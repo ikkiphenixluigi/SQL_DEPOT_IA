@@ -1,58 +1,62 @@
-# SQL_DEPOT_IA
+owner: ikkiphenixluigi
+repo: SQL_DEPOT_IA
+path: README.md
+message: Correction encodage UTF-8 - version avec vrais accents français
+content: |
+  # SQL_DEPOT_IA
 
-Dé¬°p√Æ¬≠t p√≠dagogi que pour un projet d'initiation √† SQL et SQLite dans un cadre universitaire.
+  Dépot pédagogique pour un projet d'initiation à SQL et SQLite dans un cadre universitaire.
 
-## Objectif
+  ## Objectif
 
-Ce projet a pour but de proposer :
-- une petite base de donn√≠es SQLite ;
-- des scripts SQL pour cr√≠er et alimenter la base ;
-- des exercices progressifs de requ√™tage ;
-- une documentation simple publi√≠e via GitHub Pages.
+  Ce projet a pour but de proposer :
+  - une petite base de données SQLite ;
+  - des scripts SQL pour créer et alimenter la base ;
+  - des exercices progressifs de requetage ;
+  - une documentation simple publiée via GitHub Pages.
 
-## Structure du d√≠p√Æ¬≠t
-
-```
+  ## Structure du dépôt
 SQL_DEPOT_IA/
-√É¬≠√É¬≠ README.md
-√É¬≠√É¬≠ data/          # Base SQLite et fichiers de donn√≠es
-√É¬≠√É¬≠ sql/          # Scripts de cr√≠ation, insertion et exercices
-√É¬≠√É¬≠ docs/         # Pages destin√≠es √† GitHub Pages
-√É¬≠√É¬≠ teacher/      # Notes p√≠dagogiques et corrig√≠s (priv√≠)
-```
+├── README.md
+├── data/ # Base SQLite et fichiers de données
+├── sql/ # Scripts de création, insertion et exercices
+├── docs/ # Pages destinies a GitHub Pages
+└── teacher/ # Notes pedagogiques et corriges (prive)
 
-- `data/` : base SQLite (`universite.db`) et √≠ventuels fichiers de donn√≠es
+- `data/` : base SQLite (`universite.db`) et eventuels fichiers de donnees
 - `sql/` :
-  - `01_create_tables.sql` : cr√≠ation des tables
-  - `02_insert_data.sql` : insertion des donn√≠es
-  - `03_exercices.sql` : exercices SQL pour les √≠tudiants
-- `docs/` : site GitHub Pages (accueil, sch√≠ma, consignes)
-- `teacher/` : corrig√≠s et notes internes (√† ne pas publier)
+  - `01_create_tables.sql` : creation des tables
+  - `02_insert_data.sql` : insertion des donnees
+  - `03_exercices.sql` : exercices SQL pour les etudiants
+- `docs/` : site GitHub Pages (accueil, schema, consignes)
+- `teacher/` : corriges et notes internes (a ne pas publier)
 
-## Public vis√≠
+## Public vise
 
-√É¬â¬©tudiants d√≠butants en bases de donn√≠es relationnelles et en SQL (niveau licence / premi√É¬∞re ann√≠e).
+Etudiants debutants en bases de donnees relationnelles et en SQL (niveau licence / premiere annee).
 
-## Comp√≠tences vis√≠es
+## Competences visees
 
-- comprendre un sch√≠ma relationnel simple ;
-- √≠crire des requ√™tes `SELECT`, `JOIN`, `GROUP BY`, `HAVING` ;
+- comprendre un schema relationnel simple ;
+- ecrire des requetes `SELECT`, `JOIN`, `GROUP BY`, `HAVING` ;
 - manipuler une base SQLite avec un outil graphique (DB Browser for SQLite) ;
-- utiliser GitHub pour r√≠cup√≠rer un projet et suivre des consignes.
+- utiliser GitHub pour recuperer un projet et suivre des consignes.
 
-## Premiers contenus pr√≠vus
+## Premiers contenus prevus
 
-- sch√≠ma simple de base universitaire (`√≠tudiants`, `cours`, `enseignants`, `inscriptions`, `notes`)
-- exercices SQL de difficult√≠ progressive
-- page d'accueil de pr√≠sentation du projet
+- schema simple de base universitaire (`etudiants`, `cours`, `enseignants`, `inscriptions`, `notes`)
+- exercices SQL de difficulte progressive
+- page d'accueil de presentation du projet
 
 ## Utilisation
 
-1. Cloner ou t√≠l√≠charger le d√≠p√Æ¬≠t
+1. Cloner ou telecharger le depot
 2. Ouvrir `data/universite.db` dans DB Browser for SQLite
-3. Ex√≠cuter les requ√™tes dans `sql/exercices.sql`
+3. Executer les requetes dans `sql/exercices.sql`
 4. Consulter la documentation dans `docs/` (via GitHub Pages)
 
 ## Licence
 
-Projet p√≠dagogique √† usage universitaire.
+Projet pedagogique a usage universitaire.
+branch: main
+sha: 7629c239ab200392929de09be2aaacaf0faf2ca5
