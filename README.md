@@ -1,8 +1,3 @@
-owner: ikkiphenixluigi
-repo: SQL_DEPOT_IA
-path: README.md
-message: Correction encodage UTF-8 - version avec vrais accents français
-content: |
   # SQL_DEPOT_IA
 
   Dépot pédagogique pour un projet d'initiation à SQL et SQLite dans un cadre universitaire.
