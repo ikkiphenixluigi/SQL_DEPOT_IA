@@ -1,0 +1,17 @@
+# R / RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Système
+.DS_Store
+Thumbs.db
+
+# Sorties temporaires
+*.log
+*.tmp
+
+# Dossiers de build éventuels
+_book/
+_bookdown_files/
