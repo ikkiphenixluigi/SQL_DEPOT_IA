@@ -6,32 +6,32 @@ Projet de base de donnees SQL pour la gestion universitaire.
 
 ```
 SQL_DEPOT_IA/
-├── README.md
-├── init_db.sh          # Script d'initialisation (Linux/Mac)
-├── init_db.bat         # Script d'initialisation (Windows)
-└── sql/
-    ├── 01_create_tables.sql   # Creation des tables
-    └── 02_insert_data.sql     # Insertion des donnees
++-- README.md
++-- init_db.sh          # Script d'initialisation (Linux/Mac)
++-- init_db.bat         # Script d'initialisation (Windows)
++-- sql/
+    +-- 01_create_tables.sql   # Creation des tables
+    +-- 02_insert_data.sql     # Insertion des donnees
 ```
 
-## Prérequis
+## Pre-requis
 
-- **SQLite3** installé sur votre machine
+- **SQLite3** installe sur votre machine
   - Linux : `sudo apt install sqlite3` ou `sudo dnf install sqlite`
   - Mac : `brew install sqlite`
-  - Windows : télécharger sur https://www.sqlite.org/download.html
+  - Windows : telecharger sur https://www.sqlite.org/download.html
 
-## Initialisation de la base de données
+## Initialisation de la base de donnees
 
-### Option 1 : Utiliser les scripts d'initialisation (recommandé©©)
+### Option 1 : Utiliser les scripts d'initialisation (recommande)
 
 **Linux / macOS :**
 
 ```bash
-# Rendre le script exécutable
+# Rendre le script executable
 chmod +x init_db.sh
 
-# Exé©©cuter le script
+# Executer le script
 ./init_db.sh
 ```
 
@@ -43,19 +43,19 @@ init_db.bat
 
 Ces scripts vont :
 1. Supprimer l'ancienne base `gestion_universitaire.db` si elle existe
-2. Créer une nouvelle base de données
-3. Exé©©cuter `01_create_tables.sql` pour créer les tables
-4. Exé©©cuter `02_insert_data.sql` pour insé©©rer les données
+2. Creer une nouvelle base de donnees
+3. Executer `01_create_tables.sql` pour creer les tables
+4. Executer `02_insert_data.sql` pour inserer les donnees
 
 ### Option 2 : Commandes manuelles
 
-Si vous préfé©©rez exé©©cuter les commandes manuellement :
+Si vous preferez executer les commandes manuellement :
 
 ```bash
-# Créer la base et charger les tables
+# Creer la base et charger les tables
 sqlite3 gestion_universitaire.db < sql/01_create_tables.sql
 
-# Charger les données
+# Charger les donnees
 sqlite3 gestion_universitaire.db < sql/02_insert_data.sql
 ```
 
@@ -71,9 +71,9 @@ sqlite3 gestion_universitaire.db
 .exit
 ```
 
-## Vérification des données
+## Verification des donnees
 
-Aprè©¨s initialisation, vous pouvez vérifier que les données sont bien chargé€es :
+Apres initialisation, vous pouvez verifier que les donnees sont bien chargees :
 
 ```bash
 sqlite3 gestion_universitaire.db
@@ -91,7 +91,7 @@ SELECT COUNT(*) AS nb_cours FROM cours;
 .exit
 ```
 
-## Requê©ªtes utiles
+## Requetes utiles
 
 ### Liste des etudiants par lycee
 
