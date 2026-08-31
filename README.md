@@ -1,57 +1,141 @@
-  # SQL_DEPOT_IA
+# SQL_DEPOT_IA
 
-  Dépot pédagogique pour un projet d'initiation à SQL et SQLite dans un cadre universitaire.
+Projet de base de données SQL pour la gestion universitaire.
 
-  ## Objectif
+## Structure du projet
 
-  Ce projet a pour but de proposer :
-  - une petite base de données SQLite ;
-  - des scripts SQL pour créer et alimenter la base ;
-  - des exercices progressifs de requetage ;
-  - une documentation simple publiée via GitHub Pages.
-
-  ## Structure du dépôt
+```
 SQL_DEPOT_IA/
 ├── README.md
-├── data/ # Base SQLite et fichiers de données
-├── sql/ # Scripts de création, insertion et exercices
-├── docs/ # Pages destinies a GitHub Pages
-└── teacher/ # Notes pedagogiques et corriges (prive)
+├── init_db.sh          # Script d'initialisation (Linux/Mac)
+├── init_db.bat         # Script d'initialisation (Windows)
+└── sql/
+    ├── 01_create_tables.sql   # Création des tables
+    └── 02_insert_data.sql     # Insertion des données
+```
 
-- `data/` : base SQLite (`universite.db`) et eventuels fichiers de donnees
-- `sql/` :
-  - `01_create_tables.sql` : creation des tables
-  - `02_insert_data.sql` : insertion des donnees
-  - `03_exercices.sql` : exercices SQL pour les etudiants
-- `docs/` : site GitHub Pages (accueil, schema, consignes)
-- `teacher/` : corriges et notes internes (a ne pas publier)
+## Prérequis
 
-## Public vise
+- **SQLite3** installé sur votre machine
+  - Linux : `sudo apt install sqlite3` ou `sudo dnf install sqlite`
+  - Mac : `brew install sqlite`
+  - Windows : télécharger sur https://www.sqlite.org/download.html
 
-Etudiants debutants en bases de donnees relationnelles et en SQL (niveau licence / premiere annee).
+## Initialisation de la base de données
 
-## Competences visees
+### Option 1 : Utiliser les scripts d'initialisation (recommandé©©)
 
-- comprendre un schema relationnel simple ;
-- ecrire des requetes `SELECT`, `JOIN`, `GROUP BY`, `HAVING` ;
-- manipuler une base SQLite avec un outil graphique (DB Browser for SQLite) ;
-- utiliser GitHub pour recuperer un projet et suivre des consignes.
+**Linux / macOS :**
 
-## Premiers contenus prevus
+```bash
+# Rendre le script exé©©cutable
+chmod +x init_db.sh
 
-- schema simple de base universitaire (`etudiants`, `cours`, `enseignants`, `inscriptions`, `notes`)
-- exercices SQL de difficulte progressive
-- page d'accueil de presentation du projet
+# Exé©©cuter le script
+./init_db.sh
+```
 
-## Utilisation
+**Windows :**
 
-1. Cloner ou telecharger le depot
-2. Ouvrir `data/universite.db` dans DB Browser for SQLite
-3. Executer les requetes dans `sql/exercices.sql`
-4. Consulter la documentation dans `docs/` (via GitHub Pages)
+```batch
+init_db.bat
+```
+
+Ces scripts vont :
+1. Supprimer l'ancienne base `gestion_universitaire.db` si elle existe
+2. Créer une nouvelle base de données
+3. Exé©©cuter `01_create_tables.sql` pour créer les tables
+4. Exé©©cuter `02_insert_data.sql` pour insé©©rer les données
+
+### Option 2 : Commandes manuelles
+
+Si vous préfé©©rez exé©©cuter les commandes manuellement :
+
+```bash
+# Créer la base et charger les tables
+sqlite3 gestion_universitaire.db < sql/01_create_tables.sql
+
+# Charger les données
+sqlite3 gestion_universitaire.db < sql/02_insert_data.sql
+```
+
+### Option 3 : Mode interactif SQLite
+
+```bash
+# Ouvrir SQLite en mode interactif
+sqlite3 gestion_universitaire.db
+
+# Dans l'invite SQLite, charger les fichiers :
+.read sql/01_create_tables.sql
+.read sql/02_insert_data.sql
+.exit
+```
+
+## Vérification des données
+
+Aprè¨¨s initialisation, vous pouvez vérifier que les données sont bien chargé€es :
+
+```bash
+sqlite3 gestion_universitaire.db
+
+-- Nombre d'é©©tudiants
+SELECT COUNT(*) AS nb_etudiants FROM etudiants;
+
+-- Nombre de lycé©©es
+SELECT COUNT(*) AS nb_lycees FROM lycees;
+
+-- Nombre de cours
+SELECT COUNT(*) AS nb_cours FROM cours;
+
+-- Quitter
+.exit
+```
+
+## Requê©ªtes utiles
+
+### Liste des é€tudiants par lycé©©e
+
+```sql
+SELECT l.nom AS lycée, COUNT(e.id_etudiant) AS nb_etudiants
+FROM lycees l
+LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee
+GROUP BY l.id_lycee, l.nom
+ORDER BY nb_etudiants DESC;
+```
+
+### Moyenne par cours
+
+```sql
+SELECT c.nom_cours, AVG(n.note) AS moyenne
+FROM cours c
+JOIN inscriptions i ON c.id_cours = i.id_cours
+JOIN notes n ON i.id_inscription = n.id_inscription
+GROUP BY c.id_cours, c.nom_cours;
+```
+
+### É€tudiants avec leurs inscriptions
+
+```sql
+SELECT e.nom, e.prenom, c.nom_cours, i.statut
+FROM etudiants e
+JOIN inscriptions i ON e.id_etudiant = i.id_etudiant
+JOIN cours c ON i.id_cours = c.id_cours
+ORDER BY e.nom, c.nom_cours;
+```
+
+## Structure de la base
+
+### Tables principales
+
+- **lycees** : 15 lycé©©es de France mé€tropolitaine
+- **etudiants** : 60 é€tudiants en Île-de-France
+- **enseignants** : 8 enseignants
+- **salles** : 8 salles de cours
+- **cours** : 10 cours
+- **seances** : 24 sé€ances
+- **inscriptions** : 120 inscriptions (2 cours par é€tudiant)
+- **notes** : 240 notes (2 é€valuations par inscription)
 
 ## Licence
 
-Projet pedagogique a usage universitaire.
-branch: main
-sha: 7629c239ab200392929de09be2aaacaf0faf2ca5
+Projet é€ducatif.
