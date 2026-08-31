@@ -1,6 +1,6 @@
 # SQL_DEPOT_IA
 
-Projet de base de données SQL pour la gestion universitaire.
+Projet de base de donnees SQL pour la gestion universitaire.
 
 ## Structure du projet
 
@@ -10,8 +10,8 @@ SQL_DEPOT_IA/
 ├── init_db.sh          # Script d'initialisation (Linux/Mac)
 ├── init_db.bat         # Script d'initialisation (Windows)
 └── sql/
-    ├── 01_create_tables.sql   # Création des tables
-    └── 02_insert_data.sql     # Insertion des données
+    ├── 01_create_tables.sql   # Creation des tables
+    └── 02_insert_data.sql     # Insertion des donnees
 ```
 
 ## Prérequis
@@ -28,7 +28,7 @@ SQL_DEPOT_IA/
 **Linux / macOS :**
 
 ```bash
-# Rendre le script exé©©cutable
+# Rendre le script exécutable
 chmod +x init_db.sh
 
 # Exé©©cuter le script
@@ -73,15 +73,15 @@ sqlite3 gestion_universitaire.db
 
 ## Vérification des données
 
-Aprè¨¨s initialisation, vous pouvez vérifier que les données sont bien chargé€es :
+Aprè©¨s initialisation, vous pouvez vérifier que les données sont bien chargé€es :
 
 ```bash
 sqlite3 gestion_universitaire.db
 
--- Nombre d'é©©tudiants
+-- Nombre d'etudiants
 SELECT COUNT(*) AS nb_etudiants FROM etudiants;
 
--- Nombre de lycé©©es
+-- Nombre de lycees
 SELECT COUNT(*) AS nb_lycees FROM lycees;
 
 -- Nombre de cours
@@ -93,10 +93,10 @@ SELECT COUNT(*) AS nb_cours FROM cours;
 
 ## Requê©ªtes utiles
 
-### Liste des é€tudiants par lycé©©e
+### Liste des etudiants par lycee
 
 ```sql
-SELECT l.nom AS lycée, COUNT(e.id_etudiant) AS nb_etudiants
+SELECT l.nom AS lycee, COUNT(e.id_etudiant) AS nb_etudiants
 FROM lycees l
 LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee
 GROUP BY l.id_lycee, l.nom
@@ -113,7 +113,7 @@ JOIN notes n ON i.id_inscription = n.id_inscription
 GROUP BY c.id_cours, c.nom_cours;
 ```
 
-### É€tudiants avec leurs inscriptions
+### Etudiants avec leurs inscriptions
 
 ```sql
 SELECT e.nom, e.prenom, c.nom_cours, i.statut
@@ -127,15 +127,15 @@ ORDER BY e.nom, c.nom_cours;
 
 ### Tables principales
 
-- **lycees** : 15 lycé©©es de France mé€tropolitaine
-- **etudiants** : 60 é€tudiants en Île-de-France
+- **lycees** : 15 lycees de France metropolitaine
+- **etudiants** : 60 etudiants en Ile-de-France
 - **enseignants** : 8 enseignants
 - **salles** : 8 salles de cours
 - **cours** : 10 cours
-- **seances** : 24 sé€ances
-- **inscriptions** : 120 inscriptions (2 cours par é€tudiant)
-- **notes** : 240 notes (2 é€valuations par inscription)
+- **seances** : 24 seances
+- **inscriptions** : 120 inscriptions (2 cours par etudiant)
+- **notes** : 240 notes (2 evaluations par inscription)
 
 ## Licence
 
-Projet é€ducatif.
+Projet educatif.
