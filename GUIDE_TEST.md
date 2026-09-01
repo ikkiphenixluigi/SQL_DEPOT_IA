@@ -1,12 +1,12 @@
-# Guide de test - Base de données SQLite
+# Guide de test - Base de donnees SQLite
 
-Ce guide explique comment initialiser et tester la base de données `gestion_universitaire` sur ton poste.
+Ce guide explique comment initialiser et tester la base de donnees `gestion_universitaire` sur ton poste.
 
 ---
 
-## Prérequis
+## Pre-requis
 
-- Avoir téléchargé´´ SQLite3 pour Windows
+- Avoir telecharge SQLite3 pour Windows
 - Avoir extrait les fichiers dans un dossier (ex: `C:\LOGS\SQL\sqlite-tools-win-x64-3530400`)
 - Avoir les fichiers SQL suivants dans le meme dossier :
   - `01_create_tables.sql`
@@ -14,21 +14,21 @@ Ce guide explique comment initialiser et tester la base de données `gestion_uni
 
 ---
 
-## Méthode 1 : Initialisation manuelle (ce que tu as fait)
+## Methode 1 : Initialisation manuelle (ce que tu as fait)
 
-### Étape 1 : Ouvrir cmd dans le dossier
+### Etape 1 : Ouvrir cmd dans le dossier
 
 1. Ouvre l'Explorateur de fichiers
 2. Va dans ton dossier SQLite (ex: `C:\LOGS\SQL\sqlite-tools-win-x64-3530400`)
-3. Dans la barre d'adresse, tape `cmd` et appuie sur Entré©©e
+3. Dans la barre d'adresse, tape `cmd` et appuie sur Entree
 
-### Étape 2 : Créer la base et charger les tables
+### Etape 2 : Creer la base et charger les tables
 
 ```batch
 sqlite3.exe gestion_universitaire.db < 01_create_tables.sql
 ```
 
-### Étape 3 : Charger les données
+### Etape 3 : Charger les donnees
 
 ```batch
 sqlite3.exe gestion_universitaire.db < 02_insert_data.sql
@@ -36,34 +36,34 @@ sqlite3.exe gestion_universitaire.db < 02_insert_data.sql
 
 ---
 
-## Méthode 2 : Utiliser le script init_db.bat (automatisé©©)
+## Methode 2 : Utiliser le script init_db.bat (automatise)
 
 ### Quand l'utiliser ?
 
-Le fichier `init_db.bat` automatise les 2 é€tapes ci-dessus. Il est utile si :
+Le fichier `init_db.bat` automatise les 2 etapes ci-dessus. Il est utile si :
 - Tu veux tout faire en une seule commande
-- Tu veux supprimer l'ancienne base avant de recré©©er une nouvelle
+- Tu veux supprimer l'ancienne base avant de recreer une nouvelle
 - Tu partages le projet avec quelqu'un d'autre
 
 ### Comment l'utiliser ?
 
-1. Télécharge le fichier `init_db.bat` depuis le dépôt GitHub
+1. Telecharge le fichier `init_db.bat` depuis le depot GitHub
 2. Place-le dans le meme dossier que les fichiers SQL
 3. Ouvre cmd dans le dossier
 4. Tape : `init_db.bat`
 
 Le script va :
 1. Supprimer l'ancienne base si elle existe
-2. Créer les tables
-3. Insé©©rer les données
+2. Creer les tables
+3. Inserer les donnees
 
-**Tu peux t'en passer** si tu préfè©¨res exé©©cuter les commandes manuellement (Mé©©thode 1).
+**Tu peux t'en passer** si tu preferes executer les commandes manuellement (Methode 1).
 
 ---
 
-## Vérifier que la base fonctionne
+## Verifier que la base fonctionne
 
-### Ouvrir la base de données
+### Ouvrir la base de donnees
 
 ```batch
 sqlite3.exe gestion_universitaire.db
@@ -84,7 +84,7 @@ sqlite>
 .tables
 ```
 
-Ré©©sultat attendu :
+Resultat attendu :
 ```
 cours        enseignants  inscriptions  lycees       notes        salles       seances      etudiants
 ```
@@ -105,23 +105,23 @@ Exemples :
 #### 3. Compter les enregistrements
 
 ```sql
--- Nombre d'é©©tudiants
+-- Nombre d'etudiants
 SELECT COUNT(*) AS nb_etudiants FROM etudiants;
 
--- Nombre de lycé©©es
+-- Nombre de lycees
 SELECT COUNT(*) AS nb_lycees FROM lycees;
 
 -- Nombre de cours
 SELECT COUNT(*) AS nb_cours FROM cours;
 ```
 
-#### 4. Voir quelques données
+#### 4. Voir quelques donnees
 
 ```sql
--- 5 premiers é€tudiants
+-- 5 premiers etudiants
 SELECT nom, prenom, ville FROM etudiants LIMIT 5;
 
--- Tous les lycé©©es
+-- Tous les lycees
 SELECT nom, ville FROM lycees;
 
 -- Tous les cours
@@ -136,9 +136,9 @@ SELECT code_cours, nom_cours, credits FROM cours;
 
 ---
 
-## Requê©ªtes de test (niveau é€tudiant)
+## Requetes de test (niveau etudiant)
 
-### Voir tes informations (é©©tudiant ID 1)
+### Voir tes informations (etudiant ID 1)
 
 ```sql
 SELECT * FROM etudiants WHERE id_etudiant = 1;
@@ -179,7 +179,7 @@ GROUP BY c.id_cours, c.nom_cours;
 
 ---
 
-## Résumé des commandes rapides
+## Resume des commandes rapides
 
 | Action | Commande |
 |--------|----------|
@@ -187,15 +187,15 @@ GROUP BY c.id_cours, c.nom_cours;
 | Lister les tables | `.tables` |
 | Voir structure table | `.schema nom_table` |
 | Quitter | `.exit` |
-| Créer tables | `sqlite3.exe gestion_universitaire.db < 01_create_tables.sql` |
-| Charger données | `sqlite3.exe gestion_universitaire.db < 02_insert_data.sql` |
+| Creer tables | `sqlite3.exe gestion_universitaire.db < 01_create_tables.sql` |
+| Charger donnees | `sqlite3.exe gestion_universitaire.db < 02_insert_data.sql` |
 | Tout faire en une fois | `init_db.bat` |
 
 ---
 
-## Problè©¨mes courants
+## Problemes courants
 
-### Erreur "L'opé©©rateur < est ré€servé©©"
+### Erreur "L'operateur < est reserve"
 
 Tu es dans PowerShell, pas cmd. Solution :
 
@@ -203,11 +203,11 @@ Tu es dans PowerShell, pas cmd. Solution :
 cmd
 ```
 
-Puis ré€essaie les commandes dans cmd.
+Puis reessaie les commandes dans cmd.
 
 ### Erreur "no such table"
 
-Tu n'as pas encore chargé les tables. Exé©©cute :
+Tu n'as pas encore charge les tables. Execute :
 
 ```batch
 sqlite3.exe gestion_universitaire.db < 01_create_tables.sql
@@ -216,7 +216,7 @@ sqlite3.exe gestion_universitaire.db < 02_insert_data.sql
 
 ### Base vide ou inexistante
 
-Supprime l'ancien fichier et recré©©e :
+Supprime l'ancien fichier et recree :
 
 ```batch
 del gestion_universitaire.db
@@ -229,5 +229,5 @@ sqlite3.exe gestion_universitaire.db < 02_insert_data.sql
 ## Pour aller plus loin
 
 - Utiliser **DB Browser for SQLite** (interface graphique) : https://sqlitebrowser.org/dl/
-- Consulter le README.md pour plus de détails
-- Voir le dépôt GitHub : https://github.com/ikkiphenixluigi/SQL_DEPOT_IA
+- Consulter le README.md pour plus de details
+- Voir le depot GitHub : https://github.com/ikkiphenixluigi/SQL_DEPOT_IA
