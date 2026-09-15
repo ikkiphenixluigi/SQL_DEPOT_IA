@@ -6,6 +6,55 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-16 - NIVEAU 5 COMPLETE ! TOUS LES COURS TERMINES !
+
+### Fichiers crees
+
+**NIVEAU 5 - 4 fichiers cours :**
+- docs/cours/27_niveau5_01_sous_requetes_IN.md (3336 octets)
+- docs/cours/28_niveau5_02_sous_requetes_compare.md (4209 octets)
+- docs/cours/29_niveau5_03_sous_requetes_corellees.md (3288 octets)
+- docs/cours/30_niveau5_TEST.md (2093 octets)
+
+### Themes couverts par le NIVEAU 5
+
+**Exercices 5.1 a 5.6 + TEST :**
+- 5.1 Sous-requete NOT IN (5 questions)
+- 5.2 Sous-requete IN (5 questions)
+- 5.3 Sous-requete comparative (5 questions)
+- 5.4 Sous-requete dans SELECT (5 questions)
+- 5.5 Sous-requete dans WHERE (5 questions)
+- 5.6 Sous-requete correlee (5 questions)
+- TEST NIVEAU 5 (10 questions)
+
+**Total : ~40 questions**
+
+### Competences acquises
+
+- Sous-requetes avec IN et NOT IN
+- Sous-requetes comparatives
+- Sous-requetes dans SELECT et WHERE
+- Sous-requetes correlees (EXISTS, NOT EXISTS)
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/adf1f3de4da28cf62b741c00c92392a62db06178
+- Message : "NIVEAU 5 COMPLETE - Derniers cours 27 a 30"
+
+### Statistiques NIVEAU 5
+
+- Fichiers cours : 4 / 4 (100%)
+- Exercices couverts : 6 + TEST
+- Questions : ~40
+- Fichiers totaux : ~13 KB
+
+### Prochaine action
+
+- **TOUS LES COURS SONT TERMINES !** ✅
+- Prochaine etape : Creer sql/03_exercices.sql avec toutes les solutions (~284 questions)
+
+---
+
 ## 2026-09-16 - NIVEAU 4 COMPLETE !
 
 ### Fichiers crees
@@ -300,7 +349,7 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
-# Etat actuel du projet (au 2026-09-16)
+# ETAT FINAL DU PROJET (au 2026-09-16)
 
 ## Fichiers existants
 
@@ -333,16 +382,20 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - docs/cours/20_niveau3_04_SUM_LIMIT.md
 - docs/cours/21_niveau3_05_HAVING.md
 - docs/cours/22_niveau3_TEST.md
-- docs/cours/23_niveau4_01_JOIN_base.md (NOUVEAU)
-- docs/cours/24_niveau4_02_JOIN_multiple.md (NOUVEAU)
-- docs/cours/25_niveau4_03_JOIN_avance.md (NOUVEAU)
-- docs/cours/26_niveau4_TEST.md (NOUVEAU)
+- docs/cours/23_niveau4_01_JOIN_base.md
+- docs/cours/24_niveau4_02_JOIN_multiple.md
+- docs/cours/25_niveau4_03_JOIN_avance.md
+- docs/cours/26_niveau4_TEST.md
+- docs/cours/27_niveau5_01_sous_requetes_IN.md (NOUVEAU)
+- docs/cours/28_niveau5_02_sous_requetes_compare.md (NOUVEAU)
+- docs/cours/29_niveau5_03_sous_requetes_corellees.md (NOUVEAU)
+- docs/cours/30_niveau5_TEST.md (NOUVEAU)
 - Logs/JOURNAL_PROJET.md
 
 ### SQL
 - sql/01_create_tables.sql
 - sql/02_insert_data.sql
-- sql/03_exercices.sql (A CREER - sera cree a la fin de tous les cours)
+- sql/03_exercices.sql (A CREER - sera cree a la fin)
 
 ### Scripts
 - init_db.sh
@@ -350,26 +403,43 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ## Prochaines actions
 
-1. Commencer le NIVEAU 5 : Sous-requetes et requates complexes
-2. Creer docs/cours/27_niveau5_01_sous_requetes_IN.md
-3. Continuer avec les autres cours du Niveau 5
-4. Creer sql/03_exercices.sql avec toutes les solutions (a la fin)
-5. Mettre a jour le JOURNAL a chaque fichier cree
+1. **TOUS LES COURS SONT TERMINES !** ✅
+2. Creer sql/03_exercices.sql avec toutes les solutions (~284 questions)
+3. Mettre a jour le JOURNAL si besoin
 
-## Statistiques
+## Statistiques FINALES
 
-- Fichiers cours crees : 27 / ~30 (NIVEAUX 1, 2, 3 et 4 complets + intro)
-- Niveaux completes : 4 / 5
-- Exercices rediges : 48 / ~284
-- Pourcentage d'avancement : ~90%
+- **Fichiers cours crees : 31 / 31 (100%)** ✅
+  - 1 fichier intro
+  - 30 fichiers cours (NIVEAUX 1 a 5)
+- **Niveaux completes : 5 / 5 (100%)** ✅
+- **Exercices rediges : ~284 questions** ✅
+- **Taille totale des cours : ~106 KB**
+
+## Recapitulatif par niveau
+
+| Niveau | Fichiers | Exercices | Questions |
+|--------|----------|-----------|-----------|
+| Intro | 1 | 0 | 0 |
+| NIVEAU 1 | 7 | 12 + TEST | ~58 |
+| NIVEAU 2 | 9 | 15 + TEST | ~76 |
+| NIVEAU 3 | 6 | 10 + 1 bis + TEST | ~62 |
+| NIVEAU 4 | 4 | 8 + TEST | ~48 |
+| NIVEAU 5 | 4 | 6 + TEST | ~40 |
+| **TOTAL** | **31** | **~52** | **~284** |
 
 ---
 
 **Derniere mise a jour :** 2026-09-16
 
+**PROJET DE COURS SQL : TERMINE !** 🎉
+
 **NIVEAU 1 : COMPLETE !** ✅
 **NIVEAU 2 : COMPLETE !** ✅
 **NIVEAU 3 : COMPLETE !** ✅
 **NIVEAU 4 : COMPLETE !** ✅
+**NIVEAU 5 : COMPLETE !** ✅
 
-**Modification cours 18 :** Ajout MIN et MAX ✅
+**TOUS LES COURS : TERMINES !** ✅
+
+**Prochaine etape :** Creer sql/03_exercices.sql avec toutes les solutions (~284 requetes)
