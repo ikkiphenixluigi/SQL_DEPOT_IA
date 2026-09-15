@@ -6,6 +6,58 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-16 - NIVEAU 4 COMPLETE !
+
+### Fichiers crees
+
+**NIVEAU 4 - 4 fichiers cours :**
+- docs/cours/23_niveau4_01_JOIN_base.md (3633 octets)
+- docs/cours/24_niveau4_02_JOIN_multiple.md (3785 octets)
+- docs/cours/25_niveau4_03_JOIN_avance.md (5160 octets)
+- docs/cours/26_niveau4_TEST.md (2240 octets)
+
+### Themes couverts par le NIVEAU 4
+
+**Exercices 4.1 a 4.8 + TEST :**
+- 4.1 JOIN 1 table (5 questions)
+- 4.2 JOIN avec alias (4 questions)
+- 4.3 JOIN multiple 2 tables (5 questions)
+- 4.4 JOIN avec notes (5 questions)
+- 4.5 JOIN avec 3 tables (5 questions)
+- 4.6 JOIN avec DISTINCT (4 questions)
+- 4.7 JOIN + GROUP BY (5 questions)
+- 4.8 LEFT JOIN avance (5 questions)
+- TEST NIVEAU 4 (10 questions)
+
+**Total : ~48 questions**
+
+### Competences acquises
+
+- INNER JOIN avec alias
+- JOIN multiple (2 et 3 tables)
+- DISTINCT avec JOIN
+- JOIN + GROUP BY
+- LEFT JOIN avance
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/2e2a54d7a6575704e29cc3272424c9b2a6300347
+- Message : "NIVEAU 4 COMPLETE - Ajout cours 23 a 26"
+
+### Statistiques NIVEAU 4
+
+- Fichiers cours : 4 / 4 (100%)
+- Exercices couverts : 8 + TEST
+- Questions : ~48
+- Fichiers totaux : ~15 KB
+
+### Prochaine action
+
+- Commencer le NIVEAU 5 : Sous-requetes et requates complexes
+- Prochain fichier : docs/cours/27_niveau5_01_sous_requetes_IN.md
+
+---
+
 ## 2026-09-16 - Modification cours 18 - Ajout MIN et MAX
 
 ### Fichier modifie
@@ -281,6 +333,10 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - docs/cours/20_niveau3_04_SUM_LIMIT.md
 - docs/cours/21_niveau3_05_HAVING.md
 - docs/cours/22_niveau3_TEST.md
+- docs/cours/23_niveau4_01_JOIN_base.md (NOUVEAU)
+- docs/cours/24_niveau4_02_JOIN_multiple.md (NOUVEAU)
+- docs/cours/25_niveau4_03_JOIN_avance.md (NOUVEAU)
+- docs/cours/26_niveau4_TEST.md (NOUVEAU)
 - Logs/JOURNAL_PROJET.md
 
 ### SQL
@@ -294,19 +350,18 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ## Prochaines actions
 
-1. Commencer le NIVEAU 4 : Jointures (INNER JOIN, LEFT JOIN)
-2. Creer docs/cours/23_niveau4_01_JOIN_base.md
-3. Continuer avec les autres cours du Niveau 4
-4. Creer tous les cours des Niveaux 5
-5. Creer sql/03_exercices.sql avec toutes les solutions (a la fin)
-6. Mettre a jour le JOURNAL a chaque fichier cree
+1. Commencer le NIVEAU 5 : Sous-requetes et requates complexes
+2. Creer docs/cours/27_niveau5_01_sous_requetes_IN.md
+3. Continuer avec les autres cours du Niveau 5
+4. Creer sql/03_exercices.sql avec toutes les solutions (a la fin)
+5. Mettre a jour le JOURNAL a chaque fichier cree
 
 ## Statistiques
 
-- Fichiers cours crees : 23 / ~30 (NIVEAUX 1, 2 et 3 complets + intro)
-- Niveaux completes : 3 / 5
-- Exercices rediges : 38 / ~284 (avec exercices MIN/MAX ajoutes)
-- Pourcentage d'avancement : ~77%
+- Fichiers cours crees : 27 / ~30 (NIVEAUX 1, 2, 3 et 4 complets + intro)
+- Niveaux completes : 4 / 5
+- Exercices rediges : 48 / ~284
+- Pourcentage d'avancement : ~90%
 
 ---
 
@@ -315,5 +370,6 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 **NIVEAU 1 : COMPLETE !** ✅
 **NIVEAU 2 : COMPLETE !** ✅
 **NIVEAU 3 : COMPLETE !** ✅
+**NIVEAU 4 : COMPLETE !** ✅
 
 **Modification cours 18 :** Ajout MIN et MAX ✅
