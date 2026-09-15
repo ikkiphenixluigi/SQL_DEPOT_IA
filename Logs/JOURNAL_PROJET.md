@@ -6,6 +6,63 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-16 - NIVEAU 3 COMPLETE !
+
+### Fichiers crees
+
+**NIVEAU 3 - 6 fichiers cours :**
+- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md (3248 octets)
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (4207 octets)
+- docs/cours/19_niveau3_03_COUNT_JOIN.md (3368 octets)
+- docs/cours/20_niveau3_04_SUM_LIMIT.md (4082 octets)
+- docs/cours/21_niveau3_05_HAVING.md (4841 octets)
+- docs/cours/22_niveau3_TEST.md (2268 octets)
+
+### Themes couverts par le NIVEAU 3
+
+**Exercices 3.1 a 3.10 + TEST :**
+- 3.1 COUNT + GROUP BY (5 questions)
+- 3.2 AVG + GROUP BY (5 questions)
+- 3.3 COUNT + LEFT JOIN (4 questions)
+- 3.4 AVG etudiant (5 questions)
+- 3.5 COUNT seances (4 questions)
+- 3.6 SUM par etage (4 questions)
+- 3.7 COUNT + LIMIT (5 questions)
+- 3.8 Statistiques completes (5 questions)
+- 3.9 HAVING + AVG (5 questions)
+- 3.10 HAVING + COUNT (5 questions)
+- TEST NIVEAU 3 (10 questions)
+
+**Total : ~57 questions**
+
+### Competences acquises
+
+- COUNT avec GROUP BY
+- AVG avec GROUP BY
+- COUNT avec LEFT JOIN
+- SUM avec GROUP BY
+- LIMIT
+- HAVING avec AVG et COUNT
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/bd9b0b8f2d49422dda01a995244a72b7ac8d5e11
+- Message : "NIVEAU 3 COMPLETE - Ajout cours 17 a 22"
+
+### Statistiques NIVEAU 3
+
+- Fichiers cours : 6 / 6 (100%)
+- Exercices couverts : 10 + TEST
+- Questions : ~57
+- Fichiers totaux : ~22 KB
+
+### Prochaine action
+
+- Commencer le NIVEAU 4 : Jointures (INNER JOIN, LEFT JOIN)
+- Prochain fichier : docs/cours/23_niveau4_01_JOIN_base.md
+
+---
+
 ## 2026-09-16 - NIVEAU 2 COMPLETE !
 
 ### Fichiers crees
@@ -24,22 +81,22 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 ### Themes couverts par le NIVEAU 2
 
 **Exercices 2.1 a 2.15 + TEST :**
-- 2.1 Operations arithmetiques (5 questions)
-- 2.2 ROUND (4 questions)
-- 2.3 CEIL/FLOOR (4 questions)
-- 2.4 ABS (4 questions)
-- 2.5 POWER/SQRT (4 questions)
-- 2.6 UPPER/LOWER (4 questions)
-- 2.7 LENGTH (4 questions)
-- 2.8 SUBSTR (5 questions)
-- 2.9 REPLACE (4 questions)
-- 2.10 TRIM + concatenation (5 questions)
-- 2.11 LIKE avec % (5 questions)
-- 2.12 LIKE avec _ et % (5 questions)
-- 2.13 strftime() extraction (4 questions)
-- 2.14 strftime() formatage (4 questions)
-- 2.15 Calcul d'age (5 questions)
-- TEST NIVEAU 2 (10 questions)
+- 2.1 Operations arithmetiques (5)
+- 2.2 ROUND (4)
+- 2.3 CEIL/FLOOR (4)
+- 2.4 ABS (4)
+- 2.5 POWER/SQRT (4)
+- 2.6 UPPER/LOWER (4)
+- 2.7 LENGTH (4)
+- 2.8 SUBSTR (5)
+- 2.9 REPLACE (4)
+- 2.10 TRIM + concatenation (5)
+- 2.11 LIKE avec % (5)
+- 2.12 LIKE avec _ et % (5)
+- 2.13 strftime() extraction (4)
+- 2.14 strftime() formatage (4)
+- 2.15 Calcul d'age (5)
+- TEST NIVEAU 2 (10)
 
 **Total : ~76 questions**
 
@@ -157,15 +214,21 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - docs/cours/05_niveau1_05_WHERE_AND.md
 - docs/cours/06_niveau1_06_COUNT.md
 - docs/cours/07_niveau1_TEST.md
-- docs/cours/08_niveau2_01_operations_ROUND.md (NOUVEAU)
-- docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md (NOUVEAU)
-- docs/cours/10_niveau2_03_POWER_SQRT.md (NOUVEAU)
-- docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md (NOUVEAU)
-- docs/cours/12_niveau2_05_SUBSTR_REPLACE.md (NOUVEAU)
-- docs/cours/13_niveau2_06_TRIM_concat.md (NOUVEAU)
-- docs/cours/14_niveau2_07_LIKE.md (NOUVEAU)
-- docs/cours/15_niveau2_08_strftime_age.md (NOUVEAU)
-- docs/cours/16_niveau2_TEST.md (NOUVEAU)
+- docs/cours/08_niveau2_01_operations_ROUND.md
+- docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md
+- docs/cours/10_niveau2_03_POWER_SQRT.md
+- docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md
+- docs/cours/12_niveau2_05_SUBSTR_REPLACE.md
+- docs/cours/13_niveau2_06_TRIM_concat.md
+- docs/cours/14_niveau2_07_LIKE.md
+- docs/cours/15_niveau2_08_strftime_age.md
+- docs/cours/16_niveau2_TEST.md
+- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md (NOUVEAU)
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (NOUVEAU)
+- docs/cours/19_niveau3_03_COUNT_JOIN.md (NOUVEAU)
+- docs/cours/20_niveau3_04_SUM_LIMIT.md (NOUVEAU)
+- docs/cours/21_niveau3_05_HAVING.md (NOUVEAU)
+- docs/cours/22_niveau3_TEST.md (NOUVEAU)
 - Logs/JOURNAL_PROJET.md
 
 ### SQL
@@ -179,19 +242,19 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ## Prochaines actions
 
-1. Commencer le NIVEAU 3 : Agregats, GROUP BY, HAVING, LIMIT
-2. Creer docs/cours/17_niveau3_01_COUNT_GROUP_BY.md
-3. Continuer avec les autres cours du Niveau 3
-4. Creer tous les cours des Niveaux 4-5
+1. Commencer le NIVEAU 4 : Jointures (INNER JOIN, LEFT JOIN)
+2. Creer docs/cours/23_niveau4_01_JOIN_base.md
+3. Continuer avec les autres cours du Niveau 4
+4. Creer tous les cours des Niveaux 5
 5. Creer sql/03_exercices.sql avec toutes les solutions
 6. Mettre a jour le JOURNAL a chaque fichier cree
 
 ## Statistiques
 
-- Fichiers cours crees : 17 / ~30 (NIVEAUX 1 et 2 complets + intro)
-- Niveaux completes : 2 / 5
-- Exercices rediges : 27 / ~279
-- Pourcentage d'avancement : ~57%
+- Fichiers cours crees : 23 / ~30 (NIVEAUX 1, 2 et 3 complets + intro)
+- Niveaux completes : 3 / 5
+- Exercices rediges : 37 / ~279
+- Pourcentage d'avancement : ~77%
 
 ---
 
@@ -199,3 +262,4 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 **NIVEAU 1 : COMPLETE !** ✅
 **NIVEAU 2 : COMPLETE !** ✅
+**NIVEAU 3 : COMPLETE !** ✅
