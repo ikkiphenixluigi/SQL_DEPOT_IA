@@ -6,6 +6,51 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-15 - Creation du cours 02 (WHERE avec texte, egalite, annee)
+
+### Fichiers crees
+
+- docs/cours/02_niveau1_02_WHERE_texte_annee.md (7389 octets)
+
+### Contenu du cours 02
+
+**Themes abordes :**
+- Clause WHERE avec texte (operateurs =, <>, LIKE)
+- WHERE avec egalite (texte, nombres, cles etrangeres)
+- WHERE avec dates et annees (strftime)
+- Fonctions strftime() pour extraire annee, mois, jour
+
+**Exercices couverts :**
+- 1.4 WHERE avec texte (5 questions)
+- 1.6 WHERE avec egalite (5 questions)
+- 1.7 WHERE avec annee (4 questions)
+- Total : 14 questions
+
+**Exemples utilises :**
+- Filtrer les etudiants par ville
+- Filtrer les lycees par ville
+- LIKE avec motifs (%, _)
+- Filtrer les cours par credits
+- Filtrer les etudiants par lycee
+- Filtrer par date de naissance (annee, mois, jour)
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/cea34aa1051d5a49bf6e1d72a79798a291ed6aa5
+- Message : "Ajout cours 02 - WHERE avec texte, egalite, annee (Niveau 1)"
+
+### Tests
+
+- Validation ASCII 100%
+- Navigation fonctionnelle (SOMMAIRE, cours 01, cours 03)
+- Structure conforme (intro, definitions, exemples, exercices, navigation)
+
+### Prochaine action
+
+- Cours 03 : WHERE avec plage et cle etrangere (exercices 1.8, 1.10)
+
+---
+
 ## 2026-09-11 - Creation du journal et reprise des cours
 
 ### Decision
@@ -351,7 +396,7 @@ Validee :
 
 ---
 
-# Etat actuel du projet (au 2026-09-11)
+# Etat actuel du projet (au 2026-09-15)
 
 ## Fichiers existants
 
@@ -363,7 +408,8 @@ Validee :
 - docs/SOMMAIRE.md
 - docs/cours/00_intro.md
 - docs/cours/01_niveau1_01_FROM_SELECT.md
-- Logs/JOURNAL_PROJET.md (ce fichier)
+- docs/cours/02_niveau1_02_WHERE_texte_annee.md (NOUVEAU)
+- Logs/JOURNAL_PROJET.md
 
 ### SQL
 - sql/01_create_tables.sql
@@ -376,7 +422,7 @@ Validee :
 
 ## Prochaines actions
 
-1. Creer docs/cours/02_niveau1_02_WHERE_texte_annee.md
+1. Creer docs/cours/03_niveau1_03_WHERE_plage_FK.md
 2. Continuer avec les autres cours du Niveau 1
 3. Creer tous les cours des Niveaux 2-5
 4. Creer sql/03_exercices.sql avec toutes les solutions
@@ -384,11 +430,11 @@ Validee :
 
 ## Statistiques
 
-- Fichiers cours crees : 2 / ~30
+- Fichiers cours crees : 3 / ~30
 - Niveaux completes : 0 / 5
 - Exercices rediges : 3 / ~279
-- Pourcentage d'avancement : ~7%
+- Pourcentage d'avancement : ~10%
 
 ---
 
-**Derniere mise a jour :** 2026-09-11
+**Derniere mise a jour :** 2026-09-15
