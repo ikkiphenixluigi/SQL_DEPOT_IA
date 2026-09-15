@@ -6,13 +6,63 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-16 - Modification cours 18 - Ajout MIN et MAX
+
+### Fichier modifie
+
+**Modification de :**
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md
+
+### Contenu ajoute
+
+**Nouvelles sections :**
+- Section 3 : La fonction MIN (minimum)
+  - MIN simple
+  - MIN avec GROUP BY
+  - MIN avec texte
+- Section 4 : La fonction MAX (maximum)
+  - MAX simple
+  - MAX avec GROUP BY
+  - MAX avec texte
+- Section 5 : Combinaison de MIN, MAX et AVG
+  - Statistiques completes
+  - Statistiques par groupe
+  - Avec d'autres colonnes
+
+**Nouveaux exercices :**
+- Exercice 3.2.bis - MIN, MAX, AVG (5 questions)
+  - Note min et max generales
+  - Stats par cours
+  - Cours avec note max
+  - Stats par type d'evaluation
+  - Comparaison par semestre
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/2e5c89cf6e0f4fcaf57a2e8036d543a8def93c00
+- Message : "MAJ cours 18 - Ajout MIN et MAX"
+
+### Impact
+
+- **Fichiers modifies :** 1 (cours 18)
+- **Fichiers a creer :** 0
+- **sql/03_exercices.sql :** PAS cree maintenant (sera cree a la fin de tous les cours)
+
+### Raison de la modification
+
+- Demande utilisateur : regrouper toutes les fonctions d'agregation classiques (MIN, MAX, AVG)
+- Plus logique pedagogiquement
+- Permet d'alterner les exercices sur differentes fonctions
+
+---
+
 ## 2026-09-16 - NIVEAU 3 COMPLETE !
 
 ### Fichiers crees
 
 **NIVEAU 3 - 6 fichiers cours :**
 - docs/cours/17_niveau3_01_COUNT_GROUP_BY.md (3248 octets)
-- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (4207 octets)
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (4207 octets) - MODIFIE avec MIN et MAX
 - docs/cours/19_niveau3_03_COUNT_JOIN.md (3368 octets)
 - docs/cours/20_niveau3_04_SUM_LIMIT.md (4082 octets)
 - docs/cours/21_niveau3_05_HAVING.md (4841 octets)
@@ -23,6 +73,7 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 **Exercices 3.1 a 3.10 + TEST :**
 - 3.1 COUNT + GROUP BY (5 questions)
 - 3.2 AVG + GROUP BY (5 questions)
+- 3.2.bis MIN, MAX, AVG (5 questions) - NOUVEAU
 - 3.3 COUNT + LEFT JOIN (4 questions)
 - 3.4 AVG etudiant (5 questions)
 - 3.5 COUNT seances (4 questions)
@@ -33,12 +84,13 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - 3.10 HAVING + COUNT (5 questions)
 - TEST NIVEAU 3 (10 questions)
 
-**Total : ~57 questions**
+**Total : ~62 questions** (au lieu de ~57)
 
 ### Competences acquises
 
 - COUNT avec GROUP BY
 - AVG avec GROUP BY
+- MIN, MAX avec et sans GROUP BY
 - COUNT avec LEFT JOIN
 - SUM avec GROUP BY
 - LIMIT
@@ -52,8 +104,8 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 ### Statistiques NIVEAU 3
 
 - Fichiers cours : 6 / 6 (100%)
-- Exercices couverts : 10 + TEST
-- Questions : ~57
+- Exercices couverts : 10 + TEST + 1 bis
+- Questions : ~62
 - Fichiers totaux : ~22 KB
 
 ### Prochaine action
@@ -223,18 +275,18 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - docs/cours/14_niveau2_07_LIKE.md
 - docs/cours/15_niveau2_08_strftime_age.md
 - docs/cours/16_niveau2_TEST.md
-- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md (NOUVEAU)
-- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (NOUVEAU)
-- docs/cours/19_niveau3_03_COUNT_JOIN.md (NOUVEAU)
-- docs/cours/20_niveau3_04_SUM_LIMIT.md (NOUVEAU)
-- docs/cours/21_niveau3_05_HAVING.md (NOUVEAU)
-- docs/cours/22_niveau3_TEST.md (NOUVEAU)
+- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (MODIFIE avec MIN et MAX)
+- docs/cours/19_niveau3_03_COUNT_JOIN.md
+- docs/cours/20_niveau3_04_SUM_LIMIT.md
+- docs/cours/21_niveau3_05_HAVING.md
+- docs/cours/22_niveau3_TEST.md
 - Logs/JOURNAL_PROJET.md
 
 ### SQL
 - sql/01_create_tables.sql
 - sql/02_insert_data.sql
-- sql/03_exercices.sql (A CREER)
+- sql/03_exercices.sql (A CREER - sera cree a la fin de tous les cours)
 
 ### Scripts
 - init_db.sh
@@ -246,14 +298,14 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 2. Creer docs/cours/23_niveau4_01_JOIN_base.md
 3. Continuer avec les autres cours du Niveau 4
 4. Creer tous les cours des Niveaux 5
-5. Creer sql/03_exercices.sql avec toutes les solutions
+5. Creer sql/03_exercices.sql avec toutes les solutions (a la fin)
 6. Mettre a jour le JOURNAL a chaque fichier cree
 
 ## Statistiques
 
 - Fichiers cours crees : 23 / ~30 (NIVEAUX 1, 2 et 3 complets + intro)
 - Niveaux completes : 3 / 5
-- Exercices rediges : 37 / ~279
+- Exercices rediges : 38 / ~284 (avec exercices MIN/MAX ajoutes)
 - Pourcentage d'avancement : ~77%
 
 ---
@@ -263,3 +315,5 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 **NIVEAU 1 : COMPLETE !** ✅
 **NIVEAU 2 : COMPLETE !** ✅
 **NIVEAU 3 : COMPLETE !** ✅
+
+**Modification cours 18 :** Ajout MIN et MAX ✅
