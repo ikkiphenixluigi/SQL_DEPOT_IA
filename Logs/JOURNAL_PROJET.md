@@ -6,6 +6,68 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-15 - NIVEAU 1 COMPLETE !
+
+### Fichiers crees
+
+**NIVEAU 1 - 7 fichiers cours :**
+- docs/cours/01_niveau1_01_FROM_SELECT.md (deja pushe)
+- docs/cours/02_niveau1_02_WHERE_texte_annee.md (deja pushe)
+- docs/cours/03_niveau1_03_WHERE_plage_FK.md (3859 octets)
+- docs/cours/04_niveau1_04_ORDER_BY.md (4041 octets)
+- docs/cours/05_niveau1_05_WHERE_AND.md (3674 octets)
+- docs/cours/06_niveau1_06_COUNT.md (4027 octets)
+- docs/cours/07_niveau1_TEST.md (2337 octets)
+
+### Themes couverts par le NIVEAU 1
+
+**Exercices 1.1 a 1.12 + TEST :**
+- 1.1 FROM - choix de table (4 questions)
+- 1.2 FROM - selection de colonnes (4 questions)
+- 1.3 SELECT simple (4 questions)
+- 1.4 WHERE avec texte (5 questions)
+- 1.5 ORDER BY multiple (4 questions)
+- 1.6 WHERE avec egalite (5 questions)
+- 1.7 WHERE avec annee (4 questions)
+- 1.8 WHERE avec plage (4 questions)
+- 1.9 ORDER BY DESC (4 questions)
+- 1.10 WHERE avec FK (4 questions)
+- 1.11 WHERE avec AND (5 questions)
+- 1.12 COUNT simple (4 questions)
+- TEST NIVEAU 1 (10 questions)
+
+**Total : ~58 questions**
+
+### Competences acquises
+
+- SELECT et FROM
+- WHERE avec texte, nombres, dates
+- WHERE avec BETWEEN, <, >, <=, >=
+- WHERE avec cles etrangeres (IN)
+- ORDER BY ASC et DESC
+- ORDER BY multiple
+- WHERE avec AND
+- COUNT(*) et COUNT(colonne)
+
+### Commit
+
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/69978f96fe1ee8e8c8c0684036d230daa22ed575
+- Message : "Completion NIVEAU 1 - Ajout cours 03 a 07"
+
+### Statistiques NIVEAU 1
+
+- Fichiers cours : 7 / 7 (100%)
+- Exercices couverts : 12 + TEST
+- Questions : ~58
+- Fichiers totaux : ~22 KB
+
+### Prochaine action
+
+- Commencer le NIVEAU 2 : Fonctions SQL sur les colonnes
+- Prochain fichier : docs/cours/08_niveau2_01_operations_ROUND.md
+
+---
+
 ## 2026-09-15 - Creation du cours 02 (WHERE avec texte, egalite, annee)
 
 ### Fichiers crees
@@ -408,7 +470,12 @@ Validee :
 - docs/SOMMAIRE.md
 - docs/cours/00_intro.md
 - docs/cours/01_niveau1_01_FROM_SELECT.md
-- docs/cours/02_niveau1_02_WHERE_texte_annee.md (NOUVEAU)
+- docs/cours/02_niveau1_02_WHERE_texte_annee.md
+- docs/cours/03_niveau1_03_WHERE_plage_FK.md (NOUVEAU)
+- docs/cours/04_niveau1_04_ORDER_BY.md (NOUVEAU)
+- docs/cours/05_niveau1_05_WHERE_AND.md (NOUVEAU)
+- docs/cours/06_niveau1_06_COUNT.md (NOUVEAU)
+- docs/cours/07_niveau1_TEST.md (NOUVEAU)
 - Logs/JOURNAL_PROJET.md
 
 ### SQL
@@ -422,19 +489,22 @@ Validee :
 
 ## Prochaines actions
 
-1. Creer docs/cours/03_niveau1_03_WHERE_plage_FK.md
-2. Continuer avec les autres cours du Niveau 1
-3. Creer tous les cours des Niveaux 2-5
-4. Creer sql/03_exercices.sql avec toutes les solutions
-5. Mettre a jour le JOURNAL a chaque fichier cree
+1. Commencer le NIVEAU 2 : Fonctions SQL
+2. Creer docs/cours/08_niveau2_01_operations_ROUND.md
+3. Continuer avec les autres cours du Niveau 2
+4. Creer tous les cours des Niveaux 3-5
+5. Creer sql/03_exercices.sql avec toutes les solutions
+6. Mettre a jour le JOURNAL a chaque fichier cree
 
 ## Statistiques
 
-- Fichiers cours crees : 3 / ~30
-- Niveaux completes : 0 / 5
-- Exercices rediges : 3 / ~279
-- Pourcentage d'avancement : ~10%
+- Fichiers cours crees : 8 / ~30 (NIVEAU 1 complet + intro)
+- Niveaux completes : 1 / 5
+- Exercices rediges : 12 / ~279
+- Pourcentage d'avancement : ~27%
 
 ---
 
 **Derniere mise a jour :** 2026-09-15
+
+**NIVEAU 1 : COMPLETE !** ✅
