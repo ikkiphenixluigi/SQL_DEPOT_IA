@@ -15,11 +15,11 @@ Ce test permet de verifier ta comprehension des concepts du Niveau 3.
 **Themes couverts :**
 - COUNT avec GROUP BY
 - AVG avec GROUP BY
+- MIN, MAX avec et sans GROUP BY
 - COUNT avec LEFT JOIN
 - SUM avec GROUP BY
 - LIMIT
-- HAVING avec AVG
-- HAVING avec COUNT
+- HAVING avec AVG et COUNT
 
 ---
 
@@ -27,15 +27,15 @@ Ce test permet de verifier ta comprehension des concepts du Niveau 3.
 
 ### Question 1 (COUNT + GROUP BY)
 
-Compte le nombre d'etudiants par ville.
+Compte les etudiants par ville.
 
 ### Question 2 (AVG + GROUP BY)
 
 Calcule la moyenne des notes par cours.
 
-### Question 3 (LEFT JOIN + COUNT)
+### Question 3 (COUNT + LEFT JOIN)
 
-Compte le nombre d'etudiants par lycee, meme les lycees vides.
+Compte les etudiants par lycee (meme zero).
 
 ### Question 4 (SUM + GROUP BY)
 
@@ -55,22 +55,22 @@ Trouve les lycees avec plus de 5 etudiants.
 
 ### Question 8 (AVG + ORDER BY + LIMIT)
 
-Affiche les 3 etudiants avec les meilleures moyennes.
+Affiche les 3 etudiants avec la meilleure moyenne.
 
 ### Question 9 (SUM + HAVING)
 
 Trouve les semestres avec un total de credits superieur a 20.
 
-### Question 10 (COUNT + GROUP BY + ORDER BY)
+### Question 10 (COUNT + ORDER BY)
 
-Compte le nombre de cours par semestre et trie par nombre decroissant.
+Trie les semestres par nombre de cours (decroissant).
 
 ---
 
 ## Conseils pour le test
 
 1. **Relis les cours precedents** si besoin
-2. **Teste tes requates** dans SQLite
+2. **Teste tes requetes** dans SQLite
 3. **Verifie les resultats** (nombre de lignes, valeurs)
 4. **Utilise la base** `gestion_universitaire`
 
@@ -91,6 +91,7 @@ Si tu as reussi ce test, tu peux passer au **Niveau 4** !
 **Competences acquises :**
 - COUNT avec GROUP BY
 - AVG avec GROUP BY
+- MIN, MAX avec et sans GROUP BY
 - COUNT avec LEFT JOIN
 - SUM avec GROUP BY
 - LIMIT
@@ -108,4 +109,4 @@ Si tu as reussi ce test, tu peux passer au **Niveau 4** !
 
 **Felicitation ! Tu as termine le Niveau 3 !**
 
-**Prochain cours :** Niveau 4 - Jointures (INNER JOIN, LEFT JOIN)
+**Prochain cours :** Niveau 4 - INNER JOIN avec alias
