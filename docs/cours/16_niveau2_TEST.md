@@ -3,8 +3,8 @@
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : strftime et calcul d'age](15_niveau2_08_strftime_age.md)
-- [Niveau 3 - Cours suivant : COUNT avec GROUP BY](17_niveau3_01_COUNT_GROUP_BY.md)
+- [Cours precedent : strftime et age](15_niveau2_08_strftime_age.md)
+- [Niveau 3 - Cours suivant : COUNT et GROUP BY](17_niveau3_01_COUNT_GROUP_BY.md)
 
 ---
 
@@ -28,51 +28,51 @@ Ce test permet de verifier ta comprehension des concepts du Niveau 2.
 
 ### Question 1 (Operations)
 
-Affiche les notes avec une colonne montrant la note * 1.5.
+Multiplie les notes par 1.5.
 
 ### Question 2 (ROUND)
 
-Arrondis toutes les notes a 1 decimale.
+Arrondis les notes a 1 decimale.
 
-### Question 3 (CEIL/FLOOR)
+### Question 3 (CEIL, FLOOR)
 
-Affiche CEIL(note) et FLOOR(note) pour chaque evaluation.
+Affiche le plafond et le plancher des notes.
 
 ### Question 4 (ABS)
 
-Calcule l'ecart absolu entre chaque note et 10.
+Calcule l'ecart a 10 pour chaque note.
 
-### Question 5 (UPPER/LOWER)
+### Question 5 (UPPER, LOWER)
 
-Affiche les noms en majuscules et les prenoms en minuscules.
+Affiche les noms en majuscule et les prenoms en minuscule.
 
 ### Question 6 (LENGTH)
 
-Compte le nombre de caracteres de chaque email.
+Calcule la longueur des emails.
 
 ### Question 7 (SUBSTR)
 
-Extrais les 3 premiers caracteres de chaque nom.
+Extrais les 3 premieres lettres du nom.
 
 ### Question 8 (LIKE)
 
-Trouve les etudiants dont le nom commence par 'B'.
+Trouve les etudiants dont le nom commence par B.
 
 ### Question 9 (Concatenation)
 
-Cree des emails au format 'nom.prenom@univ.fr'.
+Genere des emails universitaires.
 
-### Question 10 (Calcul d'age)
+### Question 10 (Age)
 
-Calcule l'age de chaque etudiant a partir de date_naissance.
+Calcule l'age des etudiants.
 
 ---
 
 ## Conseils pour le test
 
 1. **Relis les cours precedents** si besoin
-2. **Teste tes requates** dans SQLite
-3. **Verifie les resultats** (format, valeurs)
+2. **Teste tes requetes** dans SQLite
+3. **Verifie les resultats** (nombre de lignes, valeurs)
 4. **Utilise la base** `gestion_universitaire`
 
 ---
@@ -104,11 +104,11 @@ Si tu as reussi ce test, tu peux passer au **Niveau 3** !
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : strftime et calcul d'age](15_niveau2_08_strftime_age.md)
-- [Niveau 3 - COUNT avec GROUP BY](17_niveau3_01_COUNT_GROUP_BY.md)
+- [Cours precedent : strftime et age](15_niveau2_08_strftime_age.md)
+- [Niveau 3 - COUNT et GROUP BY](17_niveau3_01_COUNT_GROUP_BY.md)
 
 ---
 
 **Felicitation ! Tu as termine le Niveau 2 !**
 
-**Prochain cours :** Niveau 3 - Agregats et GROUP BY
+**Prochain cours :** Niveau 3 - COUNT et GROUP BY

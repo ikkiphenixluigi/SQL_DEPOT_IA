@@ -4,146 +4,123 @@
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : TRIM et concatenation](13_niveau2_06_TRIM_concat.md)
-- [Cours suivant : strftime et calcul d'age](15_niveau2_08_strftime_age.md)
+- [Cours suivant : strftime et age](15_niveau2_08_strftime_age.md)
 
 ---
 
 ## Introduction
 
-Ce cours presente l'operateur LIKE pour la recherche de motifs avec les caracteres speciaux % et _.
+Ce cours presente LIKE avec les wildcards % et _.
 
 **Objectifs :**
-- Utiliser LIKE avec % (n'importe quelle suite de caracteres)
-- Utiliser LIKE avec _ (un seul caractere)
-- Combiner les motifs
+- Utiliser % (zero ou plusieurs caracteres)
+- Utiliser _ (un seul caractere)
 
 ---
 
-## 1. LIKE avec % (pourcentage)
+## 1. LIKE avec %
 
 ### Definition
 
-Le caractere `%` dans LIKE represente n'importe quelle suite de caracteres (y compris vide).
+`%` represente zero ou plusieurs caracteres.
 
 **Syntaxe :**
 ```sql
-WHERE colonne LIKE 'motif%'
+WHERE colonne LIKE 'pattern%';
 ```
 
 ### Exemple 1 : Commence par
 
-**Question :** Trouver les noms qui commencent par 'B'.
+**Question :** Trouver les etudiants dont le nom commence par T.
 
 **Requete :**
 ```sql
-SELECT nom
+SELECT nom, prenom
 FROM etudiants
-WHERE nom LIKE 'B%';
+WHERE nom LIKE 'T%';
 ```
 
 **Explication :**
-- `'B%'` : commence par B, suivi de n'importe quoi
-- Correspond a 'Bernard', 'Blanc', 'Bertrand', etc.
+- `LIKE 'T%'` : commence par T
 
-**Resultat :** Noms commencant par B.
+**Resultat :** Noms commencant par T.
 
 ### Exemple 2 : Finit par
 
-**Question :** Trouver les noms qui finissent par 'd'.
+**Question :** Trouver les etudiants dont le nom finit par s.
 
 **Requete :**
 ```sql
-SELECT nom
+SELECT nom, prenom
 FROM etudiants
-WHERE nom LIKE '%d';
+WHERE nom LIKE '%s';
 ```
 
 **Explication :**
-- `'%d'` : n'importe quoi, termine par d
-- Correspond a 'Bernard', 'David', 'Arnaud', etc.
+- `LIKE '%s'` : finit par s
 
-**Resultat :** Noms finissant par d.
+**Resultat :** Noms finissant par s.
 
 ### Exemple 3 : Contient
 
-**Question :** Trouver les noms qui contiennent 'an'.
+**Question :** Trouver les etudiants dont le nom contient er.
 
 **Requete :**
 ```sql
-SELECT nom
+SELECT nom, prenom
 FROM etudiants
-WHERE nom LIKE '%an%';
+WHERE nom LIKE '%er%';
 ```
 
 **Explication :**
-- `'%an%'` : contient 'an' quelque part
-- Correspond a 'Bernard', 'Laurent', 'Martin', etc.
+- `LIKE '%er%'` : contient er
 
-**Resultat :** Noms contenant 'an'.
+**Resultat :** Noms avec er.
 
 ---
 
-## 2. LIKE avec _ (tiret bas)
+## 2. LIKE avec _
 
 ### Definition
 
-Le caractere `_` dans LIKE represente exactement un caractere.
+`_` represente exactement un caractere.
 
 **Syntaxe :**
 ```sql
-WHERE colonne LIKE 'motif_'
+WHERE colonne LIKE 'a_b';
 ```
 
-### Exemple 1 : Un caractere precis
+### Exemple 1 : Un caractere
 
-**Question :** Trouver les noms de 5 lettres commencant par 'P'.
+**Question :** Trouver les noms de 4 lettres.
 
 **Requete :**
 ```sql
 SELECT nom
 FROM etudiants
-WHERE nom LIKE 'P____';
+WHERE nom LIKE '____';
 ```
 
 **Explication :**
-- `'P____'` : P suivi de 4 caracteres
-- Correspond a 'Petit', 'Pierre', etc. (si 5 lettres)
+- `LIKE '____'` : exactement 4 caracteres
 
-**Resultat :** Noms de 5 lettres commencant par P.
+**Resultat :** Noms de 4 lettres.
 
-### Exemple 2 : Motif avec _ au milieu
+### Exemple 2 : Pattern avec _
 
-**Question :** Trouver les noms comme 'M_rtin'.
+**Question :** Trouver les noms commencant par 2 lettres puis a.
 
 **Requete :**
 ```sql
 SELECT nom
 FROM etudiants
-WHERE nom LIKE 'M_rtin';
+WHERE nom LIKE '__a%';
 ```
 
 **Explication :**
-- `'M_rtin'` : M, un caractere, puis 'rtin'
-- Correspond a 'Martin'
+- `LIKE '__a%'` : 2 lettres, puis a, puis le reste
 
-**Resultat :** Noms correspondant au motif.
-
-### Exemple 3 : Combinaison % et _
-
-**Question :** Trouver les noms avec 't' comme 2eme lettre.
-
-**Requete :**
-```sql
-SELECT nom
-FROM etudiants
-WHERE nom LIKE '_t%';
-```
-
-**Explication :**
-- `'_t%'` : un caractere, puis 't', puis n'importe quoi
-- Correspond a 'Thomas', 'Martin', etc.
-
-**Resultat :** Noms avec 't' en 2eme position.
+**Resultat :** Noms avec ce pattern.
 
 ---
 
@@ -151,19 +128,19 @@ WHERE nom LIKE '_t%';
 
 ### Exercice 2.11 - LIKE avec % (5 questions)
 
-1. Trouve les etudiants dont le nom commence par 'T'.
-2. Trouve les etudiants dont le nom finit par 's'.
-3. Trouve les etudiants dont le nom contient 'er'.
-4. Trouve les emails qui finissent par 'univ.fr'.
-5. Trouve les villes qui commencent par 'P'.
+1. Trouve les etudiants dont le nom commence par T.
+2. Trouve les etudiants dont le nom finit par s.
+3. Trouve les etudiants dont le nom contient er.
+4. Trouve les emails qui finissent par univ.fr.
+5. Trouve les lycees dont la ville commence par P.
 
 ### Exercice 2.12 - LIKE avec _ et % (5 questions)
 
 1. Trouve les noms de 4 lettres.
-2. Trouve les noms avec 'a' comme 3eme lettre.
-3. Trouve les prenoms qui commencent par 'M' et ont 5 lettres.
-4. Trouve les emails avec exactement 20 caracteres.
-5. Combine % et _ pour trouver les noms comme 'B_rn_rd'.
+2. Trouve les noms commencant par 2 lettres puis a.
+3. Trouve les prenoms de 5 lettres commencant par M.
+4. Trouve les emails de exactement 20 caracteres.
+5. Trouve les noms commencant par B, une lettre, puis rn et finissant par d.
 
 ---
 
@@ -171,8 +148,8 @@ WHERE nom LIKE '_t%';
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : TRIM et concatenation](13_niveau2_06_TRIM_concat.md)
-- [Cours suivant : strftime et calcul d'age](15_niveau2_08_strftime_age.md)
+- [Cours suivant : strftime et age](15_niveau2_08_strftime_age.md)
 
 ---
 
-**Prochain cours :** strftime et calcul d'age
+**Prochain cours :** strftime() et calcul d'age
