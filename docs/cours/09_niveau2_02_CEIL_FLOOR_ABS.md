@@ -4,26 +4,26 @@
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : Operations et ROUND](08_niveau2_01_operations_ROUND.md)
-- [Cours suivant : POWER et SQRT](10_niveau2_03_POWER_SQRT.md)
+- [Cours suivant : POWER, SQRT](10_niveau2_03_POWER_SQRT.md)
 
 ---
 
 ## Introduction
 
-Ce cours presente les fonctions mathematiques CEIL, FLOOR et ABS pour manipuler les nombres.
+Ce cours presente CEIL, FLOOR et ABS.
 
 **Objectifs :**
-- Comprendre CEIL (plafond)
-- Comprendre FLOOR (plancher)
-- Comprendre ABS (valeur absolue)
+- Arrondir au superieur avec CEIL
+- Arrondir a l'inferieur avec FLOOR
+- Obtenir la valeur absolue avec ABS
 
 ---
 
-## 1. La fonction CEIL (plafond)
+## 1. CEIL (plafond)
 
 ### Definition
 
-La fonction `CEIL()` (ou `CEILING()`) retourne le plus petit entier superieur ou egal au nombre donne.
+`CEIL` arrondit au superieur.
 
 **Syntaxe :**
 ```sql
@@ -32,7 +32,7 @@ CEIL(nombre)
 
 ### Exemple 1 : CEIL simple
 
-**Question :** Arrondir les notes a l'entier superieur.
+**Question :** Arrondir les notes au superieur.
 
 **Requete :**
 ```sql
@@ -41,37 +41,17 @@ FROM notes;
 ```
 
 **Explication :**
-- `CEIL(12.3)` = 13
-- `CEIL(12.0)` = 12
-- Toujours vers le haut
+- `CEIL(note)` : arrondit a l'entier superieur
 
-**Resultat :** Notes avec arrondi superieur.
-
-### Exemple 2 : CEIL avec calcul
-
-**Question :** Calculer le nombre de groupes necessaires (plafond).
-
-**Requete :**
-```sql
-SELECT 
-    COUNT(*) AS total,
-    CEIL(COUNT(*) / 30.0) AS groupes_necessaires
-FROM etudiants;
-```
-
-**Explication :**
-- Division par 30 etudiants par groupe
-- CEIL pour avoir le nombre entier superieur
-
-**Resultat :** Nombre de groupes necessaires.
+**Resultat :** Notes arrondies au-dessus.
 
 ---
 
-## 2. La fonction FLOOR (plancher)
+## 2. FLOOR (plancher)
 
 ### Definition
 
-La fonction `FLOOR()` retourne le plus grand entier inferieur ou egal au nombre donne.
+`FLOOR` arrondit a l'inferieur.
 
 **Syntaxe :**
 ```sql
@@ -80,7 +60,7 @@ FLOOR(nombre)
 
 ### Exemple 1 : FLOOR simple
 
-**Question :** Arrondir les notes a l'entier inferieur.
+**Question :** Arrondir les notes a l'inferieur.
 
 **Requete :**
 ```sql
@@ -89,37 +69,17 @@ FROM notes;
 ```
 
 **Explication :**
-- `FLOOR(12.9)` = 12
-- `FLOOR(12.0)` = 12
-- Toujours vers le bas
+- `FLOOR(note)` : arrondit a l'entier inferieur
 
-**Resultat :** Notes avec arrondi inferieur.
-
-### Exemple 2 : FLOOR avec division
-
-**Question :** Calculer le nombre complet de dizaines.
-
-**Requete :**
-```sql
-SELECT 
-    credits,
-    FLOOR(credits / 10) AS dizaines_completes
-FROM cours;
-```
-
-**Explication :**
-- Division par 10
-- FLOOR pour garder seulement les dizaines entieres
-
-**Resultat :** Nombre de dizaines completes.
+**Resultat :** Notes arrondies en-dessous.
 
 ---
 
-## 3. La fonction ABS (valeur absolue)
+## 3. ABS (valeur absolue)
 
 ### Definition
 
-La fonction `ABS()` retourne la valeur absolue d'un nombre (toujours positif).
+`ABS` retourne la valeur absolue.
 
 **Syntaxe :**
 ```sql
@@ -128,42 +88,19 @@ ABS(nombre)
 
 ### Exemple 1 : ABS simple
 
-**Question :** Afficher la valeur absolue des differences.
+**Question :** Calculer l'ecart a 10 pour chaque note.
 
 **Requete :**
 ```sql
-SELECT 
-    note,
-    ABS(note - 10) AS ecart_a_10
+SELECT note, ABS(note - 10) AS ecart_a_10
 FROM notes;
 ```
 
 **Explication :**
-- `ABS(-5)` = 5
-- `ABS(5)` = 5
-- Toujours positif
+- `note - 10` : difference avec 10
+- `ABS` : valeur absolue (toujours positive)
 
-**Resultat :** Ecarts a 10 (toujours positifs).
-
-### Exemple 2 : ABS avec soustraction
-
-**Question :** Calculer l'ecart entre deux notes.
-
-**Requete :**
-```sql
-SELECT 
-    n1.note AS note1,
-    n2.note AS note2,
-    ABS(n1.note - n2.note) AS ecart
-FROM notes n1, notes n2
-WHERE n1.id_inscription = 1 AND n2.id_inscription = 2;
-```
-
-**Explication :**
-- Difference entre deux notes
-- ABS pour avoir l'ecart positif
-
-**Resultat :** Ecart entre les deux notes.
+**Resultat :** Ecarts a 10.
 
 ---
 
@@ -171,24 +108,24 @@ WHERE n1.id_inscription = 1 AND n2.id_inscription = 2;
 
 ### Exercice 2.3 - CEIL (4 questions)
 
-1. Arrondis toutes les notes a l'entier superieur.
-2. Calcule le nombre de groupes de 20 etudiants necessaires (utilise CEIL).
-3. Arrondis les credits multiplies par 1.5 a l'entier superieur.
-4. Affiche CEIL(note / 5) pour chaque evaluation.
+1. Arrondis les notes au superieur.
+2. Calcule le nombre de groupes necessaires (20 etudiants par groupe).
+3. Ajoute 50% aux credits et arrondis au superieur.
+4. Divise les notes par 5 et arrondis au superieur.
 
 ### Exercice 2.4 - FLOOR (4 questions)
 
-1. Arrondis toutes les notes a l'entier inferieur.
-2. Calcule le nombre complet de dizaines de credits pour chaque cours.
-3. Affiche FLOOR(note / 2) pour chaque evaluation.
-4. Compare CEIL et FLOOR sur les memes notes.
+1. Arrondis les notes a l'inferieur.
+2. Calcule le nombre de dizaines de credits.
+3. Divise les notes par 2 et arrondis a l'inferieur.
+4. Affiche le plafond et le plancher des notes.
 
 ### Exercice 2.5 - ABS (4 questions)
 
-1. Affiche la valeur absolue de (note - 10) pour chaque evaluation.
-2. Calcule l'ecart entre la note et la moyenne de la classe.
-3. Affiche ABS(credits - 5) pour chaque cours.
-4. Compare les ecarts positifs et negatifs avec ABS.
+1. Calcule l'ecart a 10 pour chaque note.
+2. Calcule l'ecart a la moyenne pour chaque note.
+3. Calcule l'ecart a 5 pour les credits.
+4. Calcule l'ecart a 10 pour chaque note.
 
 ---
 
@@ -196,7 +133,7 @@ WHERE n1.id_inscription = 1 AND n2.id_inscription = 2;
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : Operations et ROUND](08_niveau2_01_operations_ROUND.md)
-- [Cours suivant : POWER et SQRT](10_niveau2_03_POWER_SQRT.md)
+- [Cours suivant : POWER, SQRT](10_niveau2_03_POWER_SQRT.md)
 
 ---
 
