@@ -51,24 +51,6 @@ INNER JOIN lycees l ON e.id_lycee = l.id_lycee;
 
 **Resultat :** Etudiants avec leur lycee.
 
-### Exemple 2 : JOIN avec WHERE
-
-**Question :** Afficher les etudiants de Paris avec leur lycee.
-
-**Requete :**
-```sql
-SELECT e.nom, e.prenom, l.nom AS lycee, l.ville
-FROM etudiants e
-INNER JOIN lycees l ON e.id_lycee = l.id_lycee
-WHERE l.ville = 'Paris';
-```
-
-**Explication :**
-- JOIN pour relier etudiants et lycees
-- WHERE pour filtrer par ville
-
-**Resultat :** Etudiants parisiens avec leur lycee.
-
 ---
 
 ## 2. Alias de tables
@@ -101,40 +83,6 @@ INNER JOIN notes AS n ON c.id_cours = n.id_cours;
 - Plus court a ecrire dans la requete
 
 **Resultat :** Notes avec noms de cours.
-
-### Exemple 2 : Alias sans AS
-
-**Question :** Meme requete sans AS.
-
-**Requete :**
-```sql
-SELECT c.nom_cours, n.note
-FROM cours c
-INNER JOIN notes n ON c.id_cours = n.id_cours;
-```
-
-**Explication :**
-- `cours c` : equivalente a `cours AS c`
-- AS est optionnel pour les alias
-
-**Resultat :** Meme resultat.
-
-### Exemple 3 : Alias explicites
-
-**Question :** Utiliser des alias clairs.
-
-**Requete :**
-```sql
-SELECT etu.nom, etu.prenom, lyc.nom AS lycee
-FROM etudiants AS etu
-INNER JOIN lycees AS lyc ON etu.id_lycee = lyc.id_lycee;
-```
-
-**Explication :**
-- Alias explicites : etu, lyc
-- Plus lisible que e, l
-
-**Resultat :** Etudiants avec lycees.
 
 ---
 

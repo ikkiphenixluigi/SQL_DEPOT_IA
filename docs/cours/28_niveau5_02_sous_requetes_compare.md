@@ -49,23 +49,6 @@ WHERE note > (SELECT AVG(note) FROM notes);
 
 **Resultat :** Notes au-dessus de la moyenne.
 
-### Exemple 2 : Superieur au maximum
-
-**Question :** Trouver les cours avec plus de credits que la moyenne.
-
-**Requete :**
-```sql
-SELECT nom_cours, credits
-FROM cours
-WHERE credits > (SELECT AVG(credits) FROM cours);
-```
-
-**Explication :**
-- Sous-requete : moyenne des credits
-- WHERE filtre les cours au-dessus de la moyenne
-
-**Resultat :** Cours avec plus de credits que la moyenne.
-
 ---
 
 ## 2. Sous-requetes dans SELECT
@@ -100,25 +83,6 @@ FROM cours;
 
 **Resultat :** Tous les cours avec la meme moyenne generale.
 
-### Exemple 2 : COUNT dans SELECT
-
-**Question :** Afficher les etudiants avec le nombre total d'inscriptions.
-
-**Requete :**
-```sql
-SELECT 
-    nom,
-    prenom,
-    (SELECT COUNT(*) FROM inscriptions) AS total_inscriptions
-FROM etudiants;
-```
-
-**Explication :**
-- Sous-requete dans SELECT : compte toutes les inscriptions
-- Affichee pour chaque etudiant
-
-**Resultat :** Tous les etudiants avec le total des inscriptions.
-
 ---
 
 ## 3. Sous-requetes dans WHERE
@@ -150,29 +114,6 @@ WHERE id_etudiant IN (
 - WHERE filtre ceux avec moyenne > 10
 
 **Resultat :** Etudiants avec moyenne > 10.
-
-### Exemple 2 : WHERE avec COUNT
-
-**Question :** Afficher les cours avec plus de 5 notes.
-
-**Requete :**
-```sql
-SELECT nom_cours
-FROM cours
-WHERE id_cours IN (
-    SELECT id_cours
-    FROM notes
-    GROUP BY id_cours
-    HAVING COUNT(*) > 5
-);
-```
-
-**Explication :**
-- Sous-requete avec GROUP BY et HAVING
-- Compte les notes par cours
-- WHERE filtre ceux avec > 5 notes
-
-**Resultat :** Cours avec plus de 5 notes.
 
 ---
 

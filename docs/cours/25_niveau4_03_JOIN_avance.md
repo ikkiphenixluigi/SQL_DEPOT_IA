@@ -49,23 +49,6 @@ INNER JOIN notes n ON c.id_cours = n.id_cours;
 
 **Resultat :** Liste des cours sans doublons.
 
-### Exemple 2 : DISTINCT avec plusieurs colonnes
-
-**Question :** Afficher les combinaisons uniques cours/enseignant.
-
-**Requete :**
-```sql
-SELECT DISTINCT c.nom_cours, ens.nom AS enseignant
-FROM cours c
-INNER JOIN enseignants ens ON c.id_enseignant = ens.id_enseignant;
-```
-
-**Explication :**
-- DISTINCT sur plusieurs colonnes
-- Chaque combinaison cours/enseignant est unique
-
-**Resultat :** Combinaisons uniques.
-
 ---
 
 ## 2. JOIN avec GROUP BY
@@ -93,44 +76,6 @@ GROUP BY c.nom_cours;
 
 **Resultat :** Nombre de notes par cours.
 
-### Exemple 2 : AVG avec JOIN
-
-**Question :** Calculer la moyenne par cours.
-
-**Requete :**
-```sql
-SELECT c.nom_cours, AVG(n.note) AS moyenne
-FROM cours c
-INNER JOIN notes n ON c.id_cours = n.id_cours
-GROUP BY c.nom_cours;
-```
-
-**Explication :**
-- JOIN pour relier cours et notes
-- GROUP BY pour grouper par cours
-- AVG pour calculer la moyenne
-
-**Resultat :** Moyenne par cours.
-
-### Exemple 3 : SUM avec JOIN
-
-**Question :** Calculer le total des credits par enseignant.
-
-**Requete :**
-```sql
-SELECT ens.nom, SUM(c.credits) AS total_credits
-FROM enseignants ens
-INNER JOIN cours c ON ens.id_enseignant = c.id_enseignant
-GROUP BY ens.nom;
-```
-
-**Explication :**
-- JOIN pour relier enseignants et cours
-- GROUP BY pour grouper par enseignant
-- SUM pour additionner les credits
-
-**Resultat :** Total des credits par enseignant.
-
 ---
 
 ## 3. LEFT JOIN avance
@@ -155,43 +100,6 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 - Les lycees sans etudiants ont NULL dans la colonne etudiant
 
 **Resultat :** Tous les lycees, avec ou sans etudiants.
-
-### Exemple 2 : LEFT JOIN avec COUNT
-
-**Question :** Compter les etudiants par lycee (meme zero).
-
-**Requete :**
-```sql
-SELECT l.nom AS lycee, COUNT(e.id_etudiant) AS nb_etudiants
-FROM lycees l
-LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee
-GROUP BY l.nom;
-```
-
-**Explication :**
-- LEFT JOIN garde tous les lycees
-- COUNT(e.id_etudiant) ne compte pas les NULL
-- Les lycees vides ont 0
-
-**Resultat :** Tous les lycees avec leur nombre d'etudiants.
-
-### Exemple 3 : LEFT JOIN avec WHERE
-
-**Question :** Trouver les lycees sans etudiants.
-
-**Requete :**
-```sql
-SELECT l.nom AS lycee
-FROM lycees l
-LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee
-WHERE e.id_etudiant IS NULL;
-```
-
-**Explication :**
-- LEFT JOIN garde tous les lycees
-- WHERE e.id_etudiant IS NULL : seulement les lycees sans etudiants
-
-**Resultat :** Lycees vides.
 
 ---
 

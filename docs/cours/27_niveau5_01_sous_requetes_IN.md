@@ -51,23 +51,6 @@ WHERE id_etudiant IN (SELECT id_etudiant FROM inscriptions);
 
 **Resultat :** Etudiants qui ont au moins une inscription.
 
-### Exemple 2 : IN avec plusieurs colonnes
-
-**Question :** Afficher les cours avec des notes.
-
-**Requete :**
-```sql
-SELECT nom_cours, credits
-FROM cours
-WHERE id_cours IN (SELECT id_cours FROM notes);
-```
-
-**Explication :**
-- Sous-requete sur id_cours
-- Filtre les cours qui ont des notes
-
-**Resultat :** Cours avec au moins une note.
-
 ---
 
 ## 2. Sous-requetes avec NOT IN
@@ -99,23 +82,6 @@ WHERE id_etudiant NOT IN (SELECT id_etudiant FROM inscriptions);
 - NOT IN : exclut ceux qui sont dans la liste
 
 **Resultat :** Etudiants qui n'ont aucune inscription.
-
-### Exemple 2 : NOT IN avec cours
-
-**Question :** Afficher les cours sans notes.
-
-**Requete :**
-```sql
-SELECT nom_cours
-FROM cours
-WHERE id_cours NOT IN (SELECT id_cours FROM notes);
-```
-
-**Explication :**
-- Sous-requete : tous les id_cours avec des notes
-- NOT IN : exclut les cours avec des notes
-
-**Resultat :** Cours sans aucune note.
 
 ---
 

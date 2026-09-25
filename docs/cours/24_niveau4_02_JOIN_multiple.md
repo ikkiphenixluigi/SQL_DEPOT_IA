@@ -38,23 +38,6 @@ INNER JOIN lycees l ON e.id_lycee = l.id_lycee;
 
 **Resultat :** Etudiants avec infos lycee.
 
-### Exemple 2 : Notes et cours
-
-**Question :** Afficher les notes avec les cours.
-
-**Requete :**
-```sql
-SELECT n.note, c.nom_cours, c.credits
-FROM notes n
-INNER JOIN cours c ON n.id_cours = c.id_cours;
-```
-
-**Explication :**
-- 2 tables : notes, cours
-- Jointure sur id_cours
-
-**Resultat :** Notes avec infos cours.
-
 ---
 
 ## 2. JOIN avec 3 tables
@@ -77,42 +60,6 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 - Deuxieme jointure : etudiants-inscriptions
 
 **Resultat :** Etudiants avec lycee et inscriptions.
-
-### Exemple 2 : Notes, cours et enseignants
-
-**Question :** Afficher les notes avec le cours et l'enseignant.
-
-**Requete :**
-```sql
-SELECT n.note, c.nom_cours, ens.nom AS enseignant
-FROM notes n
-INNER JOIN cours c ON n.id_cours = c.id_cours
-INNER JOIN enseignants ens ON c.id_enseignant = ens.id_enseignant;
-```
-
-**Explication :**
-- 3 tables : notes, cours, enseignants
-- Jointure en chaine
-
-**Resultat :** Notes avec cours et enseignant.
-
-### Exemple 3 : Etudiants, inscriptions et cours
-
-**Question :** Afficher les etudiants avec leurs cours.
-
-**Requete :**
-```sql
-SELECT e.nom, e.prenom, c.nom_cours, i.statut
-FROM etudiants e
-INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant
-INNER JOIN cours c ON i.id_cours = c.id_cours;
-```
-
-**Explication :**
-- 3 tables : etudiants, inscriptions, cours
-- inscriptions est la table de liaison
-
-**Resultat :** Etudiants avec leurs cours.
 
 ---
 

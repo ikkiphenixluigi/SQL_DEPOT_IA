@@ -68,7 +68,7 @@ Calcule la moyenne d'age par ville en utilisant une jointure.
 ## Conseils pour le test
 
 1. **Relis les cours precedents** si besoin
-2. **Teste tes requates** dans SQLite
+2. **Teste tes requetes** dans SQLite
 3. **Verifie les resultats** (nombre de lignes, valeurs)
 4. **Utilise la base** `gestion_universitaire`
 
