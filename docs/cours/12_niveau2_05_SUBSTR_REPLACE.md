@@ -10,148 +10,82 @@
 
 ## Introduction
 
-Ce cours presente les fonctions SUBSTR (extraction de sous-chaine) et REPLACE (remplacement de texte).
+Ce cours presente SUBSTR et REPLACE.
 
 **Objectifs :**
-- Extraire des parties de texte avec SUBSTR
+- Extraire des sous-chaines avec SUBSTR
 - Remplacer du texte avec REPLACE
 
 ---
 
-## 1. La fonction SUBSTR (sous-chaine)
+## 1. SUBSTR (sous-chaine)
 
 ### Definition
 
-La fonction `SUBSTR()` extrait une partie d'un texte.
+`SUBSTR` extrait une partie d'un texte.
 
 **Syntaxe :**
 ```sql
 SUBSTR(texte, depart, longueur)
 ```
 
-- `texte` : le texte original
-- `depart` : position de depart (1 = premier caractere)
-- `longueur` : nombre de caracteres a extraire (optionnel)
-
 ### Exemple 1 : SUBSTR simple
 
-**Question :** Extraire les 3 premiers caracteres des noms.
+**Question :** Extraire les 4 premieres lettres du nom.
 
 **Requete :**
 ```sql
-SELECT nom, SUBSTR(nom, 1, 3) AS debut_nom
+SELECT nom, SUBSTR(nom, 1, 4) AS debut_nom
 FROM etudiants;
 ```
 
 **Explication :**
-- `SUBSTR('Bernard', 1, 3)` = 'Ber'
-- Depart a 1, longueur 3
+- `SUBSTR(nom, 1, 4)` : 4 caracteres a partir de la position 1
 
-**Resultat :** Noms et leurs 3 premiers caracteres.
+**Resultat :** Debut des noms.
 
-### Exemple 2 : SUBSTR sans longueur
+### Exemple 2 : SUBSTR avec fin
 
-**Question :** Extraire a partir du 2eme caractere jusqu'a la fin.
+**Question :** Extraire les 3 derniers caracteres de l'email.
 
 **Requete :**
 ```sql
-SELECT nom, SUBSTR(nom, 2) AS nom_sans_1er
+SELECT email, SUBSTR(email, -3) AS fin_email
 FROM etudiants;
 ```
 
 **Explication :**
-- `SUBSTR('Bernard', 2)` = 'ernard'
-- Sans longueur = jusqu'a la fin
+- `SUBSTR(email, -3)` : 3 derniers caracteres
 
-**Resultat :** Noms sans le premier caractere.
-
-### Exemple 3 : SUBSTR avec email
-
-**Question :** Extraire le domaine des emails (apres @).
-
-**Requete :**
-```sql
-SELECT 
-    email,
-    SUBSTR(email, INSTR(email, '@') + 1) AS domaine
-FROM etudiants;
-```
-
-**Explication :**
-- `INSTR(email, '@')` : trouve la position de @
-- `+ 1` : commence apres @
-- Extrait le domaine
-
-**Resultat :** Emails et leurs domaines.
+**Resultat :** Fin des emails (.fr, .com, etc.).
 
 ---
 
-## 2. La fonction REPLACE (remplacement)
+## 2. REPLACE (remplacement)
 
 ### Definition
 
-La fonction `REPLACE()` remplace toutes les occurrences d'un texte par un autre.
+`REPLACE` remplace un texte par un autre.
 
 **Syntaxe :**
 ```sql
 REPLACE(texte, ancien, nouveau)
 ```
 
-- `texte` : le texte original
-- `ancien` : le texte a remplacer
-- `nouveau` : le texte de remplacement
-
 ### Exemple 1 : REPLACE simple
 
-**Question :** Remplacer 'univ' par 'universite' dans les emails.
+**Question :** Remplacer "fr" par "com" dans les emails.
 
 **Requete :**
 ```sql
-SELECT 
-    email,
-    REPLACE(email, 'univ', 'universite') AS email_corrige
+SELECT email, REPLACE(email, 'fr', 'com') AS email_modifie
 FROM etudiants;
 ```
 
 **Explication :**
-- Remplace 'univ' par 'universite'
-- `REPLACE('thomas.univ@univ.fr', 'univ', 'universite')` = 'thomas.universite@universite.fr'
+- `REPLACE(email, 'fr', 'com')` : remplace fr par com
 
-**Resultat :** Emails avec remplacement.
-
-### Exemple 2 : REPLACE pour supprimer
-
-**Question :** Supprimer les espaces des noms.
-
-**Requete :**
-```sql
-SELECT nom, REPLACE(nom, ' ', '') AS nom_sans_espaces
-FROM etudiants;
-```
-
-**Explication :**
-- Remplace ' ' (espace) par '' (rien)
-- Supprime les espaces
-
-**Resultat :** Noms sans espaces.
-
-### Exemple 3 : REPLACE avec chiffres
-
-**Question :** Remplacer '2024' par '2025' dans les annees.
-
-**Requete :**
-```sql
-SELECT 
-    annee_inscription,
-    REPLACE(CAST(annee_inscription AS TEXT), '2024', '2025') AS nouvelle_annee
-FROM etudiants;
-```
-
-**Explication :**
-- CAST pour convertir en texte
-- Remplace 2024 par 2025
-
-**Resultat :** Annees mises a jour.
+**Resultat :** Emails avec .com au lieu de .fr.
 
 ---
 
@@ -159,18 +93,18 @@ FROM etudiants;
 
 ### Exercice 2.8 - SUBSTR (5 questions)
 
-1. Extrais les 4 premiers caracteres de chaque nom.
-2. Extrais les 3 derniers caracteres de chaque email.
-3. Extrais le prenom complet a partir de la colonne email (avant le point).
-4. Utilise SUBSTR pour afficher seulement l'annee de date_naissance.
-5. Extrais le domaine des emails (tout ce qui est apres @).
+1. Extrais les 4 premieres lettres du nom.
+2. Extrais les 3 derniers caracteres de l'email.
+3. Extrais le prenom de l'email (avant le point).
+4. Extrais l'annee de naissance de la date.
+5. Extrais le domaine de l'email (apres @).
 
 ### Exercice 2.9 - REPLACE (4 questions)
 
-1. Remplace 'fr' par 'com' dans tous les emails.
-2. Remplace les espaces par des tirets dans les noms (si applicable).
-3. Remplace '2024' par '2025' dans annee_inscription.
-4. Utilise REPLACE pour mettre les emails en minuscules (indice : combine avec LOWER).
+1. Remplace "fr" par "com" dans les emails.
+2. Remplace les espaces par des tirets dans les noms.
+3. Remplace "2024" par "2025" dans les annees d'inscription.
+4. Mets les emails en minuscule.
 
 ---
 

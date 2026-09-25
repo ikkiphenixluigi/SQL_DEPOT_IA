@@ -3,27 +3,27 @@
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : POWER et SQRT](10_niveau2_03_POWER_SQRT.md)
-- [Cours suivant : SUBSTR et REPLACE](12_niveau2_05_SUBSTR_REPLACE.md)
+- [Cours precedent : POWER, SQRT](10_niveau2_03_POWER_SQRT.md)
+- [Cours suivant : SUBSTR, REPLACE](12_niveau2_05_SUBSTR_REPLACE.md)
 
 ---
 
 ## Introduction
 
-Ce cours presente les fonctions de manipulation de texte UPPER, LOWER et LENGTH.
+Ce cours presente UPPER, LOWER et LENGTH.
 
 **Objectifs :**
-- Mettre en majuscules avec UPPER
-- Mettre en minuscules avec LOWER
-- Compter les caracteres avec LENGTH
+- Mettre en majuscule avec UPPER
+- Mettre en minuscule avec LOWER
+- Calculer la longueur avec LENGTH
 
 ---
 
-## 1. La fonction UPPER (majuscules)
+## 1. UPPER (majuscule)
 
 ### Definition
 
-La fonction `UPPER()` convertit un texte en majuscules.
+`UPPER` met un texte en majuscule.
 
 **Syntaxe :**
 ```sql
@@ -32,44 +32,26 @@ UPPER(texte)
 
 ### Exemple 1 : UPPER simple
 
-**Question :** Afficher les noms des etudiants en majuscules.
+**Question :** Mettre les noms en majuscule.
 
 **Requete :**
 ```sql
-SELECT nom, UPPER(nom) AS nom_majuscule
+SELECT nom, UPPER(nom) AS nom_maj
 FROM etudiants;
 ```
 
 **Explication :**
-- `UPPER('bernard')` = 'BERNARD'
-- Conserve deja les majuscules
+- `UPPER(nom)` : met le nom en majuscule
 
-**Resultat :** Noms originaux et en majuscules.
-
-### Exemple 2 : UPPER avec prenom
-
-**Question :** Afficher nom et prenom tout en majuscules.
-
-**Requete :**
-```sql
-SELECT 
-    UPPER(nom) AS NOM,
-    UPPER(prenom) AS PRENOM
-FROM etudiants;
-```
-
-**Explication :**
-- UPPER sur chaque colonne
-
-**Resultat :** Tout en majuscules.
+**Resultat :** Noms en majuscule.
 
 ---
 
-## 2. La fonction LOWER (minuscules)
+## 2. LOWER (minuscule)
 
 ### Definition
 
-La fonction `LOWER()` convertit un texte en minuscules.
+`LOWER` met un texte en minuscule.
 
 **Syntaxe :**
 ```sql
@@ -78,42 +60,26 @@ LOWER(texte)
 
 ### Exemple 1 : LOWER simple
 
-**Question :** Afficher les emails en minuscules.
+**Question :** Mettre les prenoms en minuscule.
 
 **Requete :**
 ```sql
-SELECT email, LOWER(email) AS email_minuscule
+SELECT prenom, LOWER(prenom) AS prenom_min
 FROM etudiants;
 ```
 
 **Explication :**
-- `LOWER('Thomas.BERNARD@univ.fr')` = 'thomas.bernard@univ.fr'
-- Utile pour normaliser les emails
+- `LOWER(prenom)` : met le prenom en minuscule
 
-**Resultat :** Emails normalises en minuscules.
-
-### Exemple 2 : LOWER avec nom
-
-**Question :** Afficher les noms en minuscules.
-
-**Requete :**
-```sql
-SELECT nom, LOWER(nom) AS nom_minuscule
-FROM etudiants;
-```
-
-**Explication :**
-- `LOWER('BERNARD')` = 'bernard'
-
-**Resultat :** Noms originaux et en minuscules.
+**Resultat :** Prenoms en minuscule.
 
 ---
 
-## 3. La fonction LENGTH (longueur)
+## 3. LENGTH (longueur)
 
 ### Definition
 
-La fonction `LENGTH()` retourne le nombre de caracteres d'un texte.
+`LENGTH` calcule la longueur d'un texte.
 
 **Syntaxe :**
 ```sql
@@ -122,51 +88,18 @@ LENGTH(texte)
 
 ### Exemple 1 : LENGTH simple
 
-**Question :** Compter le nombre de caracteres des noms.
-
-**Requete :**
-```sql
-SELECT nom, LENGTH(nom) AS longueur_nom
-FROM etudiants;
-```
-
-**Explication :**
-- `LENGTH('Bernard')` = 7
-- Compte tous les caracteres
-
-**Resultat :** Noms et leur longueur.
-
-### Exemple 2 : LENGTH avec email
-
-**Question :** Compter la longueur des emails.
-
-**Requete :**
-```sql
-SELECT email, LENGTH(email) AS longueur_email
-FROM etudiants;
-```
-
-**Explication :**
-- Longueur totale de l'email
-
-**Resultat :** Emails et leur longueur.
-
-### Exemple 3 : LENGTH avec condition
-
-**Question :** Trouver les noms de plus de 10 caracteres.
+**Question :** Calculer la longueur des noms.
 
 **Requete :**
 ```sql
 SELECT nom, LENGTH(nom) AS longueur
-FROM etudiants
-WHERE LENGTH(nom) > 10;
+FROM etudiants;
 ```
 
 **Explication :**
-- WHERE avec LENGTH
-- Filtre les noms longs
+- `LENGTH(nom)` : nombre de caracteres
 
-**Resultat :** Seulement les noms de plus de 10 caracteres.
+**Resultat :** Noms avec leur longueur.
 
 ---
 
@@ -174,25 +107,25 @@ WHERE LENGTH(nom) > 10;
 
 ### Exercice 2.6 - UPPER et LOWER (4 questions)
 
-1. Affiche les noms des etudiants en majuscules.
-2. Affiche les prenoms en minuscules.
-3. Affiche les emails en majuscules.
-4. Compare UPPER(nom) et LOWER(nom) pour chaque etudiant.
+1. Mets les noms en majuscule.
+2. Mets les prenoms en minuscule.
+3. Mets les emails en majuscule.
+4. Affiche les noms en majuscule et en minuscule.
 
 ### Exercice 2.7 - LENGTH (4 questions)
 
-1. Compte le nombre de caracteres de chaque nom.
-2. Compte la longueur des emails.
-3. Trouve les etudiants dont le nom a plus de 8 caracteres.
-4. Affiche LENGTH(nom) et LENGTH(prenom) pour chaque etudiant.
+1. Calcule la longueur des noms.
+2. Calcule la longueur des emails.
+3. Trouve les noms avec plus de 8 lettres.
+4. Affiche la longueur des noms et prenoms.
 
 ---
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : POWER et SQRT](10_niveau2_03_POWER_SQRT.md)
-- [Cours suivant : SUBSTR et REPLACE](12_niveau2_05_SUBSTR_REPLACE.md)
+- [Cours precedent : POWER, SQRT](10_niveau2_03_POWER_SQRT.md)
+- [Cours suivant : SUBSTR, REPLACE](12_niveau2_05_SUBSTR_REPLACE.md)
 
 ---
 
