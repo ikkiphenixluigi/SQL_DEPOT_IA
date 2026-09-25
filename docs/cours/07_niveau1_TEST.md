@@ -3,7 +3,7 @@
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : COUNT simple](06_niveau1_06_COUNT.md)
+- [Cours precedent : COUNT](06_niveau1_06_COUNT.md)
 - [Niveau 2 - Cours suivant : Operations et ROUND](08_niveau2_01_operations_ROUND.md)
 
 ---
@@ -14,31 +14,33 @@ Ce test permet de verifier ta comprehension des concepts du Niveau 1.
 
 **Themes couverts :**
 - SELECT et FROM
-- WHERE avec texte, egalite, dates
-- WHERE avec plages et cles etrangeres
-- ORDER BY ASC/DESC
+- WHERE avec texte, nombres, dates
+- WHERE avec BETWEEN, <, >, <=, >=
+- WHERE avec cles etrangeres (IN)
+- ORDER BY ASC et DESC
+- ORDER BY multiple
 - WHERE avec AND
-- COUNT
+- COUNT(*) et COUNT(colonne)
 
 ---
 
 ## Exercices du test (10 questions)
 
-### Question 1 (SELECT, FROM)
+### Question 1 (FROM)
 
-Affiche toutes les colonnes de la table `enseignants`.
+Affiche toutes les colonnes de la table enseignants.
 
-### Question 2 (SELECT colonnes)
+### Question 2 (SELECT)
 
-Affiche seulement `nom`, `prenom` et `email` des etudiants.
+Affiche le nom, le prenom et l'email des etudiants.
 
 ### Question 3 (WHERE texte)
 
-Affiche les lycees qui sont a Marseille.
+Trouve les lycees de Marseille.
 
 ### Question 4 (WHERE egalite)
 
-Affiche les cours qui ont exactement 4 credits.
+Affiche les cours avec 4 credits.
 
 ### Question 5 (WHERE annee)
 
@@ -46,30 +48,30 @@ Affiche les etudiants nes en 2004.
 
 ### Question 6 (WHERE plage)
 
-Affiche les salles avec entre 16 et 20 places (inclus).
+Trouve les salles avec 16 a 20 places.
 
 ### Question 7 (ORDER BY)
 
-Affiche les etudiants tries par nom (de A a Z).
+Trie les etudiants par nom (ordre alphabetique).
 
 ### Question 8 (ORDER BY DESC)
 
-Affiche les cours tries par credits (du plus grand au plus petit).
+Trie les cours par credits (plus gros en premier).
 
 ### Question 9 (WHERE AND)
 
-Affiche les etudiants de sexe feminin inscrits en 2025.
+Affiche les etudiantes feminines inscrites en 2025.
 
 ### Question 10 (COUNT)
 
-Compte le nombre d'etudiants du lycee numero 5.
+Compte les etudiants du lycee 5.
 
 ---
 
 ## Conseils pour le test
 
 1. **Relis les cours precedents** si besoin
-2. **Teste tes requates** dans SQLite
+2. **Teste tes requetes** dans SQLite
 3. **Verifie les resultats** (nombre de lignes, valeurs)
 4. **Utilise la base** `gestion_universitaire`
 
@@ -91,18 +93,18 @@ Si tu as reussi ce test, tu peux passer au **Niveau 2** !
 - SELECT et FROM
 - WHERE avec texte, nombres, dates
 - WHERE avec BETWEEN, <, >, <=, >=
-- WHERE avec cles etrangeres
+- WHERE avec cles etrangeres (IN)
 - ORDER BY ASC et DESC
 - ORDER BY multiple
 - WHERE avec AND
-- COUNT
+- COUNT(*) et COUNT(colonne)
 
 ---
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : COUNT simple](06_niveau1_06_COUNT.md)
+- [Cours precedent : COUNT](06_niveau1_06_COUNT.md)
 - [Niveau 2 - Operations et ROUND](08_niveau2_01_operations_ROUND.md)
 
 ---

@@ -1,58 +1,101 @@
-# Niveau 1 - ORDER BY simple et multiple
+# Niveau 1 - ORDER BY
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : WHERE avec plage et FK](03_niveau1_03_WHERE_plage_FK.md)
-- [Cours suivant : WHERE avec AND](05_niveau1_05_WHERE_AND.md)
+- [Cours precedent : WHERE plage et FK](03_niveau1_03_WHERE_plage_FK.md)
+- [Cours suivant : WHERE AND](05_niveau1_05_WHERE_AND.md)
 
 ---
 
 ## Introduction
 
-Ce cours presente la clause ORDER BY pour trier les resultats d'une requate.
+Ce cours presente ORDER BY pour trier les resultats.
 
 **Objectifs :**
-- Trier avec ORDER BY ASC (croissant)
-- Trier avec ORDER BY DESC (decroissant)
+- Trier avec ORDER BY ASC
+- Trier avec ORDER BY DESC
 - Trier sur plusieurs colonnes
 
 ---
 
-## 1. ORDER BY simple
+## 1. ORDER BY ASC (croissant)
 
 ### Definition
 
-La clause `ORDER BY` permet de **trier les resultats** selon une ou plusieurs colonnes.
+`ORDER BY` trie les resultats.
 
 **Syntaxe :**
 ```sql
-SELECT colonnes FROM table ORDER BY colonne_tri [ASC|DESC];
+SELECT colonnes
+FROM table
+ORDER BY colonne ASC;
 ```
 
-- `ASC` : ordre croissant (defaut)
-- `DESC` : ordre decroissant
+### Exemple 1 : ORDER BY simple
 
-### Exemple 1 : Tri croissant (ASC)
+**Question :** Trier les etudiants par nom.
 
-**Question :** Afficher les lycees tries par nom.
+**Requete :**
+```sql
+SELECT nom, prenom
+FROM etudiants
+ORDER BY nom ASC;
+```
+
+**Explication :**
+- `ORDER BY nom ASC` : trie par nom (A a Z)
+
+**Resultat :** Etudiants tries alphabetiquement.
+
+### Exemple 2 : ORDER BY multiple
+
+**Question :** Trier les lycees par ville puis par nom.
 
 **Requete :**
 ```sql
 SELECT nom, ville
 FROM lycees
-ORDER BY nom ASC;
+ORDER BY ville ASC, nom ASC;
 ```
 
 **Explication :**
-- `ORDER BY nom ASC` : trie par nom de A a Z
-- ASC est optionnel (c'est le defaut)
+- `ORDER BY ville ASC, nom ASC` : trie par ville, puis par nom
 
-**Resultat :** Lycees tries alphabetiquement.
+**Resultat :** Lycees tries par ville, puis alphabetiquement.
 
-### Exemple 2 : Tri decroissant (DESC)
+---
 
-**Question :** Afficher les cours tries par credits decroissant.
+## 2. ORDER BY DESC (decroissant)
+
+### Definition
+
+`DESC` trie en ordre decroissant.
+
+**Syntaxe :**
+```sql
+ORDER BY colonne DESC;
+```
+
+### Exemple 1 : ORDER BY DESC
+
+**Question :** Trier les etudiants par date de naissance (plus recent en premier).
+
+**Requete :**
+```sql
+SELECT nom, prenom, date_naissance
+FROM etudiants
+ORDER BY date_naissance DESC;
+```
+
+**Explication :**
+- `DESC` : du plus recent au plus ancien
+
+**Resultat :** Etudiants tries du plus jeune au plus age.
+
+### Exemple 2 : ORDER BY DESC avec credits
+
+**Question :** Trier les cours par credits (plus gros en premier).
 
 **Requete :**
 ```sql
@@ -62,92 +105,9 @@ ORDER BY credits DESC;
 ```
 
 **Explication :**
-- `ORDER BY credits DESC` : du plus grand au plus petit
+- `DESC` : du plus grand au plus petit
 
-**Resultat :** Cours avec 6 credits, puis 4, puis 3.
-
-### Exemple 3 : Tri avec WHERE
-
-**Question :** Afficher les etudiants de Paris tries par nom.
-
-**Requete :**
-```sql
-SELECT nom, prenom, ville
-FROM etudiants
-WHERE ville = 'Paris'
-ORDER BY nom ASC;
-```
-
-**Explication :**
-- WHERE filtre d'abord
-- ORDER BY trie ensuite
-
-**Resultat :** Etudiants parisiens tries par nom.
-
----
-
-## 2. ORDER BY multiple
-
-### Definition
-
-On peut trier sur **plusieurs colonnes** en les separant par des virgules.
-
-**Syntaxe :**
-```sql
-SELECT colonnes FROM table 
-ORDER BY colonne1 [ASC|DESC], colonne2 [ASC|DESC], ...;
-```
-
-### Exemple 1 : Tri sur 2 colonnes
-
-**Question :** Afficher les etudiants tries par ville puis par nom.
-
-**Requete :**
-```sql
-SELECT nom, prenom, ville
-FROM etudiants
-ORDER BY ville ASC, nom ASC;
-```
-
-**Explication :**
-- Trie d'abord par ville (A a Z)
-- Puis par nom dans chaque ville
-
-**Resultat :** Tous les etudiants de Paris tries par nom, puis tous ceux de Lyon, etc.
-
-### Exemple 2 : Tri mixte ASC/DESC
-
-**Question :** Afficher les cours tries par credits (decroissant) puis par nom (croissant).
-
-**Requete :**
-```sql
-SELECT code_cours, nom_cours, credits
-FROM cours
-ORDER BY credits DESC, nom_cours ASC;
-```
-
-**Explication :**
-- D'abord par credits du plus grand au plus petit
-- Puis par nom alphabetique pour les cours avec memes credits
-
-**Resultat :** Cours avec 6 credits (tries par nom), puis 4 credits, etc.
-
-### Exemple 3 : Tri sur 3 colonnes
-
-**Question :** Afficher les etudiants tries par annee, puis sexe, puis nom.
-
-**Requete :**
-```sql
-SELECT nom, prenom, annee_inscription, sexe
-FROM etudiants
-ORDER BY annee_inscription ASC, sexe ASC, nom ASC;
-```
-
-**Explication :**
-- 3 niveaux de tri
-- Utile pour regrouper les donnees
-
-**Resultat :** Etudiants de 2024 (Feminin puis Masculin, tries par nom), puis 2025, etc.
+**Resultat :** Cours avec le plus de credits en premier.
 
 ---
 
@@ -155,26 +115,26 @@ ORDER BY annee_inscription ASC, sexe ASC, nom ASC;
 
 ### Exercice 1.5 - ORDER BY multiple (4 questions)
 
-1. Affiche les lycees tries par ville puis par nom.
-2. Affiche les etudiants tries par annee_inscription puis par nom.
-3. Affiche les cours tries par semestre puis par credits (decroissant).
-4. Affiche les enseignants tries par departement puis par grade.
+1. Trie les lycees par ville puis par nom.
+2. Trie les etudiants par annee d'inscription puis par nom.
+3. Trie les cours par semestre puis par credits (decroissant).
+4. Trie les enseignants par departement puis par grade.
 
 ### Exercice 1.9 - ORDER BY DESC (4 questions)
 
-1. Affiche les etudiants tries par date_naissance (du plus recent au plus ancien).
-2. Affiche les salles avec le plus de places en premier.
-3. Affiche les cours avec le plus de credits en premier.
-4. Affiche les lycees tries par ville (Z a A).
+1. Trie les etudiants par date de naissance (plus recent en premier).
+2. Trie les salles par nombre de places (plus grand en premier).
+3. Trie les cours par credits (plus gros en premier).
+4. Trie les lycees par ville (ordre decroissant).
 
 ---
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : WHERE avec plage et FK](03_niveau1_03_WHERE_plage_FK.md)
-- [Cours suivant : WHERE avec AND](05_niveau1_05_WHERE_AND.md)
+- [Cours precedent : WHERE plage et FK](03_niveau1_03_WHERE_plage_FK.md)
+- [Cours suivant : WHERE AND](05_niveau1_05_WHERE_AND.md)
 
 ---
 
-**Prochain cours :** WHERE avec AND
+**Prochain cours :** WHERE avec plusieurs conditions (AND)
