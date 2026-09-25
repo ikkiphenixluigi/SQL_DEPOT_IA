@@ -1,184 +1,119 @@
-# Niveau 1 - FROM et SELECT - Bases
+# Niveau 1 - FROM et SELECT
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : Introduction](00_intro.md)
-- [Cours suivant : WHERE avec texte](02_niveau1_02_WHERE_texte_annee.md)
+- [Cours suivant : WHERE texte et année](02_niveau1_02_WHERE_texte_annee.md)
 
 ---
 
 ## Introduction
 
-Ce premier cours pratique presente les bases de la requatation SQL avec les clauses `SELECT` et `FROM`.
-Ces deux clauses sont indispensables pour toute requate SQL.
+Ce cours presente les bases de SELECT et FROM.
 
 **Objectifs :**
-- Comprendre le role de `SELECT` et `FROM`
-- Selectionner toutes les colonnes d'une table
-- Selectionner des colonnes specifiques
-- Utiliser des alias pour les colonnes
+- Choisir une table avec FROM
+- Selectionner des colonnes avec SELECT
+- Utiliser * pour toutes les colonnes
 
 ---
 
-## 1. La clause FROM - choix de table
+## 1. La clause FROM
 
 ### Definition
 
-La clause `FROM` indique **quelle table** on veut interroger.
-C'est la premiere chose a preciser dans une requate.
+`FROM` indique la table dans laquelle recuperer les donnees.
 
 **Syntaxe :**
 ```sql
-SELECT * FROM nom_table;
+FROM nom_table;
 ```
 
-### Exemple 1 : Voir toutes les donnees d'une table
+### Exemple 1 : FROM simple
 
-**Question :** Afficher tous les lycees.
+**Question :** Afficher toutes les colonnes de la table etudiants.
 
 **Requete :**
 ```sql
-SELECT * FROM lycees;
-```
-
-**Explication :**
-- `SELECT *` : selectionne toutes les colonnes
-- `FROM lycees` : dans la table `lycees`
-
-**Resultat :** Toutes les lignes et colonnes de la table `lycees`.
-
-### Exemple 2 : Choisir une autre table
-
-**Question :** Afficher tous les cours.
-
-**Requete :**
-```sql
-SELECT * FROM cours;
-```
-
-**Resultat :** Toutes les lignes et colonnes de la table `cours`.
-
-### Tables disponibles
-
-Dans notre base `gestion_universitaire`, tu peux utiliser :
-- `lycees`
-- `etudiants`
-- `enseignants`
-- `cours`
-- `seances`
-- `salles`
-- `inscriptions`
-- `notes`
-
----
-
-## 2. La clause SELECT - selection de colonnes
-
-### Definition
-
-La clause `SELECT` permet de choisir **quelles colonnes** on veut afficher.
-Au lieu de `*` (toutes), on peut lister les colonnes desirees.
-
-**Syntaxe :**
-```sql
-SELECT colonne1, colonne2, colonne3 FROM nom_table;
-```
-
-### Exemple 1 : Selectionner quelques colonnes
-
-**Question :** Afficher seulement le nom et la ville des lycees.
-
-**Requete :**
-```sql
-SELECT nom, ville FROM lycees;
-```
-
-**Resultat :**
-```
-nom                       | ville
---------------------------+------------
-Lycee Louis-le-Grand      | Paris
-Lycee du Parc             | Lyon
-Lycee Thiers              | Marseille
-...
-```
-
-### Exemple 2 : Selectionner dans une autre table
-
-**Question :** Afficher le nom, prenom et email des etudiants.
-
-**Requete :**
-```sql
-SELECT nom, prenom, email FROM etudiants;
-```
-
-**Resultat :** Seulement ces 3 colonnes pour tous les etudiants.
-
-### Exemple 3 : Une seule colonne
-
-**Question :** Afficher seulement les noms des lycees.
-
-**Requete :**
-```sql
-SELECT nom FROM lycees;
-```
-
-**Resultat :** Une seule colonne avec tous les noms.
-
----
-
-## 3. SELECT simple avec alias
-
-### Definition
-
-Un **alias** permet de renommer une colonne dans le resultat.
-C'est utile pour afficher des noms plus clairs ou plus courts.
-
-**Syntaxe :**
-```sql
-SELECT nom_colonne AS alias FROM nom_table;
-```
-
-### Exemple 1 : Renommer une colonne
-
-**Question :** Afficher le nom des lycees avec un titre clair.
-
-**Requete :**
-```sql
-SELECT nom AS "Nom du lycee" FROM lycees;
-```
-
-**Resultat :**
-```
-Nom du lycee
---------------------------
-Lycee Louis-le-Grand
-Lycee du Parc
-...
-```
-
-### Exemple 2 : Plusieurs alias
-
-**Question :** Afficher les informations des etudiants avec des titres clairs.
-
-**Requete :**
-```sql
-SELECT 
-    nom AS "Nom",
-    prenom AS "Prenom",
-    email AS "Adresse email"
 FROM etudiants;
 ```
 
-**Resultat :**
+**Explication :**
+- `FROM etudiants` : on choisit la table etudiants
+- Toutes les colonnes sont selectionnees
+
+**Resultat :** Toutes les lignes et colonnes de etudiants.
+
+### Exemple 2 : FROM avec SELECT
+
+**Question :** Afficher tous les etudiants.
+
+**Requete :**
+```sql
+SELECT * FROM etudiants;
 ```
-Nom      | Prenom | Adresse email
----------+--------+---------------------------
-Bernard  | Thomas | thomas.bernard@univ.fr
-Thomas   | Emma   | emma.thomas@univ.fr
-...
+
+**Explication :**
+- `SELECT *` : toutes les colonnes
+- `FROM etudiants` : table etudiants
+
+**Resultat :** Liste complete des etudiants.
+
+---
+
+## 2. La clause SELECT
+
+### Definition
+
+`SELECT` precise les colonnes a afficher.
+
+**Syntaxe :**
+```sql
+SELECT colonne1, colonne2, ... FROM table;
 ```
+
+### Exemple 1 : SELECT avec colonnes
+
+**Question :** Afficher le nom et le prenom des etudiants.
+
+**Requete :**
+```sql
+SELECT nom, prenom FROM etudiants;
+```
+
+**Explication :**
+- `SELECT nom, prenom` : seulement ces 2 colonnes
+- `FROM etudiants` : table etudiants
+
+**Resultat :** Liste des noms et prenoms.
+
+### Exemple 2 : SELECT avec une colonne
+
+**Question :** Afficher les emails des etudiants.
+
+**Requete :**
+```sql
+SELECT email FROM etudiants;
+```
+
+**Explication :**
+- `SELECT email` : une seule colonne
+
+**Resultat :** Liste des emails.
+
+### Exemple 3 : SELECT avec plusieurs colonnes
+
+**Question :** Afficher le code, le nom et les credits des cours.
+
+**Requete :**
+```sql
+SELECT code_cours, nom_cours, credits FROM cours;
+```
+
+**Explication :**
+- `SELECT code_cours, nom_cours, credits` : 3 colonnes
+
+**Resultat :** Liste des cours avec ces infos.
 
 ---
 
@@ -186,33 +121,32 @@ Thomas   | Emma   | emma.thomas@univ.fr
 
 ### Exercice 1.1 - FROM - choix de table (4 questions)
 
-1. Affiche toutes les donnees de la table `etudiants`.
-2. Affiche toutes les donnees de la table `enseignants`.
-3. Affiche toutes les donnees de la table `cours`.
-4. Affiche toutes les donnees de la table `salles`.
+1. Affiche toutes les colonnes de la table etudiants.
+2. Affiche toutes les colonnes de la table enseignants.
+3. Affiche toutes les colonnes de la table cours.
+4. Affiche toutes les colonnes de la table salles.
 
 ### Exercice 1.2 - FROM - selection de colonnes (4 questions)
 
-1. Affiche seulement les colonnes `nom` et `prenom` de la table `etudiants`.
-2. Affiche les colonnes `nom_cours` et `credits` de la table `cours`.
-3. Affiche les colonnes `nom` et `ville` de la table `lycees`.
-4. Affiche les colonnes `nom`, `prenom` et `departement` de la table `enseignants`.
+1. Affiche le nom et le prenom des etudiants.
+2. Affiche le nom du cours et les credits.
+3. Affiche le nom et la ville des lycees.
+4. Affiche le nom, le prenom et le departement des enseignants.
 
 ### Exercice 1.3 - SELECT simple (4 questions)
 
-1. Affiche seulement la colonne `email` de la table `etudiants`.
-2. Affiche les colonnes `code_cours` et `nom_cours` de la table `cours`.
-3. Affiche les colonnes `nom` et `grade` de la table `enseignants`.
-4. Affiche les colonnes `etage` et `num_salle` de la table `salles`.
+1. Affiche l'email des etudiants.
+2. Affiche le code et le nom des cours.
+3. Affiche le nom et le grade des enseignants.
+4. Affiche l'etage et le numero de salle.
 
 ---
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Cours precedent : Introduction](00_intro.md)
-- [Cours suivant : WHERE avec texte](02_niveau1_02_WHERE_texte_annee.md)
+- [Cours suivant : WHERE texte et année](02_niveau1_02_WHERE_texte_annee.md)
 
 ---
 
-**Prochain cours :** WHERE avec texte, egalite, annee
+**Prochain cours :** WHERE avec texte et annee
