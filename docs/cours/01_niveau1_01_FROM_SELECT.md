@@ -119,21 +119,21 @@ SELECT code_cours, nom_cours, credits FROM cours;
 
 ## Exercices
 
-### Exercice 1.1 - FROM - choix de table (4 questions)
+### Exercice 1.1 (4 questions)
 
 1. Affiche toutes les colonnes de la table etudiants.
 2. Affiche toutes les colonnes de la table enseignants.
 3. Affiche toutes les colonnes de la table cours.
 4. Affiche toutes les colonnes de la table salles.
 
-### Exercice 1.2 - FROM - selection de colonnes (4 questions)
+### Exercice 1.2 (4 questions)
 
 1. Affiche le nom et le prenom des etudiants.
 2. Affiche le nom du cours et les credits.
 3. Affiche le nom et la ville des lycees.
 4. Affiche le nom, le prenom et le departement des enseignants.
 
-### Exercice 1.3 - SELECT simple (4 questions)
+### Exercice 1.3 (4 questions)
 
 1. Affiche l'email des etudiants.
 2. Affiche le code et le nom des cours.

@@ -96,7 +96,7 @@ WHERE semestre = 1;
 
 ## Exercices
 
-### Exercice 1.12 - COUNT simple (4 questions)
+### Exercice 1.12 (4 questions)
 
 1. Compte le nombre total de lycees.
 2. Compte les etudiants du lycee 1.

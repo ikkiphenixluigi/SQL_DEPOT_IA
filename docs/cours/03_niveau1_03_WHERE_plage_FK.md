@@ -112,14 +112,14 @@ WHERE id_lycee IN (SELECT id_lycee FROM lycees WHERE ville = 'Paris');
 
 ## Exercices
 
-### Exercice 1.8 - WHERE avec plage (4 questions)
+### Exercice 1.8 (4 questions)
 
 1. Affiche les cours avec 4 a 6 credits.
 2. Affiche les salles avec 15 a 20 places.
 3. Affiche les etudiants nes en 2003.
 4. Affiche les cours avec plus de 4 credits.
 
-### Exercice 1.10 - WHERE avec FK (4 questions)
+### Exercice 1.10 (4 questions)
 
 1. Affiche les etudiants du lycee 10.
 2. Affiche les etudiants des lycees 5, 6 et 7.

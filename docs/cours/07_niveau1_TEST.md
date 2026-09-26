@@ -12,57 +12,47 @@
 
 Ce test permet de verifier ta comprehension des concepts du Niveau 1.
 
-**Themes couverts :**
-- SELECT et FROM
-- WHERE avec texte, nombres, dates
-- WHERE avec BETWEEN, <, >, <=, >=
-- WHERE avec cles etrangeres (IN)
-- ORDER BY ASC et DESC
-- ORDER BY multiple
-- WHERE avec AND
-- COUNT(*) et COUNT(colonne)
-
 ---
 
 ## Exercices du test (10 questions)
 
-### Question 1 (FROM)
+### Question 1
 
 Affiche toutes les colonnes de la table enseignants.
 
-### Question 2 (SELECT)
+### Question 2
 
 Affiche le nom, le prenom et l'email des etudiants.
 
-### Question 3 (WHERE texte)
+### Question 3
 
 Trouve les lycees de Marseille.
 
-### Question 4 (WHERE egalite)
+### Question 4
 
 Affiche les cours avec 4 credits.
 
-### Question 5 (WHERE annee)
+### Question 5
 
 Affiche les etudiants nes en 2004.
 
-### Question 6 (WHERE plage)
+### Question 6
 
 Trouve les salles avec 16 a 20 places.
 
-### Question 7 (ORDER BY)
+### Question 7
 
 Trie les etudiants par nom (ordre alphabetique).
 
-### Question 8 (ORDER BY DESC)
+### Question 8
 
 Trie les cours par credits (plus gros en premier).
 
-### Question 9 (WHERE AND)
+### Question 9
 
 Affiche les etudiantes feminines inscrites en 2025.
 
-### Question 10 (COUNT)
+### Question 10
 
 Compte les etudiants du lycee 5.
 
@@ -88,16 +78,6 @@ Cherche la section **TEST NIVEAU 1** pour voir les corrections.
 ## Validation du Niveau 1
 
 Si tu as reussi ce test, tu peux passer au **Niveau 2** !
-
-**Competences acquises :**
-- SELECT et FROM
-- WHERE avec texte, nombres, dates
-- WHERE avec BETWEEN, <, >, <=, >=
-- WHERE avec cles etrangeres (IN)
-- ORDER BY ASC et DESC
-- ORDER BY multiple
-- WHERE avec AND
-- COUNT(*) et COUNT(colonne)
 
 ---
 

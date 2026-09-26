@@ -68,7 +68,7 @@ WHERE semestre = 2 AND credits = 4;
 
 ## Exercices
 
-### Exercice 1.11 - WHERE avec AND (5 questions)
+### Exercice 1.11 (5 questions)
 
 1. Affiche les etudiants masculins inscrits en 2024.
 2. Affiche les cours du semestre 2 avec 4 credits.

@@ -114,7 +114,7 @@ WHERE strftime('%m', date_naissance) = '01';
 
 ## Exercices
 
-### Exercice 1.4 - WHERE avec texte (5 questions)
+### Exercice 1.4 (5 questions)
 
 1. Affiche les etudiants de Paris.
 2. Affiche les lycees de Lyon.
@@ -122,7 +122,7 @@ WHERE strftime('%m', date_naissance) = '01';
 4. Affiche les etudiants dont le nom finit par d.
 5. Affiche les etudiants dont le nom contient an.
 
-### Exercice 1.6 - WHERE avec egalite (5 questions)
+### Exercice 1.6 (5 questions)
 
 1. Affiche les cours avec 4 credits.
 2. Affiche les etudiants du lycee 3.
@@ -130,7 +130,7 @@ WHERE strftime('%m', date_naissance) = '01';
 4. Affiche les salles avec 20 places.
 5. Affiche les etudiants masculins.
 
-### Exercice 1.7 - WHERE avec annee (4 questions)
+### Exercice 1.7 (4 questions)
 
 1. Affiche les etudiants nes en 2004.
 2. Affiche les etudiants nes en janvier.

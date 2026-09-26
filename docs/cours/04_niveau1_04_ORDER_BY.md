@@ -113,14 +113,14 @@ ORDER BY credits DESC;
 
 ## Exercices
 
-### Exercice 1.5 - ORDER BY multiple (4 questions)
+### Exercice 1.5 (4 questions)
 
 1. Trie les lycees par ville puis par nom.
 2. Trie les etudiants par annee d'inscription puis par nom.
 3. Trie les cours par semestre puis par credits (decroissant).
 4. Trie les enseignants par departement puis par grade.
 
-### Exercice 1.9 - ORDER BY DESC (4 questions)
+### Exercice 1.9 (4 questions)
 
 1. Trie les etudiants par date de naissance (plus recent en premier).
 2. Trie les salles par nombre de places (plus grand en premier).
