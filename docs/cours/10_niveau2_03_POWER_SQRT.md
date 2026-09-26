@@ -76,7 +76,7 @@ FROM notes;
 
 ## Exercices
 
-### Exercice 2.5.bis - POWER et SQRT (4 questions)
+### Exercice 2.5.bis (4 questions)
 
 1. Calcule le carre des notes.
 2. Calcule le cube des credits.

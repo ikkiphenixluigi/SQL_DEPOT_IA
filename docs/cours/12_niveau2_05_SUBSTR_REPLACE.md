@@ -91,7 +91,7 @@ FROM etudiants;
 
 ## Exercices
 
-### Exercice 2.8 - SUBSTR (5 questions)
+### Exercice 2.8 (5 questions)
 
 1. Extrais les 4 premieres lettres du nom.
 2. Extrais les 3 derniers caracteres de l'email.
@@ -99,7 +99,7 @@ FROM etudiants;
 4. Extrais l'annee de naissance de la date.
 5. Extrais le domaine de l'email (apres @).
 
-### Exercice 2.9 - REPLACE (4 questions)
+### Exercice 2.9 (4 questions)
 
 1. Remplace "fr" par "com" dans les emails.
 2. Remplace les espaces par des tirets dans les noms.

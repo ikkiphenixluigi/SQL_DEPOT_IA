@@ -125,21 +125,21 @@ FROM etudiants;
 
 ## Exercices
 
-### Exercice 2.13 - strftime() extraction (4 questions)
+### Exercice 2.13 (4 questions)
 
 1. Extrais l'annee de naissance.
 2. Extrais le mois de naissance.
 3. Extrais le jour de naissance.
 4. Extrais le jour de la semaine de naissance.
 
-### Exercice 2.14 - strftime() formatage (4 questions)
+### Exercice 2.14 (4 questions)
 
 1. Affiche la date au format francais (jj/mm/aaaa).
 2. Affiche "Ne le " suivi de la date au format francais.
 3. Affiche l'annee et le mois (aaaa-mm).
 4. Affiche le mois et l'annee (mm/aaaa).
 
-### Exercice 2.15 - Calcul d'age (5 questions)
+### Exercice 2.15 (5 questions)
 
 1. Calcule l'age des etudiants.
 2. Trouve les etudiants de 22 ans ou plus.

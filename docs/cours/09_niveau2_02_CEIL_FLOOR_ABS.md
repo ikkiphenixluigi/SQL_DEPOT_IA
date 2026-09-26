@@ -106,21 +106,21 @@ FROM notes;
 
 ## Exercices
 
-### Exercice 2.3 - CEIL (4 questions)
+### Exercice 2.3 (4 questions)
 
 1. Arrondis les notes au superieur.
 2. Calcule le nombre de groupes necessaires (20 etudiants par groupe).
 3. Ajoute 50% aux credits et arrondis au superieur.
 4. Divise les notes par 5 et arrondis au superieur.
 
-### Exercice 2.4 - FLOOR (4 questions)
+### Exercice 2.4 (4 questions)
 
 1. Arrondis les notes a l'inferieur.
 2. Calcule le nombre de dizaines de credits.
 3. Divise les notes par 2 et arrondis a l'inferieur.
 4. Affiche le plafond et le plancher des notes.
 
-### Exercice 2.5 - ABS (4 questions)
+### Exercice 2.5 (4 questions)
 
 1. Calcule l'ecart a 10 pour chaque note.
 2. Calcule l'ecart a la moyenne pour chaque note.

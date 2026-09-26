@@ -106,7 +106,7 @@ FROM notes;
 
 ## Exercices
 
-### Exercice 2.1 - Operations arithmetiques (5 questions)
+### Exercice 2.1 (5 questions)
 
 1. Ajoute 2 points a toutes les notes.
 2. Multiplie les credits par 2.
@@ -114,7 +114,7 @@ FROM notes;
 4. Calcule la note ponderee (note * coeff).
 5. Ajoute 5 points aux notes inferieures a 10.
 
-### Exercice 2.2 - ROUND (4 questions)
+### Exercice 2.2 (4 questions)
 
 1. Arrondis les notes a l'entier.
 2. Arrondis les notes a 1 decimale.

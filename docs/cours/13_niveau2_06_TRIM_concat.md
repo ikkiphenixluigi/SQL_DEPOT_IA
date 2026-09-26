@@ -91,7 +91,7 @@ FROM etudiants;
 
 ## Exercices
 
-### Exercice 2.10 - TRIM et concatenation (5 questions)
+### Exercice 2.10 (5 questions)
 
 1. Nettoie les noms et compare les longueurs.
 2. Affiche le nom complet (nom + prenom).

@@ -12,57 +12,47 @@
 
 Ce test permet de verifier ta comprehension des concepts du Niveau 2.
 
-**Themes couverts :**
-- Operations arithmetiques (+, -, *, /)
-- ROUND, CEIL, FLOOR, ABS
-- POWER, SQRT
-- UPPER, LOWER, LENGTH
-- SUBSTR, REPLACE
-- TRIM, concatenation (||)
-- LIKE avec % et _
-- strftime() et calcul d'age
-
 ---
 
 ## Exercices du test (10 questions)
 
-### Question 1 (Operations)
+### Question 1
 
 Multiplie les notes par 1.5.
 
-### Question 2 (ROUND)
+### Question 2
 
 Arrondis les notes a 1 decimale.
 
-### Question 3 (CEIL, FLOOR)
+### Question 3
 
 Affiche le plafond et le plancher des notes.
 
-### Question 4 (ABS)
+### Question 4
 
 Calcule l'ecart a 10 pour chaque note.
 
-### Question 5 (UPPER, LOWER)
+### Question 5
 
 Affiche les noms en majuscule et les prenoms en minuscule.
 
-### Question 6 (LENGTH)
+### Question 6
 
 Calcule la longueur des emails.
 
-### Question 7 (SUBSTR)
+### Question 7
 
 Extrais les 3 premieres lettres du nom.
 
-### Question 8 (LIKE)
+### Question 8
 
 Trouve les etudiants dont le nom commence par B.
 
-### Question 9 (Concatenation)
+### Question 9
 
 Genere des emails universitaires.
 
-### Question 10 (Age)
+### Question 10
 
 Calcule l'age des etudiants.
 
@@ -88,16 +78,6 @@ Cherche la section **TEST NIVEAU 2** pour voir les corrections.
 ## Validation du Niveau 2
 
 Si tu as reussi ce test, tu peux passer au **Niveau 3** !
-
-**Competences acquises :**
-- Operations arithmetiques (+, -, *, /)
-- ROUND, CEIL, FLOOR, ABS
-- POWER, SQRT
-- UPPER, LOWER, LENGTH
-- SUBSTR, REPLACE
-- TRIM, concatenation (||)
-- LIKE avec % et _
-- strftime() et calcul d'age
 
 ---
 

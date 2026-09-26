@@ -126,7 +126,7 @@ WHERE nom LIKE '__a%';
 
 ## Exercices
 
-### Exercice 2.11 - LIKE avec % (5 questions)
+### Exercice 2.11 (5 questions)
 
 1. Trouve les etudiants dont le nom commence par T.
 2. Trouve les etudiants dont le nom finit par s.
@@ -134,7 +134,7 @@ WHERE nom LIKE '__a%';
 4. Trouve les emails qui finissent par univ.fr.
 5. Trouve les lycees dont la ville commence par P.
 
-### Exercice 2.12 - LIKE avec _ et % (5 questions)
+### Exercice 2.12 (5 questions)
 
 1. Trouve les noms de 4 lettres.
 2. Trouve les noms commencant par 2 lettres puis a.

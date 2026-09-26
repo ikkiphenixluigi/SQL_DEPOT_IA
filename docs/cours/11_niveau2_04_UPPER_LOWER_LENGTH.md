@@ -105,14 +105,14 @@ FROM etudiants;
 
 ## Exercices
 
-### Exercice 2.6 - UPPER et LOWER (4 questions)
+### Exercice 2.6 (4 questions)
 
 1. Mets les noms en majuscule.
 2. Mets les prenoms en minuscule.
 3. Mets les emails en majuscule.
 4. Affiche les noms en majuscule et en minuscule.
 
-### Exercice 2.7 - LENGTH (4 questions)
+### Exercice 2.7 (4 questions)
 
 1. Calcule la longueur des noms.
 2. Calcule la longueur des emails.
