@@ -1,4 +1,4 @@
-# Niveau 2 - UPPER, LOWER, LENGTH
+# Niveau 2 - Fonctions texte - UPPER, LOWER, LENGTH
 
 ## Navigation
 
@@ -129,4 +129,4 @@ FROM etudiants;
 
 ---
 
-**Prochain cours :** SUBSTR et REPLACE
+**Prochain cours :** SUBSTR, REPLACE (fonctions texte)

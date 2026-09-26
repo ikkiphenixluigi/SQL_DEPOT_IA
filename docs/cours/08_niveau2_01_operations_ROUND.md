@@ -1,4 +1,4 @@
-# Niveau 2 - Operations arithmetiques et ROUND
+# Niveau 2 - Fonctions numeriques - Operations et ROUND
 
 ## Navigation
 
@@ -131,4 +131,4 @@ FROM notes;
 
 ---
 
-**Prochain cours :** CEIL, FLOOR, ABS
+**Prochain cours :** CEIL, FLOOR, ABS (fonctions numeriques)

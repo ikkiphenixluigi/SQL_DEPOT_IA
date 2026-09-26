@@ -1,10 +1,10 @@
-# Niveau 2 - LIKE avec % et _
+# Niveau 2 - Fonctions texte - LIKE
 
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : TRIM et concatenation](13_niveau2_06_TRIM_concat.md)
-- [Cours suivant : strftime et age](15_niveau2_08_strftime_age.md)
+- [Cours suivant : CAST](15_niveau2_08_CAST.md)
 
 ---
 
@@ -148,8 +148,8 @@ WHERE nom LIKE '__a%';
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : TRIM et concatenation](13_niveau2_06_TRIM_concat.md)
-- [Cours suivant : strftime et age](15_niveau2_08_strftime_age.md)
+- [Cours suivant : CAST](15_niveau2_08_CAST.md)
 
 ---
 
-**Prochain cours :** strftime() et calcul d'age
+**Prochain cours :** CAST (conversion de types)

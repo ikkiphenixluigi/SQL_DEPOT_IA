@@ -1,4 +1,4 @@
-# Niveau 2 - TRIM et concatenation
+# Niveau 2 - Fonctions texte - TRIM et concatenation
 
 ## Navigation
 
@@ -109,4 +109,4 @@ FROM etudiants;
 
 ---
 
-**Prochain cours :** LIKE avec % et _
+**Prochain cours :** LIKE (fonctions texte)

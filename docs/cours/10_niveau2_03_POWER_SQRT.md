@@ -1,4 +1,4 @@
-# Niveau 2 - POWER et SQRT
+# Niveau 2 - Fonctions numeriques - POWER et SQRT
 
 ## Navigation
 
@@ -93,4 +93,4 @@ FROM notes;
 
 ---
 
-**Prochain cours :** UPPER, LOWER, LENGTH
+**Prochain cours :** UPPER, LOWER, LENGTH (fonctions texte)

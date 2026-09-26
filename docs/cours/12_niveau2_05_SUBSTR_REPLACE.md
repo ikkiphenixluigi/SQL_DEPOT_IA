@@ -1,4 +1,4 @@
-# Niveau 2 - SUBSTR et REPLACE
+# Niveau 2 - Fonctions texte - SUBSTR et REPLACE
 
 ## Navigation
 
@@ -116,4 +116,4 @@ FROM etudiants;
 
 ---
 
-**Prochain cours :** TRIM et concatenation
+**Prochain cours :** TRIM et concatenation (fonctions texte)

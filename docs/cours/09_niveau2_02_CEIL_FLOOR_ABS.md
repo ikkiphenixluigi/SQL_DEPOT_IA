@@ -1,4 +1,4 @@
-# Niveau 2 - CEIL, FLOOR, ABS
+# Niveau 2 - Fonctions numeriques - CEIL, FLOOR, ABS
 
 ## Navigation
 
@@ -137,4 +137,4 @@ FROM notes;
 
 ---
 
-**Prochain cours :** POWER et SQRT
+**Prochain cours :** POWER, SQRT (fonctions numeriques)
