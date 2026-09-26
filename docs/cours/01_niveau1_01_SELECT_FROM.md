@@ -15,6 +15,7 @@ Ce cours presente les bases de SELECT et FROM.
 - Choisir une table avec FROM
 - Selectionner des colonnes avec SELECT
 - Utiliser * pour toutes les colonnes
+- Eliminer les doublons avec DISTINCT
 
 ---
 
@@ -117,6 +118,49 @@ SELECT code_cours, nom_cours, credits FROM cours;
 
 ---
 
+## 3. La clause DISTINCT
+
+### Definition
+
+`DISTINCT` elimine les doublons dans les resultats.
+
+**Syntaxe :**
+```sql
+SELECT DISTINCT colonne FROM table;
+```
+
+### Exemple 1 : DISTINCT simple
+
+**Question :** Afficher les villes des etudiants sans doublons.
+
+**Requete :**
+```sql
+SELECT DISTINCT ville FROM etudiants;
+```
+
+**Explication :**
+- `DISTINCT ville` : une seule fois chaque ville
+- Les villes en double sont eliminees
+
+**Resultat :** Liste des villes uniques.
+
+### Exemple 2 : DISTINCT avec plusieurs colonnes
+
+**Question :** Afficher les combinaisons uniques ville/sexe.
+
+**Requete :**
+```sql
+SELECT DISTINCT ville, sexe FROM etudiants;
+```
+
+**Explication :**
+- `DISTINCT ville, sexe` : combinaisons uniques
+- Chaque ligne est unique
+
+**Resultat :** Combinaisons ville/sexe sans doublons.
+
+---
+
 ## Exercices
 
 ### Exercice 1.1 (4 questions)
@@ -139,6 +183,13 @@ SELECT code_cours, nom_cours, credits FROM cours;
 2. Affiche le code et le nom des cours.
 3. Affiche le nom et le grade des enseignants.
 4. Affiche l'etage et le numero de salle.
+
+### Exercice 1.4 (4 questions)
+
+1. Affiche les villes des etudiants sans doublons.
+2. Affiche les semestres des cours sans doublons.
+4. Affiche les departements des enseignants sans doublons.
+5. Affiche les combinaisons uniques ville/sexe.
 
 ---
 
