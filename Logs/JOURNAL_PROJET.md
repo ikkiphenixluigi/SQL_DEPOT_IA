@@ -6,6 +6,47 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
+## 2026-09-26 - NETTOYAGE COMPLET DES ENONCES
+
+### Modifications effectuees
+
+**2 vagues de modifications :**
+
+1. **Premiere vague :** Retrait des mentions de commandes dans les exercices
+   - "avec SELECT", "avec FROM", "avec WHERE", etc.
+   - "utilise ORDER BY", "en utilisant LIKE", etc.
+   - "la fonction AVG", "la clause WHERE", etc.
+
+2. **Deuxieme vague :** Retrait des descriptions dans les titres
+   - "Exercice 1.4 - WHERE avec texte" → "Exercice 1.4"
+   - "Question 3 (CEIL, FLOOR)" → "Question 3"
+   - "Exercice 2.1 - Operations arithmetiques" → "Exercice 2.1"
+
+**Exemples avant/apres :**
+
+| Avant | Apres |
+|-------|-------|
+| Exercice 1.4 - WHERE avec texte (5 questions) | Exercice 1.4 (5 questions) |
+| Affiche les etudiants avec SELECT et FROM. | Affiche les etudiants. |
+| Question 3 (CEIL, FLOOR) | Question 3 |
+| Exercice 3.2 - AVG + GROUP BY (5 questions) | Exercice 3.2 (5 questions) |
+| Exercice 2.1 - Operations arithmetiques (+, -, *, /) | Exercice 2.1 |
+
+**Fichiers modifies :** 30 fichiers (TOUS les cours)
+
+**Commits :**
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/e0a1db36d32fb7852fd2361982bae03a704eeefa (NIVEAU 1)
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/90171ed4937876cd43adbc0b2134f94f2fd91c35 (NIVEAU 2)
+- https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/commit/80594d9eedb2b770a8c689ae021dfda26a5a284a (NIVEAUX 3, 4, 5)
+
+### Raison du nettoyage
+
+- Les etudiants doivent trouver eux-memes les commandes a utiliser
+- Les enonces sont plus reels et moins guides
+- Les corrections detaillees seront dans sql/03_exercices.sql
+
+---
+
 ## 2026-09-16 - NIVEAU 5 COMPLETE ! TOUS LES COURS TERMINES !
 
 ### Fichiers crees
@@ -349,7 +390,7 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
-# ETAT FINAL DU PROJET (au 2026-09-16)
+# ETAT FINAL DU PROJET (au 2026-09-26)
 
 ## Fichiers existants
 
@@ -360,42 +401,42 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 - GUIDE_DBEAVER.md
 - docs/SOMMAIRE.md
 - docs/cours/00_intro.md
-- docs/cours/01_niveau1_01_FROM_SELECT.md
-- docs/cours/02_niveau1_02_WHERE_texte_annee.md
-- docs/cours/03_niveau1_03_WHERE_plage_FK.md
-- docs/cours/04_niveau1_04_ORDER_BY.md
-- docs/cours/05_niveau1_05_WHERE_AND.md
-- docs/cours/06_niveau1_06_COUNT.md
-- docs/cours/07_niveau1_TEST.md
-- docs/cours/08_niveau2_01_operations_ROUND.md
-- docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md
-- docs/cours/10_niveau2_03_POWER_SQRT.md
-- docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md
-- docs/cours/12_niveau2_05_SUBSTR_REPLACE.md
-- docs/cours/13_niveau2_06_TRIM_concat.md
-- docs/cours/14_niveau2_07_LIKE.md
-- docs/cours/15_niveau2_08_strftime_age.md
-- docs/cours/16_niveau2_TEST.md
-- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md
-- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (MODIFIE avec MIN et MAX)
-- docs/cours/19_niveau3_03_COUNT_JOIN.md
-- docs/cours/20_niveau3_04_SUM_LIMIT.md
-- docs/cours/21_niveau3_05_HAVING.md
-- docs/cours/22_niveau3_TEST.md
-- docs/cours/23_niveau4_01_JOIN_base.md
-- docs/cours/24_niveau4_02_JOIN_multiple.md
-- docs/cours/25_niveau4_03_JOIN_avance.md
-- docs/cours/26_niveau4_TEST.md
-- docs/cours/27_niveau5_01_sous_requetes_IN.md (NOUVEAU)
-- docs/cours/28_niveau5_02_sous_requetes_compare.md (NOUVEAU)
-- docs/cours/29_niveau5_03_sous_requetes_corellees.md (NOUVEAU)
-- docs/cours/30_niveau5_TEST.md (NOUVEAU)
-- Logs/JOURNAL_PROJET.md
+- docs/cours/01_niveau1_01_FROM_SELECT.md (NETTOYE)
+- docs/cours/02_niveau1_02_WHERE_texte_annee.md (NETTOYE)
+- docs/cours/03_niveau1_03_WHERE_plage_FK.md (NETTOYE)
+- docs/cours/04_niveau1_04_ORDER_BY.md (NETTOYE)
+- docs/cours/05_niveau1_05_WHERE_AND.md (NETTOYE)
+- docs/cours/06_niveau1_06_COUNT.md (NETTOYE)
+- docs/cours/07_niveau1_TEST.md (NETTOYE)
+- docs/cours/08_niveau2_01_operations_ROUND.md (NETTOYE)
+- docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md (NETTOYE)
+- docs/cours/10_niveau2_03_POWER_SQRT.md (NETTOYE)
+- docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md (NETTOYE)
+- docs/cours/12_niveau2_05_SUBSTR_REPLACE.md (NETTOYE)
+- docs/cours/13_niveau2_06_TRIM_concat.md (NETTOYE)
+- docs/cours/14_niveau2_07_LIKE.md (NETTOYE)
+- docs/cours/15_niveau2_08_strftime_age.md (NETTOYE)
+- docs/cours/16_niveau2_TEST.md (NETTOYE)
+- docs/cours/17_niveau3_01_COUNT_GROUP_BY.md (NETTOYE)
+- docs/cours/18_niveau3_02_AVG_GROUP_BY.md (NETTOYE)
+- docs/cours/19_niveau3_03_COUNT_JOIN.md (NETTOYE)
+- docs/cours/20_niveau3_04_SUM_LIMIT.md (NETTOYE)
+- docs/cours/21_niveau3_05_HAVING.md (NETTOYE)
+- docs/cours/22_niveau3_TEST.md (NETTOYE)
+- docs/cours/23_niveau4_01_JOIN_base.md (NETTOYE)
+- docs/cours/24_niveau4_02_JOIN_multiple.md (NETTOYE)
+- docs/cours/25_niveau4_03_JOIN_avance.md (NETTOYE)
+- docs/cours/26_niveau4_TEST.md (NETTOYE)
+- docs/cours/27_niveau5_01_sous_requetes_IN.md (NETTOYE)
+- docs/cours/28_niveau5_02_sous_requetes_compare.md (NETTOYE)
+- docs/cours/29_niveau5_03_sous_requetes_corellees.md (NETTOYE)
+- docs/cours/30_niveau5_TEST.md (NETTOYE)
+- Logs/JOURNAL_PROJET.md (MAJ)
 
 ### SQL
 - sql/01_create_tables.sql
 - sql/02_insert_data.sql
-- sql/03_exercices.sql (A CREER - sera cree a la fin)
+- sql/03_exercices.sql (A CREER - solutions de tous les exercices)
 
 ### Scripts
 - init_db.sh
@@ -404,16 +445,19 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 ## Prochaines actions
 
 1. **TOUS LES COURS SONT TERMINES !** ✅
-2. Creer sql/03_exercices.sql avec toutes les solutions (~284 questions)
-3. Mettre a jour le JOURNAL si besoin
+2. **TOUS LES ENONCES SONT NETTOYES !** ✅
+3. Creer sql/03_exercices.sql avec toutes les solutions (~284 questions)
+4. Ajouter des commentaires detailles par exercice
+5. Organiser par niveau et par exercice
 
 ## Statistiques FINALES
 
-- **Fichiers cours crees : 31 / 31 (100%)** ✅
+- **Fichiers cours crees : 30 / 30 (100%)** ✅
   - 1 fichier intro
   - 30 fichiers cours (NIVEAUX 1 a 5)
 - **Niveaux completes : 5 / 5 (100%)** ✅
 - **Exercices rediges : ~284 questions** ✅
+- **Fichiers modifies (nettoyage) : 30 / 30 (100%)** ✅
 - **Taille totale des cours : ~106 KB**
 
 ## Recapitulatif par niveau
@@ -422,7 +466,7 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 |--------|----------|-----------|-----------|
 | Intro | 1 | 0 | 0 |
 | NIVEAU 1 | 7 | 12 + TEST | ~58 |
-| NIVEAU 2 | 9 | 15 + TEST | ~76 |
+| NIVEAU 2 | 9 | 15 + 1 bis + TEST | ~76 |
 | NIVEAU 3 | 6 | 10 + 1 bis + TEST | ~62 |
 | NIVEAU 4 | 4 | 8 + TEST | ~48 |
 | NIVEAU 5 | 4 | 6 + TEST | ~40 |
@@ -430,7 +474,7 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 
 ---
 
-**Derniere mise a jour :** 2026-09-16
+**Derniere mise a jour :** 2026-09-26
 
 **PROJET DE COURS SQL : TERMINE !** 🎉
 
@@ -441,5 +485,6 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 **NIVEAU 5 : COMPLETE !** ✅
 
 **TOUS LES COURS : TERMINES !** ✅
+**TOUS LES ENONCES : NETTOYES !** ✅
 
-**Prochaine etape :** Creer sql/03_exercices.sql avec toutes les solutions (~284 requetes)
+**Prochaine etape :** Creer sql/03_exercices.sql avec toutes les solutions et commentaires detailles
