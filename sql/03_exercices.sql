@@ -1,0 +1,1 @@
+-- Généré automatiquement - voir code Python ci-dessus
