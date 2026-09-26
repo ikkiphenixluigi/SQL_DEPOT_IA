@@ -3,7 +3,7 @@
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 1 - Test](07_niveau1_TEST.md)
+- [Niveau 1 - Test](05_niveau1_05_TEST.md)
 - [Cours suivant : CEIL, FLOOR, ABS](09_niveau2_02_CEIL_FLOOR_ABS.md)
 
 ---
@@ -126,7 +126,7 @@ FROM notes;
 ## Navigation
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 1 - Test](07_niveau1_TEST.md)
+- [Niveau 1 - Test](05_niveau1_05_TEST.md)
 - [Cours suivant : CEIL, FLOOR, ABS](09_niveau2_02_CEIL_FLOOR_ABS.md)
 
 ---
