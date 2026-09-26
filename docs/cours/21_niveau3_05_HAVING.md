@@ -72,7 +72,7 @@ HAVING COUNT(*) > 10;
 
 ## Exercices
 
-### Exercice 3.9 - HAVING + AVG (5 questions)
+### Exercice 3.9 (5 questions)
 
 1. Trouve les cours avec une moyenne superieure a 12.
 2. Trouve les cours avec une moyenne inferieure a 8.
@@ -80,7 +80,7 @@ HAVING COUNT(*) > 10;
 4. Trouve les semestres avec une moyenne de credits superieure a 4.
 5. Trouve les departements avec une moyenne d'heures theoriques superieure a 20.
 
-### Exercice 3.10 - HAVING + COUNT (5 questions)
+### Exercice 3.10 (5 questions)
 
 1. Trouve les lycees avec plus de 10 etudiants.
 2. Trouve les cours avec plus de 8 notes.

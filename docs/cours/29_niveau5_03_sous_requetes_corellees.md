@@ -80,7 +80,7 @@ WHERE NOT EXISTS (
 
 ## Exercices
 
-### Exercice 5.6 - Sous-requete correlee (5 questions)
+### Exercice 5.6 (5 questions)
 
 1. Affiche les etudiants avec des inscriptions (utilise EXISTS).
 2. Affiche les etudiants sans inscriptions (utilise NOT EXISTS).

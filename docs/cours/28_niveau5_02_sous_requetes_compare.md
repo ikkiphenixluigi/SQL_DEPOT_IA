@@ -119,7 +119,7 @@ WHERE id_etudiant IN (
 
 ## Exercices
 
-### Exercice 5.3 - Sous-requete comparative (5 questions)
+### Exercice 5.3 (5 questions)
 
 1. Trouve les notes superieures a la moyenne.
 2. Trouve les cours avec plus de credits que la moyenne.
@@ -127,7 +127,7 @@ WHERE id_etudiant IN (
 4. Trouve les salles avec plus de places que la moyenne.
 5. Trouve les enseignants avec plus de cours que la moyenne.
 
-### Exercice 5.4 - Sous-requete dans SELECT (5 questions)
+### Exercice 5.4 (5 questions)
 
 1. Affiche les cours avec la moyenne generale des notes.
 2. Affiche les etudiants avec le nombre total d'inscriptions.
@@ -135,7 +135,7 @@ WHERE id_etudiant IN (
 4. Affiche les notes avec la moyenne du cours.
 5. Affiche les salles avec le nombre total de seances.
 
-### Exercice 5.5 - Sous-requete dans WHERE (5 questions)
+### Exercice 5.5 (5 questions)
 
 1. Trouve les etudiants avec une moyenne superieure a 10.
 2. Trouve les cours avec plus de 5 notes.

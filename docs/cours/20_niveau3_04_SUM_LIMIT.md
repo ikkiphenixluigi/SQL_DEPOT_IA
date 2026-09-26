@@ -86,14 +86,14 @@ LIMIT 10;
 
 ## Exercices
 
-### Exercice 3.6 - SUM par etage (4 questions)
+### Exercice 3.6 (4 questions)
 
 1. Calcule le total des places par etage.
 2. Calcule le total des credits par semestre.
 3. Calcule le total des coefficients par type d'evaluation.
 4. Calcule le total des notes par cours.
 
-### Exercice 3.7 - COUNT + LIMIT (5 questions)
+### Exercice 3.7 (5 questions)
 
 1. Affiche les 10 etudiants avec le plus d'inscriptions.
 2. Affiche les 5 cours avec le plus de seances.
@@ -101,7 +101,7 @@ LIMIT 10;
 4. Affiche les 5 enseignants avec le plus de cours.
 5. Affiche les 10 etudiants avec la meilleure moyenne.
 
-### Exercice 3.8 - Statistiques completes (5 questions)
+### Exercice 3.8 (5 questions)
 
 1. Calcule les stats generales des notes (total, min, max, moyenne).
 2. Calcule les stats par cours.

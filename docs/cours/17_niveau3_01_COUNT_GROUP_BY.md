@@ -52,7 +52,7 @@ GROUP BY ville;
 
 ## Exercices
 
-### Exercice 3.1 - COUNT + GROUP BY (5 questions)
+### Exercice 3.1 (5 questions)
 
 1. Compte les etudiants par ville.
 2. Compte les cours par semestre.

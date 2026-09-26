@@ -87,7 +87,7 @@ WHERE id_etudiant NOT IN (SELECT id_etudiant FROM inscriptions);
 
 ## Exercices
 
-### Exercice 5.1 - Sous-requete NOT IN (5 questions)
+### Exercice 5.1 (5 questions)
 
 1. Trouve les etudiants sans inscriptions.
 2. Trouve les cours sans notes.
@@ -95,7 +95,7 @@ WHERE id_etudiant NOT IN (SELECT id_etudiant FROM inscriptions);
 4. Trouve les enseignants sans cours.
 5. Trouve les salles sans seances.
 
-### Exercice 5.2 - Sous-requete IN (5 questions)
+### Exercice 5.2 (5 questions)
 
 1. Affiche les etudiants avec des inscriptions.
 2. Affiche les cours avec des notes.

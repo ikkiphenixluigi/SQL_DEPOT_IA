@@ -65,7 +65,7 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 
 ## Exercices
 
-### Exercice 4.3 - JOIN multiple 2 tables (5 questions)
+### Exercice 4.3 (5 questions)
 
 1. Affiche les etudiants avec leur lycee.
 2. Affiche les notes avec le nom du cours.
@@ -73,7 +73,7 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 4. Affiche les seances avec le nom de la salle.
 5. Affiche les inscriptions avec le nom de l'etudiant.
 
-### Exercice 4.4 - JOIN avec notes (5 questions)
+### Exercice 4.4 (5 questions)
 
 1. Affiche les notes avec le nom de l'etudiant et du cours.
 2. Affiche les notes avec le nom du cours et de l'enseignant.
@@ -81,7 +81,7 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 4. Affiche les notes superieures a 10 avec le nom du cours.
 5. Affiche la moyenne des notes par cours.
 
-### Exercice 4.5 - JOIN avec 3 tables (5 questions)
+### Exercice 4.5 (5 questions)
 
 1. Affiche les etudiants avec leur lycee et leurs inscriptions.
 2. Affiche les notes avec le cours et l'enseignant.

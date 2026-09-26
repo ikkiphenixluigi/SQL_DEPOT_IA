@@ -54,14 +54,14 @@ GROUP BY l.id_lycee, l.nom;
 
 ## Exercices
 
-### Exercice 3.3 - COUNT + LEFT JOIN (4 questions)
+### Exercice 3.3 (4 questions)
 
 1. Compte les etudiants par lycee (meme zero).
 2. Compte les notes par cours (meme zero).
 3. Compte les notes par type d'evaluation.
 4. Compte les seances par salle (meme zero).
 
-### Exercice 3.5 - COUNT seances (4 questions)
+### Exercice 3.5 (4 questions)
 
 1. Compte les seances par cours.
 2. Compte les seances par jour.

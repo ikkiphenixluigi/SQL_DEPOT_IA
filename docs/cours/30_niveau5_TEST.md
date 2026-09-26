@@ -11,55 +11,47 @@
 
 Ce test permet de verifier ta comprehension des concepts du Niveau 5.
 
-**Themes couverts :**
-- Sous-requetes avec IN
-- Sous-requetes avec NOT IN
-- Sous-requetes comparatives
-- Sous-requetes dans SELECT
-- Sous-requetes dans WHERE
-- Sous-requetes correlees (EXISTS, NOT EXISTS)
-
 ---
 
 ## Exercices du test (10 questions)
 
-### Question 1 (IN)
+### Question 1
 
 Affiche les etudiants avec des inscriptions.
 
-### Question 2 (NOT IN)
+### Question 2
 
 Affiche les etudiants sans inscriptions.
 
-### Question 3 (Comparative)
+### Question 3
 
 Trouve les notes superieures a la moyenne.
 
-### Question 4 (SELECT)
+### Question 4
 
 Affiche les cours avec la moyenne generale des notes.
 
-### Question 5 (WHERE)
+### Question 5
 
 Trouve les cours avec plus de 5 notes.
 
-### Question 6 (EXISTS)
+### Question 6
 
 Affiche les etudiants avec des inscriptions (utilise EXISTS).
 
-### Question 7 (NOT EXISTS)
+### Question 7
 
 Affiche les etudiants sans inscriptions (utilise NOT EXISTS).
 
-### Question 8 (IN + JOIN)
+### Question 8
 
 Affiche les etudiants de Paris avec leurs cours.
 
-### Question 9 (HAVING + sous-requete)
+### Question 9
 
 Trouve les etudiants avec une moyenne superieure a la moyenne generale.
 
-### Question 10 (EXISTS + JOIN)
+### Question 10
 
 Affiche les cours avec des notes et le nom de l'enseignant.
 
@@ -85,12 +77,6 @@ Cherche la section **TEST NIVEAU 5** pour voir les corrections.
 ## Validation du Niveau 5
 
 Si tu as reussi ce test, tu as termine TOUS les niveaux !
-
-**Competences acquises :**
-- Sous-requetes avec IN et NOT IN
-- Sous-requetes comparatives
-- Sous-requetes dans SELECT et WHERE
-- Sous-requetes correlees (EXISTS, NOT EXISTS)
 
 ---
 

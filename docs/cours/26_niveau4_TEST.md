@@ -12,54 +12,47 @@
 
 Ce test permet de verifier ta comprehension des concepts du Niveau 4.
 
-**Themes couverts :**
-- INNER JOIN avec alias
-- JOIN multiple (2 et 3 tables)
-- DISTINCT avec JOIN
-- JOIN + GROUP BY
-- LEFT JOIN avance
-
 ---
 
 ## Exercices du test (10 questions)
 
-### Question 1 (JOIN base)
+### Question 1
 
 Affiche les etudiants avec leur lycee.
 
-### Question 2 (JOIN avec alias)
+### Question 2
 
 Utilise des alias pour afficher les notes avec le nom du cours.
 
-### Question 3 (JOIN 2 tables)
+### Question 3
 
 Affiche les cours avec le nom de l'enseignant.
 
-### Question 4 (JOIN 3 tables)
+### Question 4
 
 Affiche les etudiants avec leurs cours et leurs notes.
 
-### Question 5 (DISTINCT)
+### Question 5
 
 Affiche les cours uniques qui ont des notes.
 
-### Question 6 (JOIN + GROUP BY)
+### Question 6
 
 Calcule la moyenne des notes par cours.
 
-### Question 7 (COUNT + JOIN)
+### Question 7
 
 Compte le nombre d'etudiants par lycee.
 
-### Question 8 (LEFT JOIN)
+### Question 8
 
 Affiche tous les lycees avec leurs etudiants (meme zero).
 
-### Question 9 (LEFT JOIN + WHERE)
+### Question 9
 
 Trouve les cours sans notes.
 
-### Question 10 (JOIN + AVG + GROUP BY)
+### Question 10
 
 Calcule la moyenne d'age par ville en utilisant une jointure.
 
@@ -85,13 +78,6 @@ Cherche la section **TEST NIVEAU 4** pour voir les corrections.
 ## Validation du Niveau 4
 
 Si tu as reussi ce test, tu peux passer au **Niveau 5** !
-
-**Competences acquises :**
-- INNER JOIN avec alias
-- JOIN multiple (2 et 3 tables)
-- DISTINCT avec JOIN
-- JOIN + GROUP BY
-- LEFT JOIN avance
 
 ---
 

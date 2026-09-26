@@ -88,7 +88,7 @@ INNER JOIN notes AS n ON c.id_cours = n.id_cours;
 
 ## Exercices
 
-### Exercice 4.1 - JOIN 1 table (5 questions)
+### Exercice 4.1 (5 questions)
 
 1. Affiche les etudiants avec leur lycee.
 2. Affiche les cours avec le nom de l'enseignant.
@@ -96,7 +96,7 @@ INNER JOIN notes AS n ON c.id_cours = n.id_cours;
 4. Affiche les notes avec le nom du cours.
 5. Affiche les seances avec le nom de la salle.
 
-### Exercice 4.2 - JOIN avec alias (4 questions)
+### Exercice 4.2 (4 questions)
 
 1. Utilise des alias pour afficher les etudiants et leurs lycees.
 2. Affiche les notes avec le nom du cours en utilisant des alias.

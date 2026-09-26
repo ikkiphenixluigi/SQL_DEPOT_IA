@@ -80,7 +80,7 @@ FROM notes;
 
 ## Exercices
 
-### Exercice 3.2 - AVG + GROUP BY (5 questions)
+### Exercice 3.2 (5 questions)
 
 1. Calcule la moyenne des notes par cours.
 2. Calcule la moyenne des notes par type d'evaluation.
@@ -88,7 +88,7 @@ FROM notes;
 4. Calcule l'age moyen par ville.
 5. Calcule la moyenne des notes pour les evaluations avec coeff 2.
 
-### Exercice 3.2.bis - MIN, MAX, AVG (5 questions)
+### Exercice 3.2.bis (5 questions)
 
 1. Trouve les notes minimales et maximales.
 2. Calcule les stats (min, max, moyenne) par cours.
@@ -96,7 +96,7 @@ FROM notes;
 4. Calcule les stats par type d'evaluation.
 5. Calcule les stats des credits par semestre.
 
-### Exercice 3.4 - AVG etudiant (5 questions)
+### Exercice 3.4 (5 questions)
 
 1. Calcule la moyenne par etudiant.
 2. Affiche les etudiants avec leur moyenne (trier par moyenne decroissante).

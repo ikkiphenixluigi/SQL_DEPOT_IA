@@ -105,14 +105,14 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 
 ## Exercices
 
-### Exercice 4.6 - JOIN avec DISTINCT (4 questions)
+### Exercice 4.6 (4 questions)
 
 1. Affiche les cours uniques qui ont des notes.
 2. Affiche les combinaisons uniques etudiant/cours.
 3. Affiche les lycees uniques avec des etudiants.
 4. Affiche les enseignants uniques avec des cours.
 
-### Exercice 4.7 - JOIN + GROUP BY (5 questions)
+### Exercice 4.7 (5 questions)
 
 1. Compte le nombre de notes par cours.
 2. Calcule la moyenne des notes par cours.
@@ -120,7 +120,7 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 4. Compte le nombre d'etudiants par lycee.
 5. Calcule la moyenne d'age par ville.
 
-### Exercice 4.8 - LEFT JOIN avance (5 questions)
+### Exercice 4.8 (5 questions)
 
 1. Affiche tous les lycees avec leurs etudiants.
 2. Compte les etudiants par lycee (meme zero).
