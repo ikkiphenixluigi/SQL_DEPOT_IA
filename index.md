@@ -69,7 +69,6 @@
 
 - [01 - Creation des tables](sql/01_create_tables.sql)
 - [02 - Insertion des donnees](sql/02_insert_data.sql)
-- [03 - Exercices et solutions](sql/03_exercices.sql)
 
 ---
 

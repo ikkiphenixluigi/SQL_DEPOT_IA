@@ -4,7 +4,7 @@
 
 ---
 
-##  Structure des cours
+## 📚 Structure des cours
 
 ### Introduction
 
