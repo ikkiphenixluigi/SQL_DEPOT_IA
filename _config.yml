@@ -1,0 +1,18 @@
+title: SQL_DEPOT_IA
+description: Cours complet de SQL - 5 niveaux progressifs
+theme: just-the-docs
+url: https://ikkiphenixluigi.github.io
+baseurl: /SQL_DEPOT_IA
+
+# Navigation
+nav_enabled: true
+
+# Search
+search_enabled: true
+
+# Aux links
+aux_links:
+  "GitHub Repository": "https://github.com/ikkiphenixluigi/SQL_DEPOT_IA"
+
+# Footer
+footer_content: "Cours SQL - 5 niveaux progressifs"
