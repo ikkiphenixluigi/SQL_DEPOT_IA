@@ -1,5 +1,9 @@
 # SOMMAIRE - SQL_DEPOT_IA
 
+> **📖 Pour l'installation et les guides :** [Retour au README](../README.md)
+
+---
+
 ## 📚 Structure des cours
 
 ### Introduction
