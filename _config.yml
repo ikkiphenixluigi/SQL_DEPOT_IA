@@ -23,3 +23,11 @@ aux_links:
 
 # Footer
 footer_content: "Cours SQL - 5 niveaux progressifs"
+
+# Pages internes ou doublons : ne pas publier
+exclude:
+  - Logs/
+  - teacher/
+  - GUIDE_TEST.md
+  - docs/index.md
+  - docs/SOMMAIRE.md
