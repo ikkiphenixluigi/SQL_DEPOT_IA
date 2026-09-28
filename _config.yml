@@ -1,7 +1,7 @@
 title: SQL_DEPOT_IA
 description: Cours complet de SQL - 5 niveaux progressifs
-theme: just-the-docs
-url: https://ikkiphenixluigi.github.io
+remote_theme: just-the-docs/just-the-docs
+url: "https://ikkiphenixluigi.github.io"
 baseurl: /SQL_DEPOT_IA
 
 # Force Jekyll
@@ -13,6 +13,9 @@ nav_enabled: true
 
 # Search
 search_enabled: true
+
+# Copy code button
+enable_copy_code_button: true
 
 # Aux links
 aux_links:
