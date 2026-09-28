@@ -30,3 +30,5 @@ exclude:
   - teacher/
   - docs/index.md
   - docs/SOMMAIRE.md
+  - GUIDE_DB_BROWSER.md
+  - GUIDE_DBEAVER.md
