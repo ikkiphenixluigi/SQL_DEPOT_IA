@@ -284,3 +284,19 @@ Mise a jour : Apres chaque creation de fichier et sur demande.
 **STRUCTURE : COHERENTE ET PEDAGOGIQUE !** ✅
 
 **Prochaine etape :** Mettre a jour sql/03_exercices.sql avec les nouvelles structures
+
+## 28 septembre 2026 — Migration du site vers Just the Docs
+
+- Correction de `_config.yml` : remplacement de `theme: just-the-docs` par `remote_theme: just-the-docs/just-the-docs`. La construction GitHub Pages a réussi et le site a été vérifié.
+- Activation du bouton de copie des blocs de code avec `enable_copy_code_button: true`.
+- Conservation de `index.md` à la racine comme page d’accueil et suppression du doublon `docs/index.md`.
+- Suppression de `mkdocs.yml` : Jekyll et `_config.yml` sont désormais la configuration du site.
+- Exclusion de `Logs/` et `teacher/` du site via `_config.yml`.
+- Déplacement de `GUIDE_TEST.md` dans `teacher/` par le propriétaire du dépôt. Suppression de sa règle d’exclusion individuelle : celle de `teacher/` s’applique désormais.
+- Exclusion de `docs/SOMMAIRE.md` de la publication, sans supprimer le fichier.
+
+### À faire
+
+- Créer la rubrique « Préparer son environnement » et organiser les guides et les niveaux du cours dans la navigation Just the Docs.
+- Corriger les liens « Retour au SOMMAIRE » des cours pour qu’ils pointent vers la page d’accueil. Aucun fichier de cours n’a encore été modifié.
+- Vérifier les liens des cours avant d’envisager la suppression de `docs/SOMMAIRE.md`.
