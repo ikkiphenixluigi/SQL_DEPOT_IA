@@ -122,17 +122,17 @@ ORDER BY credits DESC;
 
 ### Exercice 1.10 (4 questions)
 
-1. Trie les etudiants par date de naissance (plus recent en premier).
-2. Trie les salles par nombre de places (plus grand en premier).
-3. Trie les cours par credits (plus gros en premier).
-4. Trie les lycees par ville (ordre decroissant).
+1. Affiche le nom, le prenom et la date de naissance des etudiants habitant a Paris. Trie-les par date de naissance decroissante, du plus jeune au plus age.
+2. Affiche le numero et le nombre de places des salles ayant au moins 20 places. Trie-les du plus grand au plus petit nombre de places.
+3. Affiche le code, le nom et le nombre de credits des cours du semestre 2. Trie-les par nombre de credits decroissant.
+4. Affiche le nom et la ville des lycees situes a Paris ou a Lyon. Trie-les par ville dans l'ordre alphabetique decroissant.
 
 ### Exercice 1.11 (4 questions)
 
-1. Trie les etudiants par ville puis par nom.
-2. Trie les cours par semestre puis par credits (decroissant).
-3. Trie les lycees par ville (ASC) puis par nom (DESC).
-4. Trie les enseignants par grade puis par nom.
+1. Affiche le nom, le prenom et la ville des etudiants habitant a Paris ou a Lyon. Trie-les par ville dans l'ordre alphabetique, puis par nom dans l'ordre alphabetique.
+2. Affiche le code, le nom, le semestre et le nombre de credits des cours ayant entre 4 et 6 credits inclus. Trie-les par semestre croissant, puis par nombre de credits decroissant.
+3. Affiche le nom et la ville des lycees situes a Paris ou a Lyon. Trie-les par ville croissante, puis par nom de lycee decroissant.
+4. Affiche le nom, le prenom, le departement et le grade des enseignants ayant le grade "Professeur". Trie-les par departement croissant, puis par nom croissant.
 
 ---
 
