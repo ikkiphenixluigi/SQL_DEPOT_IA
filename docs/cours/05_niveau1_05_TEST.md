@@ -13,7 +13,7 @@
 Ce test permet de verifier ta comprehension des concepts du NIVEAU 1.
 
 **Themes couverts :**
-- SELECT et FROM
+- SELECT et FROM, DISTINCT
 - WHERE (=, !=, AND, OR, NOT, IN, BETWEEN, <, >, IS NULL)
 - ORDER BY (ASC, DESC, multiple)
 - LIMIT
@@ -24,43 +24,43 @@ Ce test permet de verifier ta comprehension des concepts du NIVEAU 1.
 
 ### Question 1
 
-Affiche toutes les colonnes de la table enseignants.
+Affiche le nom, le prenom, la ville et l'annee d'inscription des etudiants habitant a Paris et inscrits a partir de 2024. Trie-les par annee d'inscription decroissante, puis par nom croissant.
 
 ### Question 2
 
-Affiche le nom, le prenom et l'email des etudiants.
+Affiche le code, le nom, le semestre et le nombre de credits des cours du semestre 2 ayant entre 4 et 6 credits inclus. Trie-les par nombre de credits decroissant, puis par code de cours croissant.
 
 ### Question 3
 
-Trouve les lycees de Marseille.
+Affiche, sans doublons, les villes des etudiants qui n'habitent pas a Paris. Classe les villes par ordre alphabetique.
 
 ### Question 4
 
-Affiche les cours avec 4 credits.
+Affiche le numero, l'etage et le nombre de places des salles informatiques ayant au moins 15 places. Trie-les de la plus grande a la plus petite capacite, puis par numero de salle croissant.
 
 ### Question 5
 
-Affiche les etudiants NON de Paris.
+Affiche le nom, le prenom, le grade et le departement des enseignants ayant le grade "Professeur". Trie-les par departement, puis par nom, dans l'ordre alphabetique.
 
 ### Question 6
 
-Affiche les cours du semestre 2 ET 4 credits.
+Affiche le nom et la ville des lycees situes a Paris ou a Lyon. Trie-les par ville croissante, puis par nom de lycee decroissant.
 
 ### Question 7
 
-Trie les etudiants par nom (ordre alphabetique).
+Affiche le code, le nom et le semestre des cours sans enseignant associe. Trie-les par semestre croissant, puis par code de cours croissant. Un resultat vide est acceptable si tous les cours ont un enseignant.
 
 ### Question 8
 
-Affiche les 5 cours avec le plus de credits.
+Affiche le nom, le prenom et la date de naissance des cinq etudiants de Paris dont la naissance est la plus recente. En cas de meme date de naissance, classe-les par nom puis par prenom croissants.
 
 ### Question 9
 
-Affiche les etudiants des lycees 1, 2 et 3.
+Affiche le nom, le prenom et la ville des etudiants qui n'habitent pas a Paris. Trie-les par nom puis par prenom croissants et affiche uniquement les cinq premiers resultats.
 
 ### Question 10
 
-Affiche les 10 premiers etudiants par ordre alphabetique.
+Affiche le code, le nom et le nombre de credits des trois cours ayant le plus de credits, en excluant ceux du semestre 1. En cas d'egalite de credits, departage-les par code de cours croissant.
 
 ---
 
@@ -86,7 +86,7 @@ Cherche la section **TEST NIVEAU 1** pour voir les corrections.
 Si tu as reussi ce test, tu peux passer au **Niveau 2** !
 
 **Competences acquises :**
-- SELECT et FROM
+- SELECT et FROM, DISTINCT
 - WHERE (=, !=, AND, OR, NOT, IN, BETWEEN, <, >, IS NULL)
 - ORDER BY (ASC, DESC, multiple)
 - LIMIT
