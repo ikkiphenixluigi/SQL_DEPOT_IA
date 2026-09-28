@@ -4,6 +4,10 @@ theme: just-the-docs
 url: https://ikkiphenixluigi.github.io
 baseurl: /SQL_DEPOT_IA
 
+# Force Jekyll
+markdown: kramdown
+highlighter: rouge
+
 # Navigation
 nav_enabled: true
 
