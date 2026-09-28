@@ -11,6 +11,37 @@ highlighter: rouge
 # Navigation
 nav_enabled: true
 
+# Ordre pedagogique du niveau 1
+defaults:
+  - scope:
+      path: "docs/cours/00_intro.md"
+    values:
+      nav_order: 2
+  - scope:
+      path: "docs/cours/01_niveau1_01_SELECT_FROM.md"
+    values:
+      nav_order: 3
+  - scope:
+      path: "docs/cours/02_niveau1_02_WHERE.md"
+    values:
+      nav_order: 4
+  - scope:
+      path: "docs/cours/03_niveau1_03_ORDER_BY.md"
+    values:
+      nav_order: 5
+  - scope:
+      path: "docs/cours/04_niveau1_04_LIMIT.md"
+    values:
+      nav_order: 6
+  - scope:
+      path: "docs/cours/05_niveau1_05_TEST.md"
+    values:
+      nav_order: 7
+  - scope:
+      path: "docs/cours/01_niveau1_01_FROM_SELECT.md"
+    values:
+      nav_exclude: true
+
 # Search
 search_enabled: true
 
