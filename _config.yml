@@ -11,7 +11,7 @@ highlighter: rouge
 # Navigation
 nav_enabled: true
 
-# Ordre pedagogique du niveau 1
+# Ordre pedagogique des cours
 defaults:
   - scope:
       path: "docs/cours/00_intro.md"
@@ -39,6 +39,152 @@ defaults:
       nav_order: 7
   - scope:
       path: "docs/cours/01_niveau1_01_FROM_SELECT.md"
+    values:
+      nav_exclude: true
+
+  # Niveau 2 : numerique, texte, dates, fonctions avancees, test
+  - scope:
+      path: "docs/cours/08_niveau2_01_operations_ROUND.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 1
+  - scope:
+      path: "docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 2
+  - scope:
+      path: "docs/cours/10_niveau2_03_POWER_SQRT.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 3
+  - scope:
+      path: "docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 4
+  - scope:
+      path: "docs/cours/12_niveau2_05_SUBSTR_REPLACE.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 5
+  - scope:
+      path: "docs/cours/13_niveau2_06_TRIM_concat.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 6
+  - scope:
+      path: "docs/cours/14_niveau2_07_LIKE.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 7
+  - scope:
+      path: "docs/cours/15_niveau2_08_CAST.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 8
+  - scope:
+      path: "docs/cours/16_niveau2_09_strftime.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 9
+  - scope:
+      path: "docs/cours/17_niveau2_10_age.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 10
+  - scope:
+      path: "docs/cours/18_niveau2_11_CASE_WHEN.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 11
+  - scope:
+      path: "docs/cours/19_niveau2_TEST.md"
+    values:
+      parent: Niveau 2 - Fonctions
+      nav_order: 12
+
+  # Niveau 3 : agregats, GROUP BY, HAVING, test
+  - scope:
+      path: "docs/cours/17_niveau3_01_agregats.md"
+    values:
+      parent: Niveau 3 - Agregats
+      nav_order: 1
+  - scope:
+      path: "docs/cours/18_niveau3_02_GROUP_BY.md"
+    values:
+      parent: Niveau 3 - Agregats
+      nav_order: 2
+  - scope:
+      path: "docs/cours/19_niveau3_03_HAVING_syntaxe.md"
+    values:
+      parent: Niveau 3 - Agregats
+      nav_order: 3
+  - scope:
+      path: "docs/cours/20_niveau3_TEST.md"
+    values:
+      parent: Niveau 3 - Agregats
+      nav_order: 4
+
+  # Niveau 4 : jointures, test
+  - scope:
+      path: "docs/cours/23_niveau4_01_JOIN_base.md"
+    values:
+      parent: Niveau 4 - Jointures
+      nav_order: 1
+  - scope:
+      path: "docs/cours/24_niveau4_02_JOIN_multiple.md"
+    values:
+      parent: Niveau 4 - Jointures
+      nav_order: 2
+  - scope:
+      path: "docs/cours/25_niveau4_03_JOIN_avance.md"
+    values:
+      parent: Niveau 4 - Jointures
+      nav_order: 3
+  - scope:
+      path: "docs/cours/26_niveau4_TEST.md"
+    values:
+      parent: Niveau 4 - Jointures
+      nav_order: 4
+
+  # Niveau 5 : sous-requetes, test
+  - scope:
+      path: "docs/cours/27_niveau5_01_sous_requetes_IN.md"
+    values:
+      parent: Niveau 5 - Sous-requetes
+      nav_order: 1
+  - scope:
+      path: "docs/cours/28_niveau5_02_sous_requetes_compare.md"
+    values:
+      parent: Niveau 5 - Sous-requetes
+      nav_order: 2
+  - scope:
+      path: "docs/cours/29_niveau5_03_sous_requetes_corellees.md"
+    values:
+      parent: Niveau 5 - Sous-requetes
+      nav_order: 3
+  - scope:
+      path: "docs/cours/30_niveau5_TEST.md"
+    values:
+      parent: Niveau 5 - Sous-requetes
+      nav_order: 4
+
+  # Anciennes versions conservees dans le depot, hors navigation
+  - scope:
+      path: "docs/cours/15_niveau2_08_strftime_age.md"
+    values:
+      nav_exclude: true
+  - scope:
+      path: "docs/cours/16_niveau2_TEST.md"
+    values:
+      nav_exclude: true
+  - scope:
+      path: "docs/cours/17_niveau3_01_COUNT_GROUP_BY.md"
+    values:
+      nav_exclude: true
+  - scope:
+      path: "docs/cours/18_niveau3_02_AVG_GROUP_BY.md"
     values:
       nav_exclude: true
 
