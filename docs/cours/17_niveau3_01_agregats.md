@@ -153,40 +153,40 @@ FROM cours;
 
 ### Exercice 3.1 (5 questions)
 
-1. Compte le nombre total d'etudiants.
-2. Compte le nombre total de cours.
-3. Compte le nombre total de lycees.
-4. Compte le nombre d'etudiants avec email.
-5. Compte le nombre de cours avec 4 credits.
+1. Le responsable pedagogique veut connaitre l'effectif total de la base. Donne-lui un seul nombre.
+2. Combien d'etudiants resident a Paris et se sont inscrits en 2024 ?
+3. Combien de cours du premier semestre donnent au moins 4 credits ?
+4. Combien de salles informatiques peuvent accueillir au moins 15 personnes ?
+5. Parmi les inscriptions enregistrees en 2025, combien ont le statut `abandon` ?
 
 ### Exercice 3.2 (4 questions)
 
-1. Trouve la note minimale et maximale.
-2. Trouve l'age minimum et maximum.
-3. Trouve le nombre de places minimum et maximum.
-4. Trouve les credits minimum et maximum.
+1. Pour connaitre l'etendue des resultats, affiche la note la plus basse et la plus haute de toutes les evaluations.
+2. Parmi les etudiants inscrits en 2025, donne la date de naissance la plus ancienne et la plus recente. Il s'agit de dates, pas des noms des etudiants correspondants.
+3. Quelle est la plus petite et la plus grande capacite des salles informatiques ?
+4. Pour les cours du premier semestre, affiche le nombre minimal et maximal de credits.
 
 ### Exercice 3.3 (4 questions)
 
-1. Calcule la moyenne generale des notes.
-2. Calcule la moyenne des credits.
-3. Calcule la moyenne d'age.
-4. Calcule la moyenne des places.
+1. Quelle est la moyenne des notes attribuees aux examens finaux ? Arrondis-la a deux decimales.
+2. Combien de credits vaut en moyenne un cours du premier semestre ? Arrondis a une decimale.
+3. Quelle est la capacite moyenne des salles informatiques ? Arrondis a une decimale.
+4. Pour les evaluations de coefficient 2 dont la note atteint au moins 10, quelle est la note moyenne ? Arrondis a deux decimales.
 
 ### Exercice 3.4 (4 questions)
 
-1. Calcule le total des credits.
-2. Calcule le total des places.
-3. Calcule le total des coefficients.
-4. Calcule le total des notes.
+1. Combien de credits faudrait-il cumuler pour suivre tous les cours du premier semestre ?
+2. Combien de places offrent ensemble les salles informatiques ?
+3. Quel est le total des heures theoriques prevues pour les cours d'au moins 4 credits ?
+4. Quel est le total des coefficients des examens finaux enregistres ?
 
 ### Exercice 3.5 (5 questions)
 
-1. Calcule les stats generales (total, min, max, moyenne) des notes.
-2. Calcule les stats des credits (total, min, max, moyenne).
-3. Calcule les stats des places (total, min, max, moyenne).
-4. Calcule les stats des coefficients (total, min, max, moyenne).
-5. Calcule les stats completes des notes par type d'evaluation.
+1. Prepare un bilan des examens finaux indiquant le nombre de notes, la plus faible, la plus forte et la moyenne arrondie a deux decimales.
+2. Pour les cours du premier semestre, affiche leur nombre, le total de leurs credits et leur nombre moyen de credits.
+3. Pour les salles informatiques, affiche leur nombre, la capacite minimale, la capacite maximale et le total des places.
+4. Pour les etudiants inscrits en 2025, affiche leur nombre ainsi que les dates de naissance la plus ancienne et la plus recente.
+5. Un enseignant veut examiner uniquement les notes inferieures a 10 : affiche combien il y en a, leur moyenne arrondie a deux decimales et la note la plus basse.
 
 ---
 
