@@ -35,11 +35,11 @@ END
 
 ### Exemple 1 : CASE WHEN simple
 
-**Question :** Afficher "Validé" ou "Non validé" selon la note.
+**Question :** Afficher "Valide" ou "Non valide" selon la note.
 
 **Requete :**
 ```sql
-SELECT nom, note,
+SELECT id_note, note,
     CASE WHEN note >= 10 THEN 'Valide' ELSE 'Non valide' END AS resultat
 FROM notes;
 ```
@@ -57,7 +57,7 @@ FROM notes;
 
 **Requete :**
 ```sql
-SELECT nom, note,
+SELECT id_note, note,
     CASE
         WHEN note >= 16 THEN 'Tres bien'
         WHEN note >= 14 THEN 'Bien'
@@ -80,11 +80,11 @@ FROM notes;
 
 ### Exercice 2.17 (5 questions)
 
-1. Affiche "Validé" ou "Non validé" selon la note.
-2. Affiche "Grand cours" ou "Petit cours" selon les credits.
-3. Affiche la mention (Tres bien, Bien, Assez bien, Passable, Ajourne) selon la note.
-4. Affiche "Nouveau" ou "Ancien" selon l'annee d'inscription.
-5. Affiche "Pas de note" ou la note selon si NULL.
+1. Affiche l'identifiant, la note et une colonne `resultat` indiquant `Valide` si la note est d'au moins 10, sinon `Non valide`. Ne conserve que les notes de coefficient 2 ; trie-les par note decroissante et affiche cinq lignes.
+2. Affiche le code, le nom, les credits et une colonne `categorie` indiquant `6 credits` si le cours vaut 6 credits, sinon `Autre cours`. Trie par credits decroissants, puis par code croissant.
+3. Affiche le nom, le prenom, le grade et une colonne `categorie_grade` indiquant `Professeur` pour ce grade, sinon `Autre grade`. Trie par categorie puis par nom croissants.
+4. Affiche le nom, le prenom, l'annee d'inscription et une colonne `promotion` indiquant `Promotion 2024` ou `Promotion 2025` selon l'annee. Ne conserve que les etudiants dont le nom commence par B ; trie-les par annee puis par nom croissants.
+5. Affiche l'identifiant, la note et une colonne `mention` : `Tres bien` a partir de 16, `Bien` de 14 a moins de 16, `Assez bien` de 12 a moins de 14, `Passable` de 10 a moins de 12 et `Ajourne` en dessous de 10. Ne conserve que les notes d'au moins 8 et trie-les par note decroissante.
 
 ---
 

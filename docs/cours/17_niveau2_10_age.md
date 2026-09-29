@@ -10,60 +10,59 @@
 
 ## Introduction
 
-Ce cours presente le calcul d'age avec strftime().
+Ce cours presente le calcul d'une difference entre annees avec strftime().
 
 **Objectifs :**
-- Calculer l'age a partir d'une date
+- Calculer une difference entre annees a partir d'une date de naissance
 - Utiliser CAST pour les calculs
 
 ---
 
-## 1. Calcul d'age
+## 1. Age approximatif
 
 ### Definition
 
-On calcule l'age en soustrayant l'annee de naissance de l'annee actuelle.
+Soustraire l'annee de naissance de l'annee de reference donne un age approximatif : le resultat peut depasser l'age exact d'un an si l'anniversaire n'est pas encore passe. Dans ce cours, on fixe la date de reference au `2026-09-28` pour obtenir les memes resultats lors de chaque execution.
 
 **Syntaxe :**
 ```sql
-CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER)
+CAST(strftime('%Y', '2026-09-28') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER)
 ```
 
-### Exemple 1 : Age simple
+### Exemple 1 : Age approximatif
 
-**Question :** Calculer l'age des etudiants.
+**Question :** Calculer l'age approximatif des etudiants au 28/09/2026.
 
 **Requete :**
 ```sql
 SELECT nom, date_naissance,
-    CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) AS age
+    CAST(strftime('%Y', '2026-09-28') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) AS age_approximatif
 FROM etudiants;
 ```
 
 **Explication :**
-- `strftime('%Y', 'now')` : annee actuelle
+- `strftime('%Y', '2026-09-28')` : annee de reference fixe
 - `strftime('%Y', date_naissance)` : annee de naissance
-- Difference : age
+- La soustraction ne verifie pas si l'anniversaire est deja passe
 
-**Resultat :** Ages des etudiants.
+**Resultat :** Differences entre annees, et non ages exacts.
 
-### Exemple 2 : Age avec filtre
+### Exemple 2 : Age approximatif avec filtre
 
-**Question :** Trouver les etudiants de 22 ans ou plus.
+**Question :** Trouver les etudiants dont l'age approximatif au 28/09/2026 atteint 23 ans.
 
 **Requete :**
 ```sql
 SELECT nom, date_naissance,
-    CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) AS age
+    CAST(strftime('%Y', '2026-09-28') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) AS age_approximatif
 FROM etudiants
-WHERE CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) >= 22;
+WHERE CAST(strftime('%Y', '2026-09-28') AS INTEGER) - CAST(strftime('%Y', date_naissance) AS INTEGER) >= 23;
 ```
 
 **Explication :**
-- Calcul de l'age
-- WHERE filtre par age
+- WHERE filtre sur la difference entre annees
 
-**Resultat :** Etudiants de 22 ans ou plus.
+**Resultat :** Etudiants nes en 2003 dans les donnees fournies.
 
 ---
 
@@ -71,11 +70,11 @@ WHERE CAST(strftime('%Y', 'now') AS INTEGER) - CAST(strftime('%Y', date_naissanc
 
 ### Exercice 2.16 (5 questions)
 
-1. Calcule l'age des etudiants.
-2. Trouve les etudiants de 22 ans ou plus.
-3. Calcule l'age moyen des etudiants.
-4. Compte les etudiants par age.
-5. Trouve l'etudiant le plus age.
+1. Affiche le nom, le prenom, la date de naissance et l'age approximatif au 28/09/2026 des etudiants habitant a Paris. Trie-les par nom croissant.
+2. Affiche le nom, le prenom et l'age approximatif au 28/09/2026 des etudiants nes en 2003. Trie-les par nom croissant et limite le resultat a cinq lignes.
+3. Affiche le nom, le prenom, l'annee de naissance et l'age approximatif au 28/09/2026 des etudiants inscrits en 2025 et nes en 2004. Trie-les par nom croissant.
+4. Affiche le nom, le prenom et l'age approximatif au 28/09/2026 des etudiants dont le nom commence par B. Trie-les par age approximatif decroissant, puis par nom croissant.
+5. Affiche le nom, le prenom, la date de naissance et l'age approximatif au 28/09/2026 des cinq etudiants les plus jeunes selon leur date de naissance. En cas d'egalite sur la date, trie par nom croissant.
 
 ---
 
