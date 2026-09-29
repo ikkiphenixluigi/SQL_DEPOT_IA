@@ -96,17 +96,17 @@ FROM etudiants;
 
 ### Exercice 2.14 (4 questions)
 
-1. Extrais l'annee de naissance.
-2. Extrais le mois de naissance.
-3. Extrais le jour de naissance.
-4. Extrais le jour de la semaine de naissance.
+1. Affiche le nom, le prenom, la date de naissance et l'annee de naissance des etudiants nes en 2004. Trie-les par date de naissance croissante.
+2. Affiche le nom, le prenom, la date de naissance et le mois de naissance des etudiants nes en avril, toutes annees confondues. Trie-les par nom croissant.
+3. Affiche le nom, le prenom et le jour de la semaine de naissance, sous forme de chiffre, pour les etudiants nes le `2003-01-01`. Trie-les par nom croissant.
+4. Affiche le nom, le prenom et le mois de naissance des etudiants dont le prenom commence par M et qui sont nes en 2003. Trie-les par prenom croissant.
 
 ### Exercice 2.15 (4 questions)
 
-1. Affiche la date au format francais (jj/mm/aaaa).
-2. Affiche "Ne le " suivi de la date au format francais.
-3. Affiche l'annee et le mois (aaaa-mm).
-4. Affiche le mois et l'annee (mm/aaaa).
+1. Affiche le nom, le prenom, la date de naissance d'origine et cette meme date au format `JJ/MM/AAAA` pour les etudiants habitant a Paris. Trie-les par nom croissant.
+2. Affiche, pour les etudiants nes en 2004, le nom suivi du texte ` : ne(e) le ` et de la date de naissance au format `JJ/MM/AAAA`. Trie-les par nom croissant.
+3. Affiche le nom, le prenom et la date de naissance au format `AAAA-MM` pour les etudiants nes en octobre. Trie-les par nom croissant.
+4. Affiche le nom, le prenom et la date de naissance au format `MM/AAAA` pour les etudiants inscrits en 2025 et nes en avril. Trie-les par nom croissant.
 
 ---
 

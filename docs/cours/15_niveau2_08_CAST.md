@@ -67,10 +67,10 @@ FROM cours;
 
 ### Exercice 2.13 (4 questions)
 
-1. Convertis les notes en entier.
-2. Concatene les credits avec ' credits'.
-3. Convertis les annees d'inscription en texte.
-4. Affiche les notes en entier et en texte.
+1. Affiche l'identifiant de la note, sa valeur d'origine et sa conversion en entier pour les notes d'au moins 10. Trie les resultats par note decroissante et limite-les a cinq lignes.
+2. Affiche le code, le nom et les credits des cours de 6 credits. Ajoute une colonne formee des credits convertis en texte, suivis de ` credits`. Trie par code croissant.
+3. Affiche le nom, le prenom et l'annee d'inscription des etudiants inscrits en 2025. Ajoute une colonne contenant le texte `Promotion ` suivi de l'annee convertie en texte.
+4. Affiche la note, son coefficient et le produit note multipliee par coefficient, puis convertis ce produit en entier dans une colonne distincte. Ne conserve que les evaluations de coefficient 2 et affiche cinq lignes apres un tri par note decroissante.
 
 ---
 
