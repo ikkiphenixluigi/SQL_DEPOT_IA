@@ -132,9 +132,9 @@ LIMIT 10;
 
 1. Affiche les 5 cours avec le plus de credits.
 2. Affiche les 10 etudiants par ordre alphabetique.
-3. Affiche les 3 lycees avec le plus de villes.
+3. Affiche les 3 lycees triés par ordre croisssant du nom de la ville.
 4. Affiche les 5 salles avec le plus de places.
-5. Affiche les etudiants 6 a 10 (page 2).
+5. Affiche les etudiants trié par ordre croisssant de leurs nom et prenez les 10 premiers.
 
 ---
 
