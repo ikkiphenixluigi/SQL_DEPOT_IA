@@ -260,43 +260,269 @@ INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
 (18, 9, 'mercredi', '10:00', '12:00'),
 (19, 10, 'jeudi', '10:00', '12:00');
 
--- 1200 inscriptions : 8 a 12 cours par etudiant, moyenne 10.
--- On ne filtre pas par semestre, conformement au besoin pedagogique.
--- Ordre de creation fixe des IDs : executer sur une base recreee vide.
-WITH RECURSIVE rang(n) AS (
- SELECT 0 UNION ALL SELECT n + 1 FROM rang WHERE n < 11
+
+-- Ajouts : lycees
+INSERT INTO lycees (nom, ville) VALUES
+('Lycee Foch', 'Rodez'),
+('Lycee Pierre-Corneille', 'Rouen'),
+('Lycee Saint-Exupery', 'Marseille'),
+('Lycee Roosevelt', 'Reims'),
+('Lycee Bellevue', 'Toulouse'),
+('Lycee Jean-Perrin', 'Lyon'),
+('Lycee Victor-Duruy', 'Paris'),
+('Lycee Marie-Curie', 'Sceaux'),
+('Lycee Malherbe', 'Caen'),
+('Lycee Berlioz', 'Vincennes');
+
+-- Ajouts : enseignants
+INSERT INTO enseignants (nom, prenom, grade, departement) VALUES
+('Benali', 'Samira', 'Maitre de conferences', 'Statistiques'),
+('Leroux', 'Marc', 'Professeur', 'Informatique'),
+('Roussel', 'Elena', 'Maitre de conferences', 'Gestion'),
+('Diallo', 'Karim', 'Maitre de conferences', 'Langues'),
+('Aubert', 'Jeanne', 'Professeur', 'Histoire');
+
+-- Ajouts : salles
+INSERT INTO salles (etage, num_salle, salle_informatique, nb_places) VALUES
+(0, 'C001', 'non', 45),
+(1, 'C101', 'oui', 30),
+(1, 'C102', 'non', 65),
+(2, 'C201', 'oui', 40),
+(2, 'C202', 'non', 150);
+
+-- Ajouts : cours
+INSERT INTO cours (code_cours, nom_cours, credits, semestre, nb_heures_theo, id_enseignant) VALUES
+('STAT102', 'Statistiques appliquees', 5, 2, 24, 16),
+('INFO102', 'Programmation fondamentale', 6, 2, 30, 17),
+('GEST102', 'Comptabilite initiation', 4, 2, 20, 18),
+('LANG102', 'Expression ecrite', 3, 2, 18, 19),
+('HIST102', 'Methodologie historique', 4, 2, 20, 8);
+
+-- Ajouts : seances
+INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
+(21, 16, 'lundi', '14:00', '16:00'),
+(22, 17, 'mardi', '14:00', '16:00'),
+(23, 18, 'mercredi', '10:00', '12:00'),
+(24, 19, 'jeudi', '14:00', '16:00'),
+(25, 20, 'vendredi', '10:00', '12:00');
+
+-- Ajouts : etudiants
+INSERT INTO etudiants (nom, prenom, sexe, date_naissance, email, annee_inscription, adresse, code_postal, ville, id_lycee) VALUES
+('Martin', 'Amina', 'Feminin', '2002-01-01', 'etudiant.121@univ.fr', 2023, '1 rue des Etudes', '75014', 'Paris', NULL),
+('Bernard', 'Leo', 'Masculin', '2002-02-02', 'etudiant.122@univ.fr', 2023, '2 rue des Etudes', '91940', 'Les Ulis', 2),
+('Petit', 'Clara', 'Feminin', '2002-03-03', 'etudiant.123@univ.fr', 2023, '3 rue des Etudes', '91300', 'Massy', 3),
+('Robert', 'Yanis', 'Masculin', '2002-04-04', 'etudiant.124@univ.fr', 2023, '4 rue des Etudes', '91400', 'Orsay', 4),
+('Richard', 'Louise', 'Feminin', '2002-05-05', 'etudiant.125@univ.fr', 2023, '5 rue des Etudes', '78000', 'Versailles', 5),
+('Durand', 'Rayan', 'Masculin', '2002-06-06', 'etudiant.126@univ.fr', 2023, '6 rue des Etudes', '92000', 'Nanterre', 6),
+('Dubois', 'Ines', 'Feminin', '2002-07-07', 'etudiant.127@univ.fr', 2023, '7 rue des Etudes', '93100', 'Montreuil', 7),
+('Morel', 'Nora', 'Masculin', '2002-08-08', 'etudiant.128@univ.fr', 2023, '8 rue des Etudes', '94000', 'Creteil', 8),
+('Girard', 'Lucas', 'Feminin', '2002-09-09', 'etudiant.129@univ.fr', 2023, '9 rue des Etudes', '77000', 'Melun', 9),
+('Garcia', 'Maya', 'Masculin', '2002-10-10', 'etudiant.130@univ.fr', 2023, '10 rue des Etudes', '95000', 'Cergy', 10),
+('Lambert', 'Sacha', 'Feminin', '2002-11-11', 'etudiant.131@univ.fr', 2023, '11 rue des Etudes', '75014', 'Paris', 11),
+('Lefebvre', 'Emma', 'Masculin', '2002-12-12', 'etudiant.132@univ.fr', 2023, '12 rue des Etudes', '91940', 'Les Ulis', 12),
+('Nguyen', 'Noah', 'Feminin', '2002-01-13', 'etudiant.133@univ.fr', 2023, '13 rue des Etudes', '91300', 'Massy', 13),
+('Lopez', 'Lea', 'Masculin', '2002-02-14', 'etudiant.134@univ.fr', 2023, '14 rue des Etudes', '91400', 'Orsay', 14),
+('Meunier', 'Paul', 'Feminin', '2002-03-15', 'etudiant.135@univ.fr', 2023, '15 rue des Etudes', '78000', 'Versailles', 15),
+('Diallo', 'Nina', 'Masculin', '2002-04-16', 'etudiant.136@univ.fr', 2023, '16 rue des Etudes', '92000', 'Nanterre', 16),
+('Fernandez', 'Adam', 'Feminin', '2002-05-17', 'etudiant.137@univ.fr', 2023, '17 rue des Etudes', '93100', 'Montreuil', 17),
+('Cohen', 'Sarah', 'Masculin', '2002-06-18', 'etudiant.138@univ.fr', 2023, '18 rue des Etudes', '94000', 'Creteil', 18),
+('Leroux', 'Eliott', 'Feminin', '2002-07-19', 'etudiant.139@univ.fr', 2023, '19 rue des Etudes', '77000', 'Melun', 19),
+('Benoit', 'Manon', 'Masculin', '2002-08-20', 'etudiant.140@univ.fr', 2023, '20 rue des Etudes', '95000', 'Cergy', 20),
+('Roy', 'Hugo', 'Feminin', '2002-09-21', 'etudiant.141@univ.fr', 2023, '21 rue des Etudes', '75014', 'Paris', 21),
+('Muller', 'Sofia', 'Masculin', '2002-10-22', 'etudiant.142@univ.fr', 2023, '22 rue des Etudes', '91940', 'Les Ulis', 22),
+('Morin', 'Tom', 'Feminin', '2002-11-23', 'etudiant.143@univ.fr', 2023, '23 rue des Etudes', '91300', 'Massy', 23),
+('Roux', 'Lina', 'Masculin', '2002-12-24', 'etudiant.144@univ.fr', 2023, '24 rue des Etudes', '91400', 'Orsay', 24),
+('Colin', 'Amir', 'Feminin', '2002-01-25', 'etudiant.145@univ.fr', 2023, '25 rue des Etudes', '78000', 'Versailles', 25),
+('Riviere', 'Zoe', 'Masculin', '2002-02-26', 'etudiant.146@univ.fr', 2023, '26 rue des Etudes', '92000', 'Nanterre', 26),
+('Laurent', 'Theo', 'Feminin', '2002-03-27', 'etudiant.147@univ.fr', 2023, '27 rue des Etudes', '93100', 'Montreuil', 27),
+('Chevalier', 'Jade', 'Masculin', '2002-04-01', 'etudiant.148@univ.fr', 2023, '28 rue des Etudes', '94000', 'Creteil', 28),
+('Fontaine', 'Mathis', 'Feminin', '2002-05-02', 'etudiant.149@univ.fr', 2023, '29 rue des Etudes', '77000', 'Melun', 29),
+('Boucher', 'Eva', 'Masculin', '2002-06-03', 'etudiant.150@univ.fr', 2023, '30 rue des Etudes', '95000', 'Cergy', 30),
+('Martin', 'Leo', 'Feminin', '2002-07-04', 'etudiant.151@univ.fr', 2023, '31 rue des Etudes', '75014', 'Paris', 31),
+('Bernard', 'Clara', 'Masculin', '2002-08-05', 'etudiant.152@univ.fr', 2023, '32 rue des Etudes', '91940', 'Les Ulis', 32),
+('Petit', 'Yanis', 'Feminin', '2002-09-06', 'etudiant.153@univ.fr', 2023, '33 rue des Etudes', '91300', 'Massy', 33),
+('Robert', 'Louise', 'Masculin', '2002-10-07', 'etudiant.154@univ.fr', 2023, '34 rue des Etudes', '91400', 'Orsay', 34),
+('Richard', 'Rayan', 'Feminin', '2002-11-08', 'etudiant.155@univ.fr', 2023, '35 rue des Etudes', '78000', 'Versailles', 35),
+('Durand', 'Ines', 'Masculin', '2002-12-09', 'etudiant.156@univ.fr', 2023, '36 rue des Etudes', '92000', 'Nanterre', 1),
+('Dubois', 'Nora', 'Feminin', '2002-01-10', 'etudiant.157@univ.fr', 2023, '37 rue des Etudes', '93100', 'Montreuil', 2),
+('Morel', 'Lucas', 'Masculin', '2002-02-11', 'etudiant.158@univ.fr', 2023, '38 rue des Etudes', '94000', 'Creteil', NULL),
+('Girard', 'Maya', 'Feminin', '2002-03-12', 'etudiant.159@univ.fr', 2023, '39 rue des Etudes', '77000', 'Melun', 4),
+('Garcia', 'Sacha', 'Masculin', '2002-04-13', 'etudiant.160@univ.fr', 2023, '40 rue des Etudes', '95000', 'Cergy', 5),
+('Lambert', 'Emma', 'Feminin', '2002-05-14', 'etudiant.161@univ.fr', 2023, '41 rue des Etudes', '75014', 'Paris', 6),
+('Lefebvre', 'Noah', 'Masculin', '2002-06-15', 'etudiant.162@univ.fr', 2023, '42 rue des Etudes', '91940', 'Les Ulis', 7),
+('Nguyen', 'Lea', 'Feminin', '2002-07-16', 'etudiant.163@univ.fr', 2023, '43 rue des Etudes', '91300', 'Massy', 8),
+('Lopez', 'Paul', 'Masculin', '2002-08-17', 'etudiant.164@univ.fr', 2023, '44 rue des Etudes', '91400', 'Orsay', 9),
+('Meunier', 'Nina', 'Feminin', '2002-09-18', 'etudiant.165@univ.fr', 2023, '45 rue des Etudes', '78000', 'Versailles', 10),
+('Diallo', 'Adam', 'Masculin', '2002-10-19', 'etudiant.166@univ.fr', 2023, '46 rue des Etudes', '92000', 'Nanterre', 11),
+('Fernandez', 'Sarah', 'Feminin', '2002-11-20', 'etudiant.167@univ.fr', 2023, '47 rue des Etudes', '93100', 'Montreuil', 12),
+('Cohen', 'Eliott', 'Masculin', '2002-12-21', 'etudiant.168@univ.fr', 2023, '48 rue des Etudes', '94000', 'Creteil', 13),
+('Leroux', 'Manon', 'Feminin', '2002-01-22', 'etudiant.169@univ.fr', 2023, '49 rue des Etudes', '77000', 'Melun', 14),
+('Benoit', 'Hugo', 'Masculin', '2002-02-23', 'etudiant.170@univ.fr', 2023, '50 rue des Etudes', '95000', 'Cergy', 15),
+('Roy', 'Sofia', 'Feminin', '2002-03-24', 'etudiant.171@univ.fr', 2023, '51 rue des Etudes', '75014', 'Paris', 16),
+('Muller', 'Tom', 'Masculin', '2002-04-25', 'etudiant.172@univ.fr', 2023, '52 rue des Etudes', '91940', 'Les Ulis', 17),
+('Morin', 'Lina', 'Feminin', '2002-05-26', 'etudiant.173@univ.fr', 2023, '53 rue des Etudes', '91300', 'Massy', 18),
+('Roux', 'Amir', 'Masculin', '2002-06-27', 'etudiant.174@univ.fr', 2023, '54 rue des Etudes', '91400', 'Orsay', 19),
+('Colin', 'Zoe', 'Feminin', '2002-07-01', 'etudiant.175@univ.fr', 2023, '55 rue des Etudes', '78000', 'Versailles', 20),
+('Riviere', 'Theo', 'Masculin', '2002-08-02', 'etudiant.176@univ.fr', 2023, '56 rue des Etudes', '92000', 'Nanterre', 21),
+('Laurent', 'Jade', 'Feminin', '2002-09-03', 'etudiant.177@univ.fr', 2023, '57 rue des Etudes', '93100', 'Montreuil', 22),
+('Chevalier', 'Mathis', 'Masculin', '2002-10-04', 'etudiant.178@univ.fr', 2023, '58 rue des Etudes', '94000', 'Creteil', 23),
+('Fontaine', 'Eva', 'Feminin', '2002-11-05', 'etudiant.179@univ.fr', 2023, '59 rue des Etudes', '77000', 'Melun', 24),
+('Boucher', 'Amina', 'Masculin', '2002-12-06', 'etudiant.180@univ.fr', 2023, '60 rue des Etudes', '95000', 'Cergy', 25),
+('Martin', 'Clara', 'Feminin', '2003-01-07', 'etudiant.181@univ.fr', 2024, '61 rue des Etudes', '75014', 'Paris', 26),
+('Bernard', 'Yanis', 'Masculin', '2003-02-08', 'etudiant.182@univ.fr', 2024, '62 rue des Etudes', '91940', 'Les Ulis', 27),
+('Petit', 'Louise', 'Feminin', '2003-03-09', 'etudiant.183@univ.fr', 2024, '63 rue des Etudes', '91300', 'Massy', 28),
+('Robert', 'Rayan', 'Masculin', '2003-04-10', 'etudiant.184@univ.fr', 2024, '64 rue des Etudes', '91400', 'Orsay', 29),
+('Richard', 'Ines', 'Feminin', '2003-05-11', 'etudiant.185@univ.fr', 2024, '65 rue des Etudes', '78000', 'Versailles', 30),
+('Durand', 'Nora', 'Masculin', '2003-06-12', 'etudiant.186@univ.fr', 2024, '66 rue des Etudes', '92000', 'Nanterre', 31),
+('Dubois', 'Lucas', 'Feminin', '2003-07-13', 'etudiant.187@univ.fr', 2024, '67 rue des Etudes', '93100', 'Montreuil', 32),
+('Morel', 'Maya', 'Masculin', '2003-08-14', 'etudiant.188@univ.fr', 2024, '68 rue des Etudes', '94000', 'Creteil', 33),
+('Girard', 'Sacha', 'Feminin', '2003-09-15', 'etudiant.189@univ.fr', 2024, '69 rue des Etudes', '77000', 'Melun', 34),
+('Garcia', 'Emma', 'Masculin', '2003-10-16', 'etudiant.190@univ.fr', 2024, '70 rue des Etudes', '95000', 'Cergy', 35),
+('Lambert', 'Noah', 'Feminin', '2003-11-17', 'etudiant.191@univ.fr', 2024, '71 rue des Etudes', '75014', 'Paris', 1),
+('Lefebvre', 'Lea', 'Masculin', '2003-12-18', 'etudiant.192@univ.fr', 2024, '72 rue des Etudes', '91940', 'Les Ulis', 2),
+('Nguyen', 'Paul', 'Feminin', '2003-01-19', 'etudiant.193@univ.fr', 2024, '73 rue des Etudes', '91300', 'Massy', 3),
+('Lopez', 'Nina', 'Masculin', '2003-02-20', 'etudiant.194@univ.fr', 2024, '74 rue des Etudes', '91400', 'Orsay', 4),
+('Meunier', 'Adam', 'Feminin', '2003-03-21', 'etudiant.195@univ.fr', 2024, '75 rue des Etudes', '78000', 'Versailles', NULL),
+('Diallo', 'Sarah', 'Masculin', '2003-04-22', 'etudiant.196@univ.fr', 2024, '76 rue des Etudes', '92000', 'Nanterre', 6),
+('Fernandez', 'Eliott', 'Feminin', '2003-05-23', 'etudiant.197@univ.fr', 2024, '77 rue des Etudes', '93100', 'Montreuil', 7),
+('Cohen', 'Manon', 'Masculin', '2003-06-24', 'etudiant.198@univ.fr', 2024, '78 rue des Etudes', '94000', 'Creteil', 8),
+('Leroux', 'Hugo', 'Feminin', '2003-07-25', 'etudiant.199@univ.fr', 2024, '79 rue des Etudes', '77000', 'Melun', 9),
+('Benoit', 'Sofia', 'Masculin', '2003-08-26', 'etudiant.200@univ.fr', 2024, '80 rue des Etudes', '95000', 'Cergy', 10),
+('Roy', 'Tom', 'Feminin', '2003-09-27', 'etudiant.201@univ.fr', 2024, '81 rue des Etudes', '75014', 'Paris', 11),
+('Muller', 'Lina', 'Masculin', '2003-10-01', 'etudiant.202@univ.fr', 2024, '82 rue des Etudes', '91940', 'Les Ulis', 12),
+('Morin', 'Amir', 'Feminin', '2003-11-02', 'etudiant.203@univ.fr', 2024, '83 rue des Etudes', '91300', 'Massy', 13),
+('Roux', 'Zoe', 'Masculin', '2003-12-03', 'etudiant.204@univ.fr', 2024, '84 rue des Etudes', '91400', 'Orsay', 14),
+('Colin', 'Theo', 'Feminin', '2003-01-04', 'etudiant.205@univ.fr', 2024, '85 rue des Etudes', '78000', 'Versailles', 15),
+('Riviere', 'Jade', 'Masculin', '2003-02-05', 'etudiant.206@univ.fr', 2024, '86 rue des Etudes', '92000', 'Nanterre', 16),
+('Laurent', 'Mathis', 'Feminin', '2003-03-06', 'etudiant.207@univ.fr', 2024, '87 rue des Etudes', '93100', 'Montreuil', 17),
+('Chevalier', 'Eva', 'Masculin', '2003-04-07', 'etudiant.208@univ.fr', 2024, '88 rue des Etudes', '94000', 'Creteil', 18),
+('Fontaine', 'Amina', 'Feminin', '2003-05-08', 'etudiant.209@univ.fr', 2024, '89 rue des Etudes', '77000', 'Melun', 19),
+('Boucher', 'Leo', 'Masculin', '2003-06-09', 'etudiant.210@univ.fr', 2024, '1 rue des Etudes', '95000', 'Cergy', 20),
+('Martin', 'Yanis', 'Feminin', '2003-07-10', 'etudiant.211@univ.fr', 2024, '2 rue des Etudes', '75014', 'Paris', 21),
+('Bernard', 'Louise', 'Masculin', '2003-08-11', 'etudiant.212@univ.fr', 2024, '3 rue des Etudes', '91940', 'Les Ulis', 22),
+('Petit', 'Rayan', 'Feminin', '2003-09-12', 'etudiant.213@univ.fr', 2024, '4 rue des Etudes', '91300', 'Massy', 23),
+('Robert', 'Ines', 'Masculin', '2003-10-13', 'etudiant.214@univ.fr', 2024, '5 rue des Etudes', '91400', 'Orsay', 24),
+('Richard', 'Nora', 'Feminin', '2003-11-14', 'etudiant.215@univ.fr', 2024, '6 rue des Etudes', '78000', 'Versailles', 25),
+('Durand', 'Lucas', 'Masculin', '2003-12-15', 'etudiant.216@univ.fr', 2024, '7 rue des Etudes', '92000', 'Nanterre', 26),
+('Dubois', 'Maya', 'Feminin', '2003-01-16', 'etudiant.217@univ.fr', 2024, '8 rue des Etudes', '93100', 'Montreuil', 27),
+('Morel', 'Sacha', 'Masculin', '2003-02-17', 'etudiant.218@univ.fr', 2024, '9 rue des Etudes', '94000', 'Creteil', 28),
+('Girard', 'Emma', 'Feminin', '2003-03-18', 'etudiant.219@univ.fr', 2024, '10 rue des Etudes', '77000', 'Melun', 29),
+('Garcia', 'Noah', 'Masculin', '2003-04-19', 'etudiant.220@univ.fr', 2024, '11 rue des Etudes', '95000', 'Cergy', 30),
+('Lambert', 'Lea', 'Feminin', '2003-05-20', 'etudiant.221@univ.fr', 2024, '12 rue des Etudes', '75014', 'Paris', 31),
+('Lefebvre', 'Paul', 'Masculin', '2003-06-21', 'etudiant.222@univ.fr', 2024, '13 rue des Etudes', '91940', 'Les Ulis', 32),
+('Nguyen', 'Nina', 'Feminin', '2003-07-22', 'etudiant.223@univ.fr', 2024, '14 rue des Etudes', '91300', 'Massy', 33),
+('Lopez', 'Adam', 'Masculin', '2003-08-23', 'etudiant.224@univ.fr', 2024, '15 rue des Etudes', '91400', 'Orsay', 34),
+('Meunier', 'Sarah', 'Feminin', '2003-09-24', 'etudiant.225@univ.fr', 2024, '16 rue des Etudes', '78000', 'Versailles', 35),
+('Diallo', 'Eliott', 'Masculin', '2003-10-25', 'etudiant.226@univ.fr', 2024, '17 rue des Etudes', '92000', 'Nanterre', 1),
+('Fernandez', 'Manon', 'Feminin', '2003-11-26', 'etudiant.227@univ.fr', 2024, '18 rue des Etudes', '93100', 'Montreuil', 2),
+('Cohen', 'Hugo', 'Masculin', '2003-12-27', 'etudiant.228@univ.fr', 2024, '19 rue des Etudes', '94000', 'Creteil', 3),
+('Leroux', 'Sofia', 'Feminin', '2003-01-01', 'etudiant.229@univ.fr', 2024, '20 rue des Etudes', '77000', 'Melun', 4),
+('Benoit', 'Tom', 'Masculin', '2003-02-02', 'etudiant.230@univ.fr', 2024, '21 rue des Etudes', '95000', 'Cergy', 5),
+('Roy', 'Lina', 'Feminin', '2003-03-03', 'etudiant.231@univ.fr', 2024, '22 rue des Etudes', '75014', 'Paris', 6),
+('Muller', 'Amir', 'Masculin', '2003-04-04', 'etudiant.232@univ.fr', 2024, '23 rue des Etudes', '91940', 'Les Ulis', NULL),
+('Morin', 'Zoe', 'Feminin', '2003-05-05', 'etudiant.233@univ.fr', 2024, '24 rue des Etudes', '91300', 'Massy', 8),
+('Roux', 'Theo', 'Masculin', '2003-06-06', 'etudiant.234@univ.fr', 2024, '25 rue des Etudes', '91400', 'Orsay', 9),
+('Colin', 'Jade', 'Feminin', '2003-07-07', 'etudiant.235@univ.fr', 2024, '26 rue des Etudes', '78000', 'Versailles', 10),
+('Riviere', 'Mathis', 'Masculin', '2003-08-08', 'etudiant.236@univ.fr', 2024, '27 rue des Etudes', '92000', 'Nanterre', 11),
+('Laurent', 'Eva', 'Feminin', '2003-09-09', 'etudiant.237@univ.fr', 2024, '28 rue des Etudes', '93100', 'Montreuil', 12),
+('Chevalier', 'Amina', 'Masculin', '2003-10-10', 'etudiant.238@univ.fr', 2024, '29 rue des Etudes', '94000', 'Creteil', 13),
+('Fontaine', 'Leo', 'Feminin', '2003-11-11', 'etudiant.239@univ.fr', 2024, '30 rue des Etudes', '77000', 'Melun', 14),
+('Boucher', 'Clara', 'Masculin', '2003-12-12', 'etudiant.240@univ.fr', 2024, '31 rue des Etudes', '95000', 'Cergy', 15),
+('Martin', 'Louise', 'Feminin', '2004-01-13', 'etudiant.241@univ.fr', 2025, '32 rue des Etudes', '75014', 'Paris', 16),
+('Bernard', 'Rayan', 'Masculin', '2004-02-14', 'etudiant.242@univ.fr', 2025, '33 rue des Etudes', '91940', 'Les Ulis', 17),
+('Petit', 'Ines', 'Feminin', '2004-03-15', 'etudiant.243@univ.fr', 2025, '34 rue des Etudes', '91300', 'Massy', 18),
+('Robert', 'Nora', 'Masculin', '2004-04-16', 'etudiant.244@univ.fr', 2025, '35 rue des Etudes', '91400', 'Orsay', 19),
+('Richard', 'Lucas', 'Feminin', '2004-05-17', 'etudiant.245@univ.fr', 2025, '36 rue des Etudes', '78000', 'Versailles', 20),
+('Durand', 'Maya', 'Masculin', '2004-06-18', 'etudiant.246@univ.fr', 2025, '37 rue des Etudes', '92000', 'Nanterre', 21),
+('Dubois', 'Sacha', 'Feminin', '2004-07-19', 'etudiant.247@univ.fr', 2025, '38 rue des Etudes', '93100', 'Montreuil', 22),
+('Morel', 'Emma', 'Masculin', '2004-08-20', 'etudiant.248@univ.fr', 2025, '39 rue des Etudes', '94000', 'Creteil', 23),
+('Girard', 'Noah', 'Feminin', '2004-09-21', 'etudiant.249@univ.fr', 2025, '40 rue des Etudes', '77000', 'Melun', 24),
+('Garcia', 'Lea', 'Masculin', '2004-10-22', 'etudiant.250@univ.fr', 2025, '41 rue des Etudes', '95000', 'Cergy', 25),
+('Lambert', 'Paul', 'Feminin', '2004-11-23', 'etudiant.251@univ.fr', 2025, '42 rue des Etudes', '75014', 'Paris', 26),
+('Lefebvre', 'Nina', 'Masculin', '2004-12-24', 'etudiant.252@univ.fr', 2025, '43 rue des Etudes', '91940', 'Les Ulis', 27),
+('Nguyen', 'Adam', 'Feminin', '2004-01-25', 'etudiant.253@univ.fr', 2025, '44 rue des Etudes', '91300', 'Massy', 28),
+('Lopez', 'Sarah', 'Masculin', '2004-02-26', 'etudiant.254@univ.fr', 2025, '45 rue des Etudes', '91400', 'Orsay', 29),
+('Meunier', 'Eliott', 'Feminin', '2004-03-27', 'etudiant.255@univ.fr', 2025, '46 rue des Etudes', '78000', 'Versailles', 30),
+('Diallo', 'Manon', 'Masculin', '2004-04-01', 'etudiant.256@univ.fr', 2025, '47 rue des Etudes', '92000', 'Nanterre', 31),
+('Fernandez', 'Hugo', 'Feminin', '2004-05-02', 'etudiant.257@univ.fr', 2025, '48 rue des Etudes', '93100', 'Montreuil', 32),
+('Cohen', 'Sofia', 'Masculin', '2004-06-03', 'etudiant.258@univ.fr', 2025, '49 rue des Etudes', '94000', 'Creteil', 33),
+('Leroux', 'Tom', 'Feminin', '2004-07-04', 'etudiant.259@univ.fr', 2025, '50 rue des Etudes', '77000', 'Melun', 34),
+('Benoit', 'Lina', 'Masculin', '2004-08-05', 'etudiant.260@univ.fr', 2025, '51 rue des Etudes', '95000', 'Cergy', 35),
+('Roy', 'Amir', 'Feminin', '2004-09-06', 'etudiant.261@univ.fr', 2025, '52 rue des Etudes', '75014', 'Paris', 1),
+('Muller', 'Zoe', 'Masculin', '2004-10-07', 'etudiant.262@univ.fr', 2025, '53 rue des Etudes', '91940', 'Les Ulis', 2),
+('Morin', 'Theo', 'Feminin', '2004-11-08', 'etudiant.263@univ.fr', 2025, '54 rue des Etudes', '91300', 'Massy', 3),
+('Roux', 'Jade', 'Masculin', '2004-12-09', 'etudiant.264@univ.fr', 2025, '55 rue des Etudes', '91400', 'Orsay', 4),
+('Colin', 'Mathis', 'Feminin', '2004-01-10', 'etudiant.265@univ.fr', 2025, '56 rue des Etudes', '78000', 'Versailles', 5),
+('Riviere', 'Eva', 'Masculin', '2004-02-11', 'etudiant.266@univ.fr', 2025, '57 rue des Etudes', '92000', 'Nanterre', 6),
+('Laurent', 'Amina', 'Feminin', '2004-03-12', 'etudiant.267@univ.fr', 2025, '58 rue des Etudes', '93100', 'Montreuil', 7),
+('Chevalier', 'Leo', 'Masculin', '2004-04-13', 'etudiant.268@univ.fr', 2025, '59 rue des Etudes', '94000', 'Creteil', 8),
+('Fontaine', 'Clara', 'Feminin', '2004-05-14', 'etudiant.269@univ.fr', 2025, '60 rue des Etudes', '77000', 'Melun', NULL),
+('Boucher', 'Yanis', 'Masculin', '2004-06-15', 'etudiant.270@univ.fr', 2025, '61 rue des Etudes', '95000', 'Cergy', 10),
+('Martin', 'Rayan', 'Feminin', '2004-07-16', 'etudiant.271@univ.fr', 2025, '62 rue des Etudes', '75014', 'Paris', 11),
+('Bernard', 'Ines', 'Masculin', '2004-08-17', 'etudiant.272@univ.fr', 2025, '63 rue des Etudes', '91940', 'Les Ulis', 12),
+('Petit', 'Nora', 'Feminin', '2004-09-18', 'etudiant.273@univ.fr', 2025, '64 rue des Etudes', '91300', 'Massy', 13),
+('Robert', 'Lucas', 'Masculin', '2004-10-19', 'etudiant.274@univ.fr', 2025, '65 rue des Etudes', '91400', 'Orsay', 14),
+('Richard', 'Maya', 'Feminin', '2004-11-20', 'etudiant.275@univ.fr', 2025, '66 rue des Etudes', '78000', 'Versailles', 15),
+('Durand', 'Sacha', 'Masculin', '2004-12-21', 'etudiant.276@univ.fr', 2025, '67 rue des Etudes', '92000', 'Nanterre', 16),
+('Dubois', 'Emma', 'Feminin', '2004-01-22', 'etudiant.277@univ.fr', 2025, '68 rue des Etudes', '93100', 'Montreuil', 17),
+('Morel', 'Noah', 'Masculin', '2004-02-23', 'etudiant.278@univ.fr', 2025, '69 rue des Etudes', '94000', 'Creteil', 18),
+('Girard', 'Lea', 'Feminin', '2004-03-24', 'etudiant.279@univ.fr', 2025, '70 rue des Etudes', '77000', 'Melun', 19),
+('Garcia', 'Paul', 'Masculin', '2004-04-25', 'etudiant.280@univ.fr', 2025, '71 rue des Etudes', '95000', 'Cergy', 20),
+('Lambert', 'Nina', 'Feminin', '2004-05-26', 'etudiant.281@univ.fr', 2025, '72 rue des Etudes', '75014', 'Paris', 21),
+('Lefebvre', 'Adam', 'Masculin', '2004-06-27', 'etudiant.282@univ.fr', 2025, '73 rue des Etudes', '91940', 'Les Ulis', 22),
+('Nguyen', 'Sarah', 'Feminin', '2004-07-01', 'etudiant.283@univ.fr', 2025, '74 rue des Etudes', '91300', 'Massy', 23),
+('Lopez', 'Eliott', 'Masculin', '2004-08-02', 'etudiant.284@univ.fr', 2025, '75 rue des Etudes', '91400', 'Orsay', 24),
+('Meunier', 'Manon', 'Feminin', '2004-09-03', 'etudiant.285@univ.fr', 2025, '76 rue des Etudes', '78000', 'Versailles', 25),
+('Diallo', 'Hugo', 'Masculin', '2004-10-04', 'etudiant.286@univ.fr', 2025, '77 rue des Etudes', '92000', 'Nanterre', 26),
+('Fernandez', 'Sofia', 'Feminin', '2004-11-05', 'etudiant.287@univ.fr', 2025, '78 rue des Etudes', '93100', 'Montreuil', 27),
+('Cohen', 'Tom', 'Masculin', '2004-12-06', 'etudiant.288@univ.fr', 2025, '79 rue des Etudes', '94000', 'Creteil', 28),
+('Leroux', 'Lina', 'Feminin', '2004-01-07', 'etudiant.289@univ.fr', 2025, '80 rue des Etudes', '77000', 'Melun', 29),
+('Benoit', 'Amir', 'Masculin', '2004-02-08', 'etudiant.290@univ.fr', 2025, '81 rue des Etudes', '95000', 'Cergy', 30),
+('Roy', 'Zoe', 'Feminin', '2004-03-09', 'etudiant.291@univ.fr', 2025, '82 rue des Etudes', '75014', 'Paris', 31),
+('Muller', 'Theo', 'Masculin', '2004-04-10', 'etudiant.292@univ.fr', 2025, '83 rue des Etudes', '91940', 'Les Ulis', 32),
+('Morin', 'Jade', 'Feminin', '2004-05-11', 'etudiant.293@univ.fr', 2025, '84 rue des Etudes', '91300', 'Massy', 33),
+('Roux', 'Mathis', 'Masculin', '2004-06-12', 'etudiant.294@univ.fr', 2025, '85 rue des Etudes', '91400', 'Orsay', 34),
+('Colin', 'Eva', 'Feminin', '2004-07-13', 'etudiant.295@univ.fr', 2025, '86 rue des Etudes', '78000', 'Versailles', 35),
+('Riviere', 'Amina', 'Masculin', '2004-08-14', 'etudiant.296@univ.fr', 2025, '87 rue des Etudes', '92000', 'Nanterre', 1),
+('Laurent', 'Leo', 'Feminin', '2004-09-15', 'etudiant.297@univ.fr', 2025, '88 rue des Etudes', '93100', 'Montreuil', 2),
+('Chevalier', 'Clara', 'Masculin', '2004-10-16', 'etudiant.298@univ.fr', 2025, '89 rue des Etudes', '94000', 'Creteil', 3),
+('Fontaine', 'Yanis', 'Feminin', '2004-11-17', 'etudiant.299@univ.fr', 2025, '1 rue des Etudes', '77000', 'Melun', 4),
+('Boucher', 'Louise', 'Masculin', '2004-12-18', 'etudiant.300@univ.fr', 2025, '2 rue des Etudes', '95000', 'Cergy', 5);
+
+-- Profils : 2 etudiants sans cours, 2 avec deux cours, autres 9 a 13.
+-- Pas de filtre par semestre ; cours 24 et 25 volontairement moins suivis.
+WITH RECURSIVE rang(n) AS (SELECT 0 UNION ALL SELECT n+1 FROM rang WHERE n<12), candidats AS (
+ SELECT e.id_etudiant, e.annee_inscription, r.n,
+        ((e.id_etudiant * 7 + r.n * 3) % 25) + 1 AS id_cours
+ FROM etudiants e CROSS JOIN rang r
+ WHERE e.id_etudiant>2
+   AND r.n < CASE WHEN e.id_etudiant IN (3,4) THEN 2 ELSE 9 + e.id_etudiant % 5 END
 )
-INSERT INTO inscriptions (id_etudiant, id_cours, date_inscription, statut)
-SELECT e.id_etudiant, ((e.id_etudiant - 1 + r.n) % 20) + 1,
- printf('%04d-09-%02d', e.annee_inscription, 1 + r.n),
- CASE WHEN (e.id_etudiant + r.n) % 41 = 0 THEN 'annule'
-      WHEN (e.id_etudiant + r.n) % 29 = 0 THEN 'abandon'
-      WHEN (e.id_etudiant + r.n) % 31 = 0 THEN 'en attente'
-      WHEN (e.id_etudiant + r.n) % 7 = 0 THEN 'valide'
+INSERT INTO inscriptions (id_etudiant,id_cours,date_inscription,statut)
+SELECT id_etudiant,id_cours,printf('%04d-09-%02d',annee_inscription,1+n),
+ CASE WHEN (id_etudiant+n)%43=0 THEN 'annule'
+      WHEN (id_etudiant+n)%31=0 THEN 'abandon'
+      WHEN (id_etudiant+n)%37=0 THEN 'en attente'
+      WHEN (id_etudiant+n)%6=0 THEN 'valide'
       ELSE 'en cours' END
-FROM etudiants e CROSS JOIN rang r
-WHERE r.n < 8 + e.id_etudiant % 5;
+FROM candidats
+WHERE id_cours<24 OR (id_cours=24 AND id_etudiant%2=0)
+ OR (id_cours=25 AND id_etudiant%4=0);
 
--- Notes : 0 a 3 evaluations, selon le statut et l'inscription.
--- Le NULL signifie une evaluation prevue mais pas encore notee.
-INSERT INTO notes (id_inscription, type_evaluation, note, coeff, date_evaluation)
-SELECT i.id_inscription, 'Controle continu',
- CASE WHEN i.statut = 'en cours' AND i.id_inscription % 13 = 0 THEN NULL
-      ELSE 5.0 + ((i.id_inscription * 7) % 151) / 10.0 END,
- 1, substr(i.date_inscription, 1, 4) || '-11-15'
-FROM inscriptions i
-WHERE i.statut = 'valide' OR (i.statut = 'en cours' AND i.id_inscription % 11 <> 0);
+-- Zero, une, deux ou trois evaluations par inscription ; notes NULL a dessein.
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Controle continu',
+ CASE WHEN statut='en cours' AND id_inscription%13=0 THEN NULL
+      ELSE 4.0+((id_inscription*7)%161)/10.0 END,
+ 1,substr(date_inscription,1,4)||'-11-15'
+FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0);
 
-INSERT INTO notes (id_inscription, type_evaluation, note, coeff, date_evaluation)
-SELECT i.id_inscription, 'Examen final',
- 3.0 + ((i.id_inscription * 11) % 171) / 10.0,
- 2, substr(i.date_inscription, 1, 4) || '-12-18'
-FROM inscriptions i
-WHERE i.statut = 'valide'
- OR (i.statut = 'en cours' AND i.id_inscription % 11 <> 0 AND i.id_inscription % 7 <> 0);
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Examen final',3.0+((id_inscription*11)%171)/10.0,
+ 2,substr(date_inscription,1,4)||'-12-18'
+FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0 AND id_inscription%7<>0);
 
-INSERT INTO notes (id_inscription, type_evaluation, note, coeff, date_evaluation)
-SELECT i.id_inscription, 'Projet', 6.0 + ((i.id_inscription * 3) % 141) / 10.0,
- 1.5, substr(i.date_inscription, 1, 4) || '-12-05'
-FROM inscriptions i
-WHERE i.statut = 'valide' AND i.id_inscription % 9 = 0;
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Projet',6.0+((id_inscription*3)%141)/10.0,
+ 1.5,substr(date_inscription,1,4)||'-12-05'
+FROM inscriptions WHERE statut='valide' AND id_inscription%9=0;
