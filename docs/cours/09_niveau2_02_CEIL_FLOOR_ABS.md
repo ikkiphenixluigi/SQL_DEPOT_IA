@@ -109,23 +109,23 @@ FROM notes;
 ### Exercice 2.3 (4 questions)
 
 1. Arrondis les notes au superieur.
-2. Calcule le nombre de groupes necessaires (20 etudiants par groupe).
-3. Ajoute 50% aux credits et arrondis au superieur.
+2. Pour chaque salle informatique, affiche son numero, son nombre de places et le nombre de groupes de 5 personnes necessaires pour remplir la salle. Utilise CEIL sur la division par 5.0.
+3. Pour chaque cours d'au moins 4 credits, affiche son code, ses credits et ses credits augmentes de 50 % puis arrondis a l'entier superieur.
 4. Divise les notes par 5 et arrondis au superieur.
 
 ### Exercice 2.4 (4 questions)
 
 1. Arrondis les notes a l'inferieur.
-2. Calcule le nombre de dizaines de credits.
+2. Pour chaque cours, affiche son code, ses credits et le nombre de groupes complets de 2 credits obtenu avec FLOOR(credits / 2.0).
 3. Divise les notes par 2 et arrondis a l'inferieur.
 4. Affiche le plafond et le plancher des notes.
 
 ### Exercice 2.5 (4 questions)
 
 1. Calcule l'ecart a 10 pour chaque note.
-2. Calcule l'ecart a la moyenne pour chaque note.
+2. Pour les notes inferieures a 12, affiche la note et son ecart absolu par rapport a 12.
 3. Calcule l'ecart a 5 pour les credits.
-4. Calcule l'ecart a 10 pour chaque note.
+4. Pour les notes superieures a 10, affiche la note, sa difference avec 12 et la valeur absolue de cette difference.
 
 ---
 
@@ -137,4 +137,4 @@ FROM notes;
 
 ---
 
-**Prochain cours :** POWER, SQRT (fonctions numeriques)
+**Prochain cours :** POWER, SQRT
