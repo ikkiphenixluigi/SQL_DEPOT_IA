@@ -10,10 +10,11 @@
 
 ## Introduction
 
-Ce cours presente SUBSTR et REPLACE.
+Ce cours presente SUBSTR, INSTR et REPLACE.
 
 **Objectifs :**
 - Extraire des sous-chaines avec SUBSTR
+- Reperer un caractere avec INSTR
 - Remplacer du texte avec REPLACE
 
 ---
@@ -61,7 +62,32 @@ FROM etudiants;
 
 ---
 
-## 2. REPLACE (remplacement)
+## 2. INSTR (reperer un caractere)
+
+### Definition
+
+`INSTR(texte, motif)` indique la position de la premiere occurrence du motif, en comptant a partir de 1. Si le motif est absent, la fonction renvoie 0. On peut utiliser cette position dans `SUBSTR` pour extraire un texte de longueur variable.
+
+**Exemple :** Dans `thomas.bernard@univ.fr`, le point se trouve avant `@` ; les adresses du projet suivent le format `prenom.nom@univ.fr`.
+
+**Question :** Extraire le prenom avant le premier point et le domaine apres `@`.
+
+**Requete :**
+```sql
+SELECT email,
+       SUBSTR(email, 1, INSTR(email, '.') - 1) AS prenom,
+       SUBSTR(email, INSTR(email, '@') + 1) AS domaine
+FROM etudiants;
+```
+
+**Explication :**
+- `INSTR(email, '.') - 1` : longueur du prenom avant le point.
+- `INSTR(email, '@') + 1` : position du premier caractere apres `@`.
+- `SUBSTR(email, depart)` sans troisieme argument extrait jusqu'a la fin.
+
+---
+
+## 3. REPLACE (remplacement)
 
 ### Definition
 
@@ -116,4 +142,4 @@ FROM etudiants;
 
 ---
 
-**Prochain cours :** TRIM et concatenation (fonctions texte)
+**Prochain cours :** TRIM et concatenation
