@@ -4,7 +4,7 @@
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : HAVING + syntaxe](19_niveau3_03_HAVING_syntaxe.md)
-- [Niveau 4 - Cours suivant : JOIN base](21_niveau4_01_JOIN_base.md)
+- [Niveau 4 - Cours suivant : JOIN base](23_niveau4_01_JOIN_base.md)
 
 ---
 
@@ -24,43 +24,43 @@ Ce test permet de verifier ta comprehension des concepts du NIVEAU 3.
 
 ### Question 1
 
-Compte le nombre total d'etudiants.
+Combien d'etudiants se sont inscrits en 2025, et combien resident a Paris ? Fournis ces deux resultats dans deux colonnes d'une seule ligne.
 
 ### Question 2
 
-Trouve la note minimale et maximale.
+Parmi les examens finaux, affiche la note la plus basse, la plus haute et la moyenne arrondie a deux decimales.
 
 ### Question 3
 
-Calcule la moyenne generale des notes.
+Combien de places les salles informatiques offrent-elles au total, et quelle est leur capacite moyenne arrondie a une decimale ?
 
 ### Question 4
 
-Calcule le total des credits.
+Presente chaque annee d'inscription des etudiants avec son effectif, de l'annee la plus recente a la plus ancienne.
 
 ### Question 5
 
-Compte les etudiants par ville.
+Pour chaque semestre, affiche le nombre de cours, le total de credits et le nombre moyen de credits, arrondi a une decimale.
 
 ### Question 6
 
-Calcule la moyenne des notes par cours.
+Pour chaque type d'evaluation, affiche l'effectif, la note minimale, la note maximale et la moyenne arrondie a deux decimales.
 
 ### Question 7
 
-Trouve les lycees avec plus de 5 etudiants.
+Quelles villes comptent au moins deux etudiants inscrits en 2024 ? Affiche leur effectif, decroissant, puis le nom de la ville.
 
 ### Question 8
 
-Trouve les cours avec une moyenne superieure a 10.
+Quels etages ont une capacite moyenne d'au moins 16 places par salle ? Affiche le nombre de salles et cette moyenne.
 
 ### Question 9
 
-Affiche les 5 cours avec le plus de credits.
+Quels statuts representent au moins dix inscriptions enregistrees en 2025 ? Affiche chaque statut et son effectif, du plus eleve au plus faible.
 
 ### Question 10
 
-Ecris une requete complete avec SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT.
+Un responsable veut connaitre les cinq identifiants de salle les plus utilises pour des seances en semaine. Ne retiens que les salles ayant accueilli au moins trois de ces seances ; affiche l'identifiant et le nombre de seances, puis departage les egalites par identifiant croissant.
 
 ---
 
@@ -97,7 +97,7 @@ Si tu as reussi ce test, tu peux passer au **Niveau 4** !
 
 - [Retour au SOMMAIRE](../SOMMAIRE.md)
 - [Cours precedent : HAVING + syntaxe](19_niveau3_03_HAVING_syntaxe.md)
-- [Niveau 4 - JOIN base](21_niveau4_01_JOIN_base.md)
+- [Niveau 4 - JOIN base](23_niveau4_01_JOIN_base.md)
 
 ---
 

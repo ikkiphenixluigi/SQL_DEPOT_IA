@@ -50,20 +50,20 @@ GROUP BY ville;
 
 ### Exemple 2 : GROUP BY avec AVG
 
-**Question :** Calculer la moyenne des notes par cours.
+**Question :** Calculer la moyenne des notes par type d'evaluation.
 
 **Requete :**
 ```sql
-SELECT id_cours, AVG(note) AS moyenne
+SELECT type_evaluation, AVG(note) AS moyenne
 FROM notes
-GROUP BY id_cours;
+GROUP BY type_evaluation;
 ```
 
 **Explication :**
-- `GROUP BY id_cours` : groupe par cours
+- `GROUP BY type_evaluation` : groupe les notes par type d'evaluation
 - `AVG(note)` : moyenne par groupe
 
-**Resultat :** Moyenne par cours.
+**Resultat :** Moyenne par type d'evaluation, sans jointure.
 
 ---
 
@@ -71,24 +71,24 @@ GROUP BY id_cours;
 
 ### Exemple 1 : COUNT, MIN, MAX, AVG
 
-**Question :** Calculer les stats des notes par cours.
+**Question :** Calculer les stats des notes par type d'evaluation.
 
 **Requete :**
 ```sql
-SELECT id_cours,
+SELECT type_evaluation,
     COUNT(*) AS nb_notes,
     MIN(note) AS note_min,
     MAX(note) AS note_max,
     AVG(note) AS moyenne
 FROM notes
-GROUP BY id_cours;
+GROUP BY type_evaluation;
 ```
 
 **Explication :**
-- `GROUP BY id_cours` : groupe par cours
+- `GROUP BY type_evaluation` : groupe par type d'evaluation
 - Plusieurs agregats dans le SELECT
 
-**Resultat :** Stats par cours.
+**Resultat :** Stats par type d'evaluation.
 
 ---
 
@@ -96,27 +96,27 @@ GROUP BY id_cours;
 
 ### Exercice 3.6 (5 questions)
 
-1. Compte les etudiants par ville.
-2. Compte les cours par semestre.
-3. Compte les enseignants par departement.
-4. Compte les etudiants par annee d'inscription.
-5. Compte les salles par etage.
+1. L'administration veut voir dans quelles villes resident les etudiants. Affiche chaque ville avec son nombre d'etudiants, de la plus representee a la moins representee.
+2. Affiche, pour chacune des annees d'inscription presentes, le nombre d'etudiants inscrits. Classe les annees de la plus recente a la plus ancienne.
+3. Prepare un tableau donnant, pour chaque semestre, le nombre de cours et le total des credits correspondants. Classe les semestres dans l'ordre croissant.
+4. Combien de salles trouve-t-on a chaque etage, et combien de places offrent-elles au total ? Classe les etages dans l'ordre croissant.
+5. Pour chaque statut d'inscription, indique le nombre de lignes concernees. Classe les statuts par effectif decroissant, puis par nom de statut croissant.
 
 ### Exercice 3.7 (5 questions)
 
-1. Calcule la moyenne des notes par cours.
-2. Calcule la moyenne des notes par type d'evaluation.
-3. Calcule la moyenne des credits par semestre.
-4. Calcule l'age moyen par ville.
-5. Calcule la moyenne des notes pour les evaluations avec coeff 2.
+1. Les examens finaux sont-ils notes comme les controles continus ? Affiche, pour chaque type d'evaluation, son nombre de notes et sa moyenne arrondie a deux decimales.
+2. Pour chaque semestre, indique combien de cours sont proposes et leur nombre moyen de credits, arrondi a une decimale.
+3. Compare les capacites des differents etages : affiche, pour chacun, le nombre de salles et la capacite moyenne arrondie a une decimale.
+4. Compare les notes selon leur coefficient : affiche chaque coefficient, le nombre d'evaluations et la note moyenne arrondie a deux decimales.
+5. En ne retenant que les notes d'au moins 10, affiche pour chaque type d'evaluation le nombre de notes conservees et leur moyenne arrondie a deux decimales.
 
 ### Exercice 3.8 (5 questions)
 
-1. Calcule les stats (total, min, max, moyenne) des notes par cours.
-2. Calcule les stats des credits par semestre.
-3. Calcule les stats des places par etage.
-4. Calcule les stats des coefficients par type d'evaluation.
-5. Calcule les stats completes des notes par type d'evaluation.
+1. Etablis, pour chaque type d'evaluation, un bilan comprenant le nombre de notes, la note minimale, la maximale et la moyenne arrondie a deux decimales.
+2. Etablis, pour chaque semestre, le nombre de cours, le total de leurs credits, ainsi que le minimum et le maximum de credits.
+3. Pour chaque etage, affiche le nombre de salles, le nombre total de places et la capacite moyenne arrondie a une decimale.
+4. Pour chaque statut d'inscription, affiche le nombre d'inscriptions et la date d'inscription la plus ancienne et la plus recente.
+5. Pour chaque annee d'inscription des etudiants, affiche l'effectif et les dates de naissance la plus ancienne et la plus recente.
 
 ---
 

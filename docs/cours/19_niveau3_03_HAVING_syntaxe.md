@@ -34,39 +34,39 @@ HAVING condition;
 
 ### Exemple 1 : HAVING + COUNT
 
-**Question :** Trouver les lycees avec plus de 10 etudiants.
+**Question :** Trouver les villes avec au moins deux etudiants.
 
 **Requete :**
 ```sql
-SELECT id_lycee, COUNT(*) AS nb_etudiants
+SELECT ville, COUNT(*) AS nb_etudiants
 FROM etudiants
-GROUP BY id_lycee
-HAVING COUNT(*) > 10;
+GROUP BY ville
+HAVING COUNT(*) >= 2;
 ```
 
 **Explication :**
-- `GROUP BY id_lycee` : groupe par lycee
-- `HAVING COUNT(*) > 10` : filtre les groupes
+- `GROUP BY ville` : groupe par ville
+- `HAVING COUNT(*) >= 2` : garde les villes avec au moins deux etudiants
 
-**Resultat :** Lycees avec plus de 10 etudiants.
+**Resultat :** Villes avec au moins deux etudiants.
 
 ### Exemple 2 : HAVING + AVG
 
-**Question :** Trouver les cours avec une moyenne superieure a 12.
+**Question :** Trouver les types d'evaluation avec une moyenne superieure a 10.
 
 **Requete :**
 ```sql
-SELECT id_cours, AVG(note) AS moyenne
+SELECT type_evaluation, AVG(note) AS moyenne
 FROM notes
-GROUP BY id_cours
-HAVING AVG(note) > 12;
+GROUP BY type_evaluation
+HAVING AVG(note) > 10;
 ```
 
 **Explication :**
-- `GROUP BY id_cours` : groupe par cours
-- `HAVING AVG(note) > 12` : filtre les groupes
+- `GROUP BY type_evaluation` : groupe par type d'evaluation sans jointure
+- `HAVING AVG(note) > 10` : filtre les groupes
 
-**Resultat :** Cours avec moyenne > 12.
+**Resultat :** Types d'evaluation avec moyenne superieure a 10.
 
 ---
 
@@ -76,7 +76,7 @@ HAVING AVG(note) > 12;
 
 ```sql
 SELECT attributs, calculs, agregats
-FROM tables
+FROM table
 WHERE conditions
 GROUP BY attributs
 HAVING conditions
@@ -86,8 +86,8 @@ LIMIT nombre;
 
 ### Ordre d'execution
 
-1. **FROM** (tables)
-2. **WHERE** (filtrage)
+1. **FROM** (table)
+2. **WHERE** (filtrage des lignes)
 3. **GROUP BY** (groupement)
 4. **HAVING** (filtrage des groupes)
 5. **SELECT** (selection)
@@ -96,7 +96,7 @@ LIMIT nombre;
 
 ### Exemple complet
 
-**Question :** Afficher les villes avec plus de 5 etudiants, trie par nombre d'etudiants.
+**Question :** Afficher les villes avec plus de 5 etudiants, triees par nombre d'etudiants.
 
 **Requete :**
 ```sql
@@ -118,7 +118,7 @@ LIMIT 10;
 6. ORDER BY nb_etudiants DESC
 7. LIMIT 10
 
-**Resultat :** Top 10 des villes avec plus de 5 etudiants.
+**Resultat :** Villes avec plus de 5 etudiants (Paris dans les donnees fournies).
 
 ---
 
@@ -126,26 +126,26 @@ LIMIT 10;
 
 ### Exercice 3.9 (5 questions)
 
-1. Trouve les lycees avec plus de 10 etudiants.
-2. Trouve les cours avec plus de 8 notes.
-3. Trouve les etudiants avec plus de 2 inscriptions.
-4. Trouve les salles avec plus de 3 seances.
-5. Trouve les enseignants avec plus de 2 cours.
+1. Quelles villes comptent au moins deux etudiants ? Affiche la ville et son effectif, de l'effectif le plus eleve au plus faible.
+2. Quels semestres proposent au moins deux cours ? Affiche le semestre, le nombre de cours et le total de leurs credits.
+3. Parmi les salles utilisees pour les seances, quels identifiants de salle apparaissent dans au moins trois seances ? Affiche chaque identifiant et son nombre de seances, sans chercher le numero de salle dans une autre table.
+4. Quels statuts d'inscription representent plus de cinq inscriptions ? Affiche le statut et son effectif decroissant.
+5. En ne considerant que les etudiants inscrits en 2024, quelles villes comptent au moins deux de ces etudiants ? Affiche les villes retenues et leurs effectifs.
 
 ### Exercice 3.10 (5 questions)
 
-1. Trouve les cours avec une moyenne superieure a 12.
-2. Trouve les cours avec une moyenne inferieure a 8.
-3. Trouve les types d'evaluation avec une moyenne superieure a 10.
-4. Trouve les semestres avec une moyenne de credits superieure a 4.
-5. Trouve les departements avec une moyenne d'heures theoriques superieure a 20.
+1. Quels semestres ont des cours dont le nombre moyen de credits atteint au moins 4 ? Affiche le semestre et cette moyenne, arrondie a une decimale.
+2. Parmi les controles continus et examens finaux, quels types d'evaluation ont une note moyenne superieure a 10 ? Affiche le type, l'effectif et la moyenne arrondie a deux decimales.
+3. Quels etages presentent une capacite moyenne d'au moins 16 places par salle ? Affiche l'etage, le nombre de salles et cette moyenne.
+4. En ne conservant que les cours du premier semestre, quels identifiants d'enseignant sont associes a un total d'au moins 20 heures theoriques ? Affiche l'identifiant et la somme des heures, sans chercher le nom de l'enseignant.
+5. Pour chaque coefficient d'evaluation, calcule la moyenne des notes ; ne garde que les coefficients dont la moyenne atteint au moins 10. Affiche aussi le nombre de notes concernees.
 
 ### Exercice 3.11 (4 questions)
 
-1. Ecris la syntaxe complete avec SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, LIMIT.
-2. Explique l'ordre d'execution des clauses.
-3. Quelle est la difference entre WHERE et HAVING ?
-4. Dans quel ordre executes-tu FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT ?
+1. Pour preparer l'accueil des etudiants, affiche les cinq villes comptant le plus d'etudiants parmi ceux inscrits en 2024, a condition que chaque ville retenue en compte au moins deux. Affiche la ville et l'effectif ; departage les egalites par ville croissante.
+2. Pour chaque semestre, calcule le nombre de cours et le total de credits des seuls cours valant au moins 4 credits. Ne conserve que les semestres reunissant au moins deux de ces cours ; classe-les par total de credits decroissant.
+3. Parmi les seances qui se deroulent du lundi au vendredi, affiche les identifiants des salles utilisees au moins trois fois. Indique le nombre de seances par salle et classe-les de la plus utilisee a la moins utilisee.
+4. En ne retenant que les evaluations de coefficient 2, affiche chaque type d'evaluation avec son effectif et sa moyenne arrondie a deux decimales. Garde les types ayant au moins dix evaluations et une moyenne d'au moins 10 ; trie par moyenne decroissante.
 
 ---
 
