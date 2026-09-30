@@ -2,8 +2,8 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 3 - Test](22_niveau3_TEST.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
+- [Niveau 3 - Test](20_niveau3_TEST.md)
 - [Cours suivant : JOIN multiple](24_niveau4_02_JOIN_multiple.md)
 
 ---
@@ -68,21 +68,21 @@ FROM table alias
 
 ### Exemple 1 : Alias avec AS
 
-**Question :** Afficher les notes avec les noms de cours.
+**Question :** Afficher les cours avec le nom de leur enseignant.
 
 **Requete :**
 ```sql
-SELECT c.nom_cours, n.note
+SELECT c.code_cours, c.nom_cours, ens.nom AS nom_enseignant
 FROM cours AS c
-INNER JOIN notes AS n ON c.id_cours = n.id_cours;
+INNER JOIN enseignants AS ens ON c.id_enseignant = ens.id_enseignant;
 ```
 
 **Explication :**
-- `cours AS c` : alias 'c' pour cours
-- `notes AS n` : alias 'n' pour notes
-- Plus court a ecrire dans la requete
+- `cours AS c` et `enseignants AS ens` donnent des noms courts aux deux tables
+- `ON c.id_enseignant = ens.id_enseignant` relie les colonnes presentes dans les deux tables
+- `AS nom_enseignant` renomme la colonne affichee
 
-**Resultat :** Notes avec noms de cours.
+**Resultat :** Cours avec le nom de leur enseignant.
 
 ---
 
@@ -107,8 +107,8 @@ INNER JOIN notes AS n ON c.id_cours = n.id_cours;
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 3 - Test](22_niveau3_TEST.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
+- [Niveau 3 - Test](20_niveau3_TEST.md)
 - [Cours suivant : JOIN multiple](24_niveau4_02_JOIN_multiple.md)
 
 ---
