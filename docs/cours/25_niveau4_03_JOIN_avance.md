@@ -109,18 +109,18 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 
 ### Exercice 4.6 (4 questions)
 
-1. Affiche les cours uniques qui ont des notes.
-2. Affiche les combinaisons uniques etudiant/cours.
-3. Affiche les lycees uniques avec des etudiants.
-4. Affiche les enseignants uniques avec des cours.
+1. Pour les cours qui possedent des notes d'au moins 10, affiche chaque code et nom de cours une seule fois. Trie les codes croissants.
+2. Affiche une seule fois chaque association etudiant-cours correspondant a une inscription au statut `valide`, avec le nom de l'etudiant et le code du cours. Trie par nom puis par code croissants.
+3. Pour les etudiants habitant a Paris, affiche une seule fois le nom et la ville de chaque lycee dont au moins un de ces etudiants est issu. Trie par nom de lycee croissant.
+4. Pour les cours qui valent 6 credits, affiche une seule fois le nom et le prenom de chaque enseignant concerne. Trie par nom croissant.
 
 ### Exercice 4.7 (5 questions)
 
-1. Compte le nombre de notes par cours.
-2. Calcule la moyenne des notes par cours.
-3. Calcule le total des credits par enseignant.
-4. Compte le nombre d'etudiants par lycee.
-5. Calcule la moyenne d'age par ville.
+1. Pour chaque cours ayant des notes, affiche son code, son nom et le nombre de notes recues. Trie par nombre de notes decroissant, puis par code croissant.
+2. Pour chaque cours ayant des examens finaux, affiche son code et la moyenne de ces notes arrondie a deux decimales. Trie par moyenne decroissante.
+3. Pour chaque enseignant, affiche son identifiant, son nom et le total des credits des cours qu'il enseigne. Trie par total decroissant, puis par nom croissant.
+4. Pour chaque lycee, affiche son identifiant, son nom et le nombre d'etudiants qui en sont issus. Trie par effectif decroissant, puis par nom croissant.
+5. Calcule l'age approximatif au 28/09/2026 des etudiants et affiche sa moyenne, arrondie a une decimale, pour chaque ville de leur lycee. Il s'agit bien de la ville du lycee, pas de la ville de residence des etudiants. Trie par ville croissante.
 
 ### Exercice 4.8 (5 questions)
 
