@@ -105,27 +105,27 @@ INNER JOIN cours c ON i.id_cours = c.id_cours;
 
 ### Exercice 4.3 (5 questions)
 
-1. Affiche les etudiants avec leur lycee.
-2. Affiche les notes avec le nom du cours.
-3. Affiche les cours avec le nom de l'enseignant.
-4. Affiche les seances avec le nom de la salle.
-5. Affiche les inscriptions avec le nom de l'etudiant.
+1. Pour les inscriptions au statut `valide`, affiche le nom et le prenom de l'etudiant, le nom du cours et la date d'inscription. Classe-les par date puis par nom croissants.
+2. Affiche le code et le nom des cours associes aux examens finaux ainsi que la note obtenue. Ne conserve que les notes d'au moins 10 et trie par note decroissante, puis par code de cours croissant.
+3. Affiche le jour, l'heure de debut, le numero de salle et le nom du cours des seances du samedi. Trie par heure de debut croissante.
+4. Pour les etudiants qui habitent a Paris, affiche leur nom, le nom de leur lycee et le statut de chaque inscription. Classe par nom d'etudiant puis par statut croissants.
+5. Pour les notes d'au moins 16, affiche la note, le nom du cours et le nom de l'enseignant de ce cours. Trie par note decroissante ; chaque note doit rester sur une ligne distincte.
 
 ### Exercice 4.4 (5 questions)
 
-1. Affiche les notes avec le nom de l'etudiant et du cours.
-2. Affiche les notes avec le nom du cours et de l'enseignant.
-3. Affiche les notes avec le type d'evaluation et le coefficient.
-4. Affiche les notes superieures a 10 avec le nom du cours.
-5. Affiche la moyenne des notes par cours.
+1. Affiche la note, le nom et le prenom de l'etudiant et le nom du cours pour les examens finaux. Trie par note decroissante et limite le resultat a cinq lignes.
+2. Pour les notes inferieures a 10, affiche la note, le code du cours et le nom de l'enseignant de ce cours. Trie par code de cours, puis par note croissants.
+3. Pour les notes de coefficient 2, affiche le nom de l'etudiant, la note, son type d'evaluation et le coefficient. Trie par nom puis par note decroissante.
+4. Pour les notes d'au moins 10 obtenues en controle continu, affiche le code et le nom du cours ainsi que la note. Trie par note decroissante et limite le resultat a cinq lignes.
+5. Pour chaque cours, calcule la moyenne des notes des examens finaux ; affiche le code et le nom du cours avec cette moyenne arrondie a une decimale. Classe les cours par moyenne decroissante.
 
 ### Exercice 4.5 (5 questions)
 
-1. Affiche les etudiants avec leur lycee et leurs inscriptions.
-2. Affiche les notes avec le cours et l'enseignant.
-3. Affiche les etudiants, leurs cours et les notes.
-4. Affiche les seances avec la salle et le cours.
-5. Affiche les inscriptions avec l'etudiant, le cours et la date.
+1. Affiche le nom et le prenom des etudiants, le nom de leur lycee et celui des cours auxquels ils sont inscrits au statut `valide`. Trie par nom d'etudiant puis par nom de cours croissants.
+2. Affiche la note, le type d'evaluation, le nom du cours et le nom de son enseignant pour les notes superieures a 14. Trie par note decroissante.
+3. Affiche le nom et le prenom des etudiants, le cours concerne et leurs notes d'examen final. Trie par nom d'etudiant, nom de cours puis note decroissante.
+4. Pour les seances en salle informatique, affiche le jour, l'heure de debut, le numero de salle et le nom du cours. Trie par jour puis par heure croissants.
+5. Pour les inscriptions enregistrees en 2025, affiche la date, le statut, le nom de l'etudiant et le code du cours. Trie par date puis par nom croissants.
 
 ---
 
