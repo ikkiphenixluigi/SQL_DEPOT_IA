@@ -90,18 +90,20 @@ INNER JOIN enseignants AS ens ON c.id_enseignant = ens.id_enseignant;
 
 ### Exercice 4.1 (5 questions)
 
-1. Affiche les etudiants avec leur lycee.
-2. Affiche les cours avec le nom de l'enseignant.
-3. Affiche les inscriptions avec le nom de l'etudiant.
-4. Affiche les notes avec le nom du cours.
-5. Affiche les seances avec le nom de la salle.
+1. Pour chaque etudiant, affiche son nom, son prenom et le nom de son lycee. Classe les etudiants par nom puis par prenom croissants.
+2. Affiche le code et le nom de chaque cours avec le nom et le prenom de son enseignant. Classe les cours par code croissant.
+3. Pour les inscriptions au statut `valide`, affiche leur date et le nom et le prenom de l'etudiant concerne. Classe les dates croissantes.
+4. Pour les seances ayant lieu le lundi, affiche le jour, l'heure de debut, le numero de salle et sa capacite. Classe les seances par heure de debut croissante.
+5. Affiche le code et le nom des cours ayant une seance le samedi, avec l'heure de debut de cette seance. Classe les cours par code puis par heure croissants.
 
 ### Exercice 4.2 (4 questions)
 
-1. Utilise des alias pour afficher les etudiants et leurs lycees.
-2. Affiche les notes avec le nom du cours en utilisant des alias.
-3. Affiche les inscriptions avec le nom de l'etudiant et du cours.
-4. Utilise des alias explicites (etu, lyc, cou, etc.) pour une requete avec 3 tables.
+Pour chaque requete, donne un alias court aux deux tables et utilise ces alias pour identifier les colonnes.
+
+1. Affiche le nom des etudiants et celui de leur lycee lorsque le lycee se trouve a Paris. Ne confonds pas la ville du lycee avec celle ou habite l'etudiant.
+2. Affiche le code et le nom des cours, ainsi que le nom de l'enseignant, lorsque cet enseignant a le grade `Professeur`. Trie les cours par code croissant.
+3. Pour les inscriptions enregistrees en 2025, affiche leur statut, leur date et le nom de l'etudiant. Trie-les par date puis par nom croissants.
+4. Affiche le numero et la capacite des salles informatiques utilisees pour des seances, ainsi que le jour de ces seances. Trie par jour puis par numero de salle croissants.
 
 ---
 
