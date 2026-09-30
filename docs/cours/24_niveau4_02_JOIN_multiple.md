@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
 - [Cours precedent : JOIN base](23_niveau4_01_JOIN_base.md)
 - [Cours suivant : JOIN avance](25_niveau4_03_JOIN_avance.md)
 
@@ -10,12 +10,12 @@
 
 ## Introduction
 
-Ce cours presente les jointures multiples avec 2 et 3 tables.
+Ce cours presente les jointures multiples avec 2 et 3 tables. Une fois le principe de la chaine compris, on peut ajouter une quatrieme table en reliant chaque nouvelle table par une cle appropriee.
 
 **Objectifs :**
 - Joindre 2 tables
-- Joindre 3 tables
-- Comprendre l'ordre des jointures
+- Joindre 3 tables et prolonger la chaine si necessaire
+- Comprendre l'ordre et les conditions des jointures
 
 ---
 
@@ -27,16 +27,17 @@ Ce cours presente les jointures multiples avec 2 et 3 tables.
 
 **Requete :**
 ```sql
-SELECT e.nom, e.prenom, l.nom AS lycee, l.ville
+SELECT e.nom, e.prenom, l.nom AS lycee, l.ville AS ville_lycee
 FROM etudiants e
 INNER JOIN lycees l ON e.id_lycee = l.id_lycee;
 ```
 
 **Explication :**
-- 2 tables : etudiants, lycees
+- 2 tables : etudiants et lycees
 - Jointure sur id_lycee
+- `l.ville` designe la ville du lycee, pas celle de residence de l'etudiant
 
-**Resultat :** Etudiants avec infos lycee.
+**Resultat :** Etudiants avec leur lycee et la ville de ce lycee.
 
 ---
 
@@ -55,11 +56,48 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 ```
 
 **Explication :**
-- 3 tables : etudiants, lycees, inscriptions
 - Premiere jointure : etudiants-lycees
 - Deuxieme jointure : etudiants-inscriptions
+- Chaque ligne correspond a une inscription, pas necessairement a un etudiant distinct
 
 **Resultat :** Etudiants avec lycee et inscriptions.
+
+### Exemple 2 : Etudiants, inscriptions et cours
+
+**Question :** Afficher les cours suivis par les etudiants.
+
+**Requete :**
+```sql
+SELECT e.nom, e.prenom, c.nom_cours, i.statut
+FROM etudiants e
+INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant
+INNER JOIN cours c ON i.id_cours = c.id_cours;
+```
+
+**Explication :**
+- `inscriptions` est la table de liaison entre etudiants et cours
+- Ajouter `cours` prolonge la chaine apres une premiere jointure
+
+**Resultat :** Une ligne par inscription avec etudiant, cours et statut.
+
+### Exemple 3 : Notes, inscriptions et cours
+
+**Question :** Afficher chaque note avec le nom du cours associe.
+
+**Requete :**
+```sql
+SELECT n.id_note, n.note, c.nom_cours
+FROM notes n
+INNER JOIN inscriptions i ON n.id_inscription = i.id_inscription
+INNER JOIN cours c ON i.id_cours = c.id_cours;
+```
+
+**Explication :**
+- `notes` ne contient pas `id_cours` mais `id_inscription`
+- `inscriptions` fournit ensuite `id_cours` pour rejoindre `cours`
+- Le meme principe s'etend a quatre tables en ajoutant par exemple `enseignants` a partir de `cours.id_enseignant`
+
+**Resultat :** Notes avec noms de cours.
 
 ---
 
@@ -93,7 +131,7 @@ INNER JOIN inscriptions i ON e.id_etudiant = i.id_etudiant;
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
 - [Cours precedent : JOIN base](23_niveau4_01_JOIN_base.md)
 - [Cours suivant : JOIN avance](25_niveau4_03_JOIN_avance.md)
 

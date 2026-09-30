@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
 - [Cours precedent : JOIN multiple](24_niveau4_02_JOIN_multiple.md)
 - [Cours suivant : Test Niveau 4](26_niveau4_TEST.md)
 
@@ -34,20 +34,21 @@ JOIN table2 ON condition;
 
 ### Exemple 1 : DISTINCT simple
 
-**Question :** Afficher les cours uniques avec des notes.
+**Question :** Afficher une seule fois chaque cours ayant des notes.
 
 **Requete :**
 ```sql
-SELECT DISTINCT c.nom_cours
+SELECT DISTINCT c.id_cours, c.nom_cours
 FROM cours c
-INNER JOIN notes n ON c.id_cours = n.id_cours;
+INNER JOIN inscriptions i ON c.id_cours = i.id_cours
+INNER JOIN notes n ON i.id_inscription = n.id_inscription;
 ```
 
 **Explication :**
-- DISTINCT elimine les doublons
-- Un cours n'apparait qu'une fois meme s'il a plusieurs notes
+- Une inscription relie une note au cours correspondant
+- DISTINCT elimine les repetitions creees par les multiples notes d'un meme cours
 
-**Resultat :** Liste des cours sans doublons.
+**Resultat :** Cours notes sans doublons.
 
 ---
 
@@ -59,20 +60,21 @@ On peut combiner JOIN et GROUP BY pour grouper les resultats de jointures.
 
 ### Exemple 1 : COUNT avec JOIN
 
-**Question :** Compter le nombre de notes par cours.
+**Question :** Compter les notes par cours.
 
 **Requete :**
 ```sql
-SELECT c.nom_cours, COUNT(n.note) AS nb_notes
+SELECT c.id_cours, c.nom_cours, COUNT(n.id_note) AS nb_notes
 FROM cours c
-INNER JOIN notes n ON c.id_cours = n.id_cours
-GROUP BY c.nom_cours;
+INNER JOIN inscriptions i ON c.id_cours = i.id_cours
+INNER JOIN notes n ON i.id_inscription = n.id_inscription
+GROUP BY c.id_cours, c.nom_cours;
 ```
 
 **Explication :**
-- JOIN pour relier cours et notes
-- GROUP BY pour grouper par cours
-- COUNT pour compter les notes
+- `inscriptions` relie `cours` a `notes`
+- GROUP BY rassemble les notes d'un meme cours
+- COUNT compte les notes ; seuls les cours ayant des notes figurent ici
 
 **Resultat :** Nombre de notes par cours.
 
@@ -82,7 +84,7 @@ GROUP BY c.nom_cours;
 
 ### Definition
 
-`LEFT JOIN` retourne toutes les lignes de la table de gauche, meme sans correspondance.
+`LEFT JOIN` retourne toutes les lignes de la table de gauche, meme sans correspondance. La colonne de droite vaut alors NULL ; aucun exemple des donnees fournies ne montre necessairement un lycee sans etudiant. Cela n'empeche pas d'etudier le fonctionnement de la jointure.
 
 ### Exemple 1 : LEFT JOIN avec NULL
 
@@ -97,9 +99,9 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 
 **Explication :**
 - LEFT JOIN garde tous les lycees
-- Les lycees sans etudiants ont NULL dans la colonne etudiant
+- Un lycee sans etudiant aurait NULL dans la colonne etudiant
 
-**Resultat :** Tous les lycees, avec ou sans etudiants.
+**Resultat :** Tous les lycees avec leurs etudiants dans la base actuelle.
 
 ---
 
@@ -132,7 +134,7 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour a l'accueil]({{ '/' | relative_url }})
 - [Cours precedent : JOIN multiple](24_niveau4_02_JOIN_multiple.md)
 - [Cours suivant : Test Niveau 4](26_niveau4_TEST.md)
 
