@@ -247,7 +247,6 @@ INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
 (10, 8, 'samedi', '09:00', '11:00'),
 (1, 4, 'samedi', '11:00', '13:00'),
 (2, 6, 'samedi', '14:00', '16:00');
-
 -- Extension : seances
 INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
 (11, 9, 'lundi', '08:00', '10:00'),
@@ -261,8 +260,7 @@ INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
 (19, 10, 'jeudi', '10:00', '12:00');
 
 
--- Ajouts : lycees
-INSERT INTO lycees (nom, ville) VALUES
+INSERT INTO lycees (nom,ville) VALUES
 ('Lycee Foch', 'Rodez'),
 ('Lycee Pierre-Corneille', 'Rouen'),
 ('Lycee Saint-Exupery', 'Marseille'),
@@ -274,40 +272,35 @@ INSERT INTO lycees (nom, ville) VALUES
 ('Lycee Malherbe', 'Caen'),
 ('Lycee Berlioz', 'Vincennes');
 
--- Ajouts : enseignants
-INSERT INTO enseignants (nom, prenom, grade, departement) VALUES
+INSERT INTO enseignants (nom,prenom,grade,departement) VALUES
 ('Benali', 'Samira', 'Maitre de conferences', 'Statistiques'),
 ('Leroux', 'Marc', 'Professeur', 'Informatique'),
 ('Roussel', 'Elena', 'Maitre de conferences', 'Gestion'),
 ('Diallo', 'Karim', 'Maitre de conferences', 'Langues'),
 ('Aubert', 'Jeanne', 'Professeur', 'Histoire');
 
--- Ajouts : salles
-INSERT INTO salles (etage, num_salle, salle_informatique, nb_places) VALUES
+INSERT INTO salles (etage,num_salle,salle_informatique,nb_places) VALUES
 (0, 'C001', 'non', 45),
 (1, 'C101', 'oui', 30),
 (1, 'C102', 'non', 65),
 (2, 'C201', 'oui', 40),
 (2, 'C202', 'non', 150);
 
--- Ajouts : cours
-INSERT INTO cours (code_cours, nom_cours, credits, semestre, nb_heures_theo, id_enseignant) VALUES
+INSERT INTO cours (code_cours,nom_cours,credits,semestre,nb_heures_theo,id_enseignant) VALUES
 ('STAT102', 'Statistiques appliquees', 5, 2, 24, 16),
 ('INFO102', 'Programmation fondamentale', 6, 2, 30, 17),
 ('GEST102', 'Comptabilite initiation', 4, 2, 20, 18),
 ('LANG102', 'Expression ecrite', 3, 2, 18, 19),
 ('HIST102', 'Methodologie historique', 4, 2, 20, 8);
 
--- Ajouts : seances
-INSERT INTO seances (id_cours, id_salle, jour, heure_debut, heure_fin) VALUES
+INSERT INTO seances (id_cours,id_salle,jour,heure_debut,heure_fin) VALUES
 (21, 16, 'lundi', '14:00', '16:00'),
 (22, 17, 'mardi', '14:00', '16:00'),
 (23, 18, 'mercredi', '10:00', '12:00'),
 (24, 19, 'jeudi', '14:00', '16:00'),
 (25, 20, 'vendredi', '10:00', '12:00');
 
--- Ajouts : etudiants
-INSERT INTO etudiants (nom, prenom, sexe, date_naissance, email, annee_inscription, adresse, code_postal, ville, id_lycee) VALUES
+INSERT INTO etudiants (nom,prenom,sexe,date_naissance,email,annee_inscription,adresse,code_postal,ville,id_lycee) VALUES
 ('Martin', 'Amina', 'Feminin', '2002-01-01', 'etudiant.121@univ.fr', 2023, '1 rue des Etudes', '75014', 'Paris', NULL),
 ('Bernard', 'Leo', 'Masculin', '2002-02-02', 'etudiant.122@univ.fr', 2023, '2 rue des Etudes', '91940', 'Les Ulis', 2),
 ('Petit', 'Clara', 'Feminin', '2002-03-03', 'etudiant.123@univ.fr', 2023, '3 rue des Etudes', '91300', 'Massy', 3),
@@ -488,41 +481,155 @@ INSERT INTO etudiants (nom, prenom, sexe, date_naissance, email, annee_inscripti
 ('Chevalier', 'Clara', 'Masculin', '2004-10-16', 'etudiant.298@univ.fr', 2025, '89 rue des Etudes', '94000', 'Creteil', 3),
 ('Fontaine', 'Yanis', 'Feminin', '2004-11-17', 'etudiant.299@univ.fr', 2025, '1 rue des Etudes', '77000', 'Melun', 4),
 ('Boucher', 'Louise', 'Masculin', '2004-12-18', 'etudiant.300@univ.fr', 2025, '2 rue des Etudes', '95000', 'Cergy', 5);
-
--- Profils : 2 etudiants sans cours, 2 avec deux cours, autres 9 a 13.
--- Pas de filtre par semestre ; cours 24 et 25 volontairement moins suivis.
 WITH RECURSIVE rang(n) AS (SELECT 0 UNION ALL SELECT n+1 FROM rang WHERE n<12), candidats AS (
- SELECT e.id_etudiant, e.annee_inscription, r.n,
-        ((e.id_etudiant * 7 + r.n * 3) % 25) + 1 AS id_cours
- FROM etudiants e CROSS JOIN rang r
- WHERE e.id_etudiant>2
-   AND r.n < CASE WHEN e.id_etudiant IN (3,4) THEN 2 ELSE 9 + e.id_etudiant % 5 END
-)
+ SELECT e.id_etudiant,e.annee_inscription,r.n,((e.id_etudiant*7+r.n*3)%25)+1 AS id_cours
+ FROM etudiants e CROSS JOIN rang r WHERE e.id_etudiant>2 AND r.n<CASE WHEN e.id_etudiant IN (3,4) THEN 2 ELSE 9+e.id_etudiant%5 END)
 INSERT INTO inscriptions (id_etudiant,id_cours,date_inscription,statut)
 SELECT id_etudiant,id_cours,printf('%04d-09-%02d',annee_inscription,1+n),
- CASE WHEN (id_etudiant+n)%43=0 THEN 'annule'
-      WHEN (id_etudiant+n)%31=0 THEN 'abandon'
-      WHEN (id_etudiant+n)%37=0 THEN 'en attente'
-      WHEN (id_etudiant+n)%6=0 THEN 'valide'
-      ELSE 'en cours' END
-FROM candidats
-WHERE id_cours<24 OR (id_cours=24 AND id_etudiant%2=0)
- OR (id_cours=25 AND id_etudiant%4=0);
+ CASE WHEN (id_etudiant+n)%43=0 THEN 'annule' WHEN (id_etudiant+n)%31=0 THEN 'abandon'
+ WHEN (id_etudiant+n)%37=0 THEN 'en attente' WHEN (id_etudiant+n)%6=0 THEN 'valide' ELSE 'en cours' END
+FROM candidats WHERE id_cours<24 OR (id_cours=24 AND id_etudiant%2=0) OR (id_cours=25 AND id_etudiant%4=0);
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Controle continu',CASE WHEN statut='en cours' AND id_inscription%13=0 THEN NULL ELSE 4.0+((id_inscription*7)%161)/10.0 END,1,substr(date_inscription,1,4)||'-11-15'
+FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0);
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Examen final',3.0+((id_inscription*11)%171)/10.0,2,substr(date_inscription,1,4)||'-12-18'
+FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0 AND id_inscription%7<>0);
+INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
+SELECT id_inscription,'Projet',6.0+((id_inscription*3)%141)/10.0,1.5,substr(date_inscription,1,4)||'-12-05'
+FROM inscriptions WHERE statut='valide' AND id_inscription%9=0;
 
--- Zero, une, deux ou trois evaluations par inscription ; notes NULL a dessein.
+-- Extension pedagogique : nouvelles lignes et cas sans correspondance.
+
+INSERT INTO lycees (nom,ville) VALUES
+('Lycee Victor-Segalen', 'Brest'),
+('Lycee Claude-Monet', 'Paris'),
+('Lycee Pierre-Mendes-France', 'Savigny-le-Temple'),
+('Lycee Louise-Michel', 'Bobigny'),
+('Lycee Camille-See', 'Paris'),
+('Lycee Auguste-Renoir', 'Limoges'),
+('Lycee Jean-Moulin', 'Beziers');
+
+INSERT INTO enseignants (nom,prenom,grade,departement) VALUES
+('Armand', 'Lucie', 'Maitre de conferences', 'Informatique'),
+('Perin', 'David', 'Professeur', 'Mathematiques'),
+('Nouri', 'Salma', 'Professeur', 'Langues'),
+('Vidal', 'Nicolas', 'Professeur', 'Langues');
+
+INSERT INTO salles (etage,num_salle,salle_informatique,nb_places) VALUES
+(0, 'D001', 'non', 75),
+(1, 'D101', 'oui', 28),
+(2, 'D201', 'oui', 24),
+(2, 'D202', 'non', 110);
+
+INSERT INTO cours (code_cours,nom_cours,credits,semestre,nb_heures_theo,id_enseignant) VALUES
+('INFO202', 'Projet web applique', 5, 4, 28, 21),
+('MATH202', 'Analyse de donnees', 6, 4, 30, 22),
+('LANG203', 'Atelier de langue', 3, 3, 18, 23),
+('GEST303', 'Projet de gestion', 4, 5, 24, NULL),
+('INFO304', 'Initiation a la recherche', 6, 6, 24, 21);
+
+INSERT INTO seances (id_cours,id_salle,jour,heure_debut,heure_fin) VALUES
+(26, 21, 'mardi', '08:00', '10:00'),
+(26, 23, 'jeudi', '10:00', '12:00'),
+(27, 22, 'lundi', '14:00', '16:00'),
+(27, 24, 'vendredi', '14:00', '16:00'),
+(28, 21, 'mercredi', '08:00', '10:00'),
+(29, 24, 'jeudi', '14:00', '16:00'),
+(25, 22, 'samedi', '10:00', '12:00'),
+(22, 23, 'vendredi', '08:00', '10:00');
+
+INSERT INTO etudiants (nom,prenom,sexe,date_naissance,email,annee_inscription,adresse,code_postal,ville,id_lycee) VALUES
+('Rami', 'Lina', 'Feminin', NULL, NULL, 2024, NULL, NULL, 'Paris', NULL),
+('Moreau', 'Adam', 'Masculin', '2003-02-02', 'etudiant.302@univ.fr', 2024, '2 avenue du Campus', '91940', 'Les Ulis', 37),
+('Sow', 'Sarah', 'Feminin', '2004-03-03', 'etudiant.303@univ.fr', 2024, '3 avenue du Campus', '91300', 'Massy', 38),
+('Leroy', 'Yanis', 'Masculin', '2005-04-04', 'etudiant.304@univ.fr', 2024, '4 avenue du Campus', '91400', 'Orsay', 39),
+('Garcia', 'Maya', 'Feminin', '2002-05-05', 'etudiant.305@univ.fr', 2024, '5 avenue du Campus', '78000', 'Versailles', 36),
+('Diallo', 'Leo', 'Masculin', '2003-06-06', 'etudiant.306@univ.fr', 2024, '6 avenue du Campus', '92000', 'Nanterre', 37),
+('Brun', 'Nora', 'Feminin', '2004-07-07', 'etudiant.307@univ.fr', 2024, '7 avenue du Campus', '93100', 'Montreuil', 38),
+('Petit', 'Noah', 'Masculin', '2005-08-08', 'etudiant.308@univ.fr', 2024, '8 avenue du Campus', '94000', 'Creteil', 39),
+('Nguyen', 'Emma', 'Feminin', '2002-09-09', 'etudiant.309@univ.fr', 2024, '9 avenue du Campus', '77000', 'Melun', 36),
+('Roux', 'Hugo', 'Masculin', '2003-10-10', 'etudiant.310@univ.fr', 2024, '10 avenue du Campus', '95000', 'Cergy', 37),
+('Meyer', 'Ines', 'Feminin', '2004-11-11', 'etudiant.311@univ.fr', 2024, '11 avenue du Campus', '75014', 'Paris', 38),
+('Cohen', 'Sami', 'Masculin', '2005-12-12', 'etudiant.312@univ.fr', 2024, '12 avenue du Campus', '91940', 'Les Ulis', 39),
+('Benali', 'Jade', 'Feminin', '2002-01-13', 'etudiant.313@univ.fr', 2024, '13 avenue du Campus', '91300', 'Massy', 36),
+('Laurent', 'Eliott', 'Masculin', '2003-02-14', 'etudiant.314@univ.fr', 2024, '14 avenue du Campus', '91400', 'Orsay', NULL),
+('Dupont', 'Lea', 'Feminin', '2004-03-15', 'etudiant.315@univ.fr', 2024, '15 avenue du Campus', '78000', 'Versailles', 38),
+('Rossi', 'Mathis', 'Masculin', '2005-04-16', 'etudiant.316@univ.fr', 2024, '16 avenue du Campus', '92000', 'Nanterre', 39),
+('Morin', 'Amira', 'Feminin', '2002-05-17', 'etudiant.317@univ.fr', 2024, '17 avenue du Campus', '93100', 'Montreuil', 36),
+('Marchand', 'Rayan', 'Masculin', NULL, 'etudiant.318@univ.fr', 2024, '18 avenue du Campus', '94000', 'Creteil', 37),
+('Robert', 'Clara', 'Feminin', '2004-07-19', 'etudiant.319@univ.fr', 2024, '19 avenue du Campus', '77000', 'Melun', 38),
+('Faure', 'Tom', 'Masculin', '2005-08-20', NULL, 2024, '20 avenue du Campus', '95000', 'Cergy', 39),
+('Rami', 'Lina', 'Feminin', '2002-09-21', 'etudiant.321@univ.fr', 2024, '21 avenue du Campus', '75014', 'Paris', 36),
+('Moreau', 'Adam', 'Masculin', '2003-10-22', 'etudiant.322@univ.fr', 2024, '22 avenue du Campus', NULL, 'Les Ulis', 37),
+('Sow', 'Sarah', 'Feminin', '2004-11-23', 'etudiant.323@univ.fr', 2024, '23 avenue du Campus', '91300', 'Massy', 38),
+('Leroy', 'Yanis', 'Masculin', '2005-12-24', 'etudiant.324@univ.fr', 2024, NULL, '91400', 'Orsay', 39),
+('Garcia', 'Maya', 'Feminin', '2002-01-25', 'etudiant.325@univ.fr', 2024, '25 avenue du Campus', '78000', 'Versailles', 36),
+('Diallo', 'Leo', 'Masculin', '2003-02-26', 'etudiant.326@univ.fr', 2024, '26 avenue du Campus', '92000', 'Nanterre', 37),
+('Brun', 'Nora', 'Feminin', '2004-03-27', 'etudiant.327@univ.fr', 2024, '27 avenue du Campus', '93100', 'Montreuil', NULL),
+('Petit', 'Noah', 'Masculin', '2005-04-01', 'etudiant.328@univ.fr', 2024, '28 avenue du Campus', '94000', 'Creteil', 39),
+('Nguyen', 'Emma', 'Feminin', '2002-05-02', 'etudiant.329@univ.fr', 2024, '29 avenue du Campus', '77000', 'Melun', 36),
+('Roux', 'Hugo', 'Masculin', '2003-06-03', 'etudiant.330@univ.fr', 2024, '30 avenue du Campus', '95000', 'Cergy', 37),
+('Meyer', 'Ines', 'Feminin', '2004-07-04', 'etudiant.331@univ.fr', 2025, '31 avenue du Campus', '75014', 'Paris', 38),
+('Cohen', 'Sami', 'Masculin', '2005-08-05', 'etudiant.332@univ.fr', 2025, '32 avenue du Campus', '91940', 'Les Ulis', 39),
+('Benali', 'Jade', 'Feminin', '2002-09-06', 'etudiant.333@univ.fr', 2025, '33 avenue du Campus', '91300', 'Massy', 36),
+('Laurent', 'Eliott', 'Masculin', '2003-10-07', 'etudiant.334@univ.fr', 2025, '34 avenue du Campus', '91400', 'Orsay', 37),
+('Dupont', 'Lea', 'Feminin', NULL, 'etudiant.335@univ.fr', 2025, '35 avenue du Campus', '78000', 'Versailles', 38),
+('Rossi', 'Mathis', 'Masculin', '2005-12-09', 'etudiant.336@univ.fr', 2025, '36 avenue du Campus', '92000', 'Nanterre', 39),
+('Morin', 'Amira', 'Feminin', '2002-01-10', 'etudiant.337@univ.fr', 2025, '37 avenue du Campus', '93100', 'Montreuil', 36),
+('Marchand', 'Rayan', 'Masculin', '2003-02-11', 'etudiant.338@univ.fr', 2025, '38 avenue du Campus', '94000', 'Creteil', 37),
+('Robert', 'Clara', 'Feminin', '2004-03-12', NULL, 2025, '39 avenue du Campus', '77000', 'Melun', 38),
+('Faure', 'Tom', 'Masculin', '2005-04-13', 'etudiant.340@univ.fr', 2025, '40 avenue du Campus', '95000', 'Cergy', NULL),
+('Rami', 'Lina', 'Feminin', '2002-05-14', 'etudiant.341@univ.fr', 2025, '1 avenue du Campus', '75014', 'Paris', 36),
+('Moreau', 'Adam', 'Masculin', '2003-06-15', 'etudiant.342@univ.fr', 2025, '2 avenue du Campus', '91940', 'Les Ulis', 37),
+('Sow', 'Sarah', 'Feminin', '2004-07-16', 'etudiant.343@univ.fr', 2025, '3 avenue du Campus', NULL, 'Massy', 38),
+('Leroy', 'Yanis', 'Masculin', '2005-08-17', 'etudiant.344@univ.fr', 2025, '4 avenue du Campus', '91400', 'Orsay', 39),
+('Garcia', 'Maya', 'Feminin', '2002-09-18', 'etudiant.345@univ.fr', 2025, '5 avenue du Campus', '78000', 'Versailles', 36),
+('Diallo', 'Leo', 'Masculin', '2003-10-19', 'etudiant.346@univ.fr', 2025, '6 avenue du Campus', '92000', 'Nanterre', 37),
+('Brun', 'Nora', 'Feminin', '2004-11-20', 'etudiant.347@univ.fr', 2025, NULL, '93100', 'Montreuil', 38),
+('Petit', 'Noah', 'Masculin', '2005-12-21', 'etudiant.348@univ.fr', 2025, '8 avenue du Campus', '94000', 'Creteil', 39),
+('Nguyen', 'Emma', 'Feminin', '2002-01-22', 'etudiant.349@univ.fr', 2025, '9 avenue du Campus', '77000', 'Melun', 36),
+('Roux', 'Hugo', 'Masculin', '2003-02-23', 'etudiant.350@univ.fr', 2025, '10 avenue du Campus', '95000', 'Cergy', 37),
+('Meyer', 'Ines', 'Feminin', '2004-03-24', 'etudiant.351@univ.fr', 2025, '11 avenue du Campus', '75014', 'Paris', 38),
+('Cohen', 'Sami', 'Masculin', NULL, 'etudiant.352@univ.fr', 2025, '12 avenue du Campus', '91940', 'Les Ulis', 39),
+('Benali', 'Jade', 'Feminin', '2002-05-26', 'etudiant.353@univ.fr', 2025, '13 avenue du Campus', '91300', 'Massy', NULL),
+('Laurent', 'Eliott', 'Masculin', '2003-06-27', 'etudiant.354@univ.fr', 2025, '14 avenue du Campus', '91400', 'Orsay', 37),
+('Dupont', 'Lea', 'Feminin', '2004-07-01', 'etudiant.355@univ.fr', 2025, '15 avenue du Campus', '78000', 'Versailles', 38),
+('Rossi', 'Mathis', 'Masculin', '2005-08-02', 'etudiant.356@univ.fr', 2025, '16 avenue du Campus', '92000', 'Nanterre', 39),
+('Morin', 'Amira', 'Feminin', '2002-09-03', 'etudiant.357@univ.fr', 2025, '17 avenue du Campus', '93100', 'Montreuil', 36),
+('Marchand', 'Rayan', 'Masculin', '2003-10-04', NULL, 2025, '18 avenue du Campus', '94000', 'Creteil', 37),
+('Robert', 'Clara', 'Feminin', '2004-11-05', 'etudiant.359@univ.fr', 2025, '19 avenue du Campus', '77000', 'Melun', 38),
+('Faure', 'Tom', 'Masculin', '2005-12-06', 'etudiant.360@univ.fr', 2025, '20 avenue du Campus', '95000', 'Cergy', 39);
+
+-- 57 nouveaux etudiants actifs ; 301..303 sans inscription.
+WITH RECURSIVE rang(n) AS (SELECT 0 UNION ALL SELECT n+1 FROM rang WHERE n<12)
+INSERT INTO inscriptions (id_etudiant,id_cours,date_inscription,statut)
+SELECT e.id_etudiant,((e.id_etudiant*7+r.n*2)%27)+1,
+ printf('%04d-09-%02d',e.annee_inscription,r.n+1),
+ CASE WHEN (e.id_etudiant+r.n)%41=0 THEN 'abandon'
+ WHEN (e.id_etudiant+r.n)%7=0 THEN 'valide' ELSE 'en cours' END
+FROM etudiants e CROSS JOIN rang r
+WHERE e.id_etudiant BETWEEN 304 AND 360 AND r.n<9+e.id_etudiant%5;
+
+-- Dix inscrits a deux cours sans aucune evaluation (28 et 29).
+INSERT INTO inscriptions (id_etudiant,id_cours,date_inscription,statut)
+SELECT id_etudiant,28,printf('%04d-09-18',annee_inscription),'en attente'
+FROM etudiants WHERE id_etudiant BETWEEN 304 AND 308;
+INSERT INTO inscriptions (id_etudiant,id_cours,date_inscription,statut)
+SELECT id_etudiant,29,printf('%04d-09-18',annee_inscription),'en attente'
+FROM etudiants WHERE id_etudiant BETWEEN 309 AND 313;
+
+-- Les cours 28 et 29 ont des inscrits mais pas de notes ; le cours 30 n'a pas d'inscrit.
 INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
 SELECT id_inscription,'Controle continu',
- CASE WHEN statut='en cours' AND id_inscription%13=0 THEN NULL
-      ELSE 4.0+((id_inscription*7)%161)/10.0 END,
+ CASE WHEN id_inscription%17=0 THEN NULL ELSE 5.0+((id_inscription*7)%151)/10.0 END,
  1,substr(date_inscription,1,4)||'-11-15'
-FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0);
-
+FROM inscriptions WHERE id_etudiant BETWEEN 304 AND 360 AND id_cours<=27
+ AND statut<>'abandon' AND id_inscription%11<>0;
 INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
-SELECT id_inscription,'Examen final',3.0+((id_inscription*11)%171)/10.0,
+SELECT id_inscription,'Examen final',
+ CASE WHEN id_inscription%19=0 THEN 10.0 WHEN id_inscription%23=0 THEN 16.0
+ ELSE 3.0+((id_inscription*11)%171)/10.0 END,
  2,substr(date_inscription,1,4)||'-12-18'
-FROM inscriptions WHERE statut='valide' OR (statut='en cours' AND id_inscription%11<>0 AND id_inscription%7<>0);
-
-INSERT INTO notes (id_inscription,type_evaluation,note,coeff,date_evaluation)
-SELECT id_inscription,'Projet',6.0+((id_inscription*3)%141)/10.0,
- 1.5,substr(date_inscription,1,4)||'-12-05'
-FROM inscriptions WHERE statut='valide' AND id_inscription%9=0;
+FROM inscriptions WHERE id_etudiant BETWEEN 304 AND 360 AND id_cours<=27
+ AND statut<>'abandon' AND id_inscription%11<>0 AND id_inscription%7<>0;
