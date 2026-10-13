@@ -121,7 +121,7 @@ FROM etudiants;
 
 1. Extrais les 4 premieres lettres du nom.
 2. Extrais les 3 derniers caracteres de l'email.
-3. Extrais le prenom de l'email (avant le point).
+3. Affiche le nom, le prenom, l'adresse electronique et la partie de cette adresse situee avant le premier point. Cette partie ne correspond pas necessairement au prenom. Conserve les etudiants dont l'adresse electronique est NULL : la partie extraite sera alors NULL.
 4. Extrais l'annee de naissance de la date.
 5. Extrais le domaine de l'email (apres @).
 
