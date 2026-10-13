@@ -1,83 +1,84 @@
+---
+layout: default
+title: Sommaire
+nav_order: 1
+---
+
 # SOMMAIRE - SQL_DEPOT_IA
 
-> **📖 Pour l'installation et les guides :** [README.md](README.md)
+> Pour l'installation : [README sur GitHub](https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/blob/main/README.md)
+
+## Introduction
+
+- [Introduction]({{ '/docs/cours/00_intro.html' | relative_url }})
+
+## Niveau 1 : Requêtes simples
+
+- [SELECT, FROM et DISTINCT]({{ '/docs/cours/01_niveau1_01_SELECT_FROM.html' | relative_url }})
+- [WHERE]({{ '/docs/cours/02_niveau1_02_WHERE.html' | relative_url }})
+- [ORDER BY]({{ '/docs/cours/03_niveau1_03_ORDER_BY.html' | relative_url }})
+- [LIMIT]({{ '/docs/cours/04_niveau1_04_LIMIT.html' | relative_url }})
+- [Test niveau 1]({{ '/docs/cours/05_niveau1_05_TEST.html' | relative_url }})
+
+## Niveau 2 : Fonctions sur les colonnes
+
+### Fonctions numériques
+
+- [Opérations et ROUND]({{ '/docs/cours/08_niveau2_01_operations_ROUND.html' | relative_url }})
+- [CEIL, FLOOR, ABS]({{ '/docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.html' | relative_url }})
+- [POWER, SQRT]({{ '/docs/cours/10_niveau2_03_POWER_SQRT.html' | relative_url }})
+
+### Fonctions texte
+
+- [UPPER, LOWER, LENGTH]({{ '/docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.html' | relative_url }})
+- [SUBSTR, REPLACE]({{ '/docs/cours/12_niveau2_05_SUBSTR_REPLACE.html' | relative_url }})
+- [TRIM et concaténation]({{ '/docs/cours/13_niveau2_06_TRIM_concat.html' | relative_url }})
+- [LIKE]({{ '/docs/cours/14_niveau2_07_LIKE.html' | relative_url }})
+- [CAST]({{ '/docs/cours/15_niveau2_08_CAST.html' | relative_url }})
+
+### Fonctions date
+
+- [strftime()]({{ '/docs/cours/16_niveau2_09_strftime.html' | relative_url }})
+- [Calcul d'âge]({{ '/docs/cours/17_niveau2_10_age.html' | relative_url }})
+
+### Fonctions avancées et test
+
+- [CASE WHEN]({{ '/docs/cours/18_niveau2_11_CASE_WHEN.html' | relative_url }})
+- [Test niveau 2]({{ '/docs/cours/19_niveau2_TEST.html' | relative_url }})
+
+## Niveau 3 : Agrégats, GROUP BY, HAVING
+
+- [Agrégats : COUNT, MIN, MAX, AVG, SUM]({{ '/docs/cours/17_niveau3_01_agregats.html' | relative_url }})
+- [GROUP BY]({{ '/docs/cours/18_niveau3_02_GROUP_BY.html' | relative_url }})
+- [HAVING et syntaxe complète]({{ '/docs/cours/19_niveau3_03_HAVING_syntaxe.html' | relative_url }})
+- [Test niveau 3]({{ '/docs/cours/20_niveau3_TEST.html' | relative_url }})
+
+## Niveau 4 : Jointures
+
+- [JOIN : bases]({{ '/docs/cours/23_niveau4_01_JOIN_base.html' | relative_url }})
+- [JOIN multiples]({{ '/docs/cours/24_niveau4_02_JOIN_multiple.html' | relative_url }})
+- [JOIN avancées]({{ '/docs/cours/25_niveau4_03_JOIN_avance.html' | relative_url }})
+- [Test niveau 4]({{ '/docs/cours/26_niveau4_TEST.html' | relative_url }})
+
+## Niveau 5 : Sous-requêtes
+
+- [Sous-requêtes IN]({{ '/docs/cours/27_niveau5_01_sous_requetes_IN.html' | relative_url }})
+- [Sous-requêtes comparatives]({{ '/docs/cours/28_niveau5_02_sous_requetes_compare.html' | relative_url }})
+- [Sous-requêtes corrélées]({{ '/docs/cours/29_niveau5_03_sous_requetes_corellees.html' | relative_url }})
+- [Test niveau 5]({{ '/docs/cours/30_niveau5_TEST.html' | relative_url }})
+
+## Fichiers SQL
+
+- [Création des tables]({{ '/sql/01_create_tables.sql' | relative_url }})
+- [Insertion des données]({{ '/sql/02_insert_data.sql' | relative_url }})
+
+## Guides
+
+Les guides suivants sont consultables sur GitHub :
+
+- [Guide DB Browser](https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/blob/main/GUIDE_DB_BROWSER.md)
+- [Guide DBeaver](https://github.com/ikkiphenixluigi/SQL_DEPOT_IA/blob/main/GUIDE_DBEAVER.md)
 
 ---
 
-## 📚 Structure des cours
-
-### Introduction
-
-- [00 - Introduction](docs/cours/00_intro.md)
-
-### NIVEAU 1 : Requêtes simples (SELECT, FROM, WHERE, ORDER BY, LIMIT, DISTINCT)
-
-- [01 - SELECT, FROM et DISTINCT](docs/cours/01_niveau1_01_SELECT_FROM.md)
-- [02 - WHERE (TOUT)](docs/cours/02_niveau1_02_WHERE.md)
-- [03 - ORDER BY](docs/cours/03_niveau1_03_ORDER_BY.md)
-- [04 - LIMIT](docs/cours/04_niveau1_04_LIMIT.md)
-- [05 - Test NIVEAU 1](docs/cours/05_niveau1_05_TEST.md)
-
-### NIVEAU 2 : Fonctions sur les colonnes
-
-**Partie 1 : Fonctions numériques**
-- [08 - Opérations et ROUND](docs/cours/08_niveau2_01_operations_ROUND.md)
-- [09 - CEIL, FLOOR, ABS](docs/cours/09_niveau2_02_CEIL_FLOOR_ABS.md)
-- [10 - POWER, SQRT](docs/cours/10_niveau2_03_POWER_SQRT.md)
-
-**Partie 2 : Fonctions texte**
-- [11 - UPPER, LOWER, LENGTH](docs/cours/11_niveau2_04_UPPER_LOWER_LENGTH.md)
-- [12 - SUBSTR, REPLACE](docs/cours/12_niveau2_05_SUBSTR_REPLACE.md)
-- [13 - TRIM et concatenation](docs/cours/13_niveau2_06_TRIM_concat.md)
-- [14 - LIKE](docs/cours/14_niveau2_07_LIKE.md)
-- [15 - CAST](docs/cours/15_niveau2_08_CAST.md)
-
-**Partie 3 : Fonctions date**
-- [16 - strftime()](docs/cours/16_niveau2_09_strftime.md)
-- [17 - Calcul d'age](docs/cours/17_niveau2_10_age.md)
-
-**Partie 4 : Fonctions avancees**
-- [18 - CASE WHEN](docs/cours/18_niveau2_11_CASE_WHEN.md)
-
-**Test**
-- [19 - Test NIVEAU 2](docs/cours/19_niveau2_TEST.md)
-
-### NIVEAU 3 : Agregats, GROUP BY, HAVING
-
-- [20 - Agregats (COUNT, MIN, MAX, AVG, SUM)](docs/cours/20_niveau3_01_agregats.md)
-- [21 - GROUP BY](docs/cours/21_niveau3_02_GROUP_BY.md)
-- [22 - HAVING + Syntaxe complete](docs/cours/22_niveau3_03_HAVING_syntaxe.md)
-- [23 - Test NIVEAU 3](docs/cours/23_niveau3_TEST.md)
-
-### NIVEAU 4 : Jointures (INNER JOIN, LEFT JOIN)
-
-- [24 - JOIN base](docs/cours/24_niveau4_01_JOIN_base.md)
-- [25 - JOIN multiple](docs/cours/25_niveau4_02_JOIN_multiple.md)
-- [26 - JOIN avance](docs/cours/26_niveau4_03_JOIN_avance.md)
-- [27 - Test NIVEAU 4](docs/cours/27_niveau4_TEST.md)
-
-### NIVEAU 5 : Sous-requetes et requetes complexes
-
-- [28 - Sous-requetes IN](docs/cours/28_niveau5_01_sous_requetes_IN.md)
-- [29 - Sous-requetes comparatives](docs/cours/29_niveau5_02_sous_requetes_compare.md)
-- [30 - Sous-requetes correlees](docs/cours/30_niveau5_03_sous_requetes_corellees.md)
-- [31 - Test NIVEAU 5](docs/cours/31_niveau5_TEST.md)
-
----
-
-## 📁 Fichiers SQL
-
-- [01 - Creation des tables](sql/01_create_tables.sql)
-- [02 - Insertion des donnees](sql/02_insert_data.sql)
-
----
-
-## 📝 Guides
-
-- [GUIDE_TEST](GUIDE_TEST.md)
-- [GUIDE_DB_BROWSER](GUIDE_DB_BROWSER.md)
-- [GUIDE_DBEAVER](GUIDE_DBEAVER.md)
-
----
-
-**Total : 31 fichiers cours (1 intro + 30 niveaux)**
+Total : 30 pages de cours (1 introduction + 29 leçons et tests).
