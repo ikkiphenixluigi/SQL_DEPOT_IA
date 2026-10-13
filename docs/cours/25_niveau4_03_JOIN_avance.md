@@ -116,7 +116,7 @@ LEFT JOIN etudiants e ON l.id_lycee = e.id_lycee;
 
 ### Exercice 4.7 (5 questions)
 
-1. Pour chaque cours ayant des notes, affiche son code, son nom et le nombre de notes recues. Trie par nombre de notes decroissant, puis par code croissant.
+1. Pour chaque cours ayant au moins une valeur de note effectivement renseignee, affiche son code, son nom et le nombre de valeurs de note effectivement renseignees (exclus les valeurs NULL de la colonne note). Trie par ce nombre decroissant, puis par code croissant.
 2. Pour chaque cours ayant des examens finaux, affiche son code et la moyenne de ces notes arrondie a deux decimales. Trie par moyenne decroissante.
 3. Pour chaque enseignant, affiche son identifiant, son nom et le total des credits des cours qu'il enseigne. Trie par total decroissant, puis par nom croissant.
 4. Pour chaque lycee, affiche son identifiant, son nom et le nombre d'etudiants qui en sont issus. Trie par effectif decroissant, puis par nom croissant.
