@@ -60,11 +60,13 @@ On peut combiner JOIN et GROUP BY pour grouper les resultats de jointures.
 
 ### Exemple 1 : COUNT avec JOIN
 
-**Question :** Compter les notes par cours.
+**Question :** Compter les evaluations enregistrees et les valeurs de note effectivement renseignees par cours.
 
 **Requete :**
 ```sql
-SELECT c.id_cours, c.nom_cours, COUNT(n.id_note) AS nb_notes
+SELECT c.id_cours, c.nom_cours,
+       COUNT(n.id_note) AS nb_evaluations,
+       COUNT(n.note) AS nb_notes_renseignees
 FROM cours c
 INNER JOIN inscriptions i ON c.id_cours = i.id_cours
 INNER JOIN notes n ON i.id_inscription = n.id_inscription
@@ -72,11 +74,14 @@ GROUP BY c.id_cours, c.nom_cours;
 ```
 
 **Explication :**
-- `inscriptions` relie `cours` a `notes`
-- GROUP BY rassemble les notes d'un meme cours
-- COUNT compte les notes ; seuls les cours ayant des notes figurent ici
+- `inscriptions` relie `cours` a `notes`.
+- GROUP BY rassemble les evaluations d'un meme cours.
+- `COUNT(n.id_note)` compte les evaluations enregistrees, meme si leur note est NULL.
+- `COUNT(n.note)` compte uniquement les valeurs de note non NULL ; une note de 0 est bien comptee.
+- Avec ces INNER JOIN, seuls les cours ayant au moins une evaluation enregistree figurent ici. Un cours dont toutes les notes sont NULL aurait un nombre de notes renseignees egal a 0.
+- Pour l'exercice 4.7.1, qui demande au moins une note renseignee, ajoute `HAVING COUNT(n.note) > 0` apres GROUP BY et applique le tri demande.
 
-**Resultat :** Nombre de notes par cours.
+**Resultat :** Nombre d'evaluations et nombre de notes renseignees par cours.
 
 ---
 

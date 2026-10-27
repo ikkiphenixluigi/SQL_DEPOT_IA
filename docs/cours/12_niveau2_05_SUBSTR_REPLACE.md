@@ -58,7 +58,7 @@ FROM etudiants;
 **Explication :**
 - `SUBSTR(email, -3)` : 3 derniers caracteres
 
-**Resultat :** Fin des emails (.fr, .com, etc.).
+**Resultat :** Trois derniers caracteres des emails (par exemple `.fr` ou `com`).
 
 ---
 
@@ -68,22 +68,24 @@ FROM etudiants;
 
 `INSTR(texte, motif)` indique la position de la premiere occurrence du motif, en comptant a partir de 1. Si le motif est absent, la fonction renvoie 0. On peut utiliser cette position dans `SUBSTR` pour extraire un texte de longueur variable.
 
-**Exemple :** Dans `thomas.bernard@univ.fr`, le point se trouve avant `@` ; les adresses du projet suivent le format `prenom.nom@univ.fr`.
+**Exemple :** Dans `thomas.bernard@univ.fr`, la partie avant le premier point est `thomas`. Dans `etudiant.302@univ.fr`, cette partie est `etudiant` : elle ne correspond donc pas necessairement au prenom. Les adresses du projet ne suivent pas toutes le meme format.
 
-**Question :** Extraire le prenom avant le premier point et le domaine apres `@`.
+**Question :** Extraire la partie de l'email avant le premier point et le domaine apres `@`.
 
 **Requete :**
 ```sql
 SELECT email,
-       SUBSTR(email, 1, INSTR(email, '.') - 1) AS prenom,
+       SUBSTR(email, 1, INSTR(email, '.') - 1) AS partie_avant_point,
        SUBSTR(email, INSTR(email, '@') + 1) AS domaine
 FROM etudiants;
 ```
 
 **Explication :**
-- `INSTR(email, '.') - 1` : longueur du prenom avant le point.
+- `INSTR(email, '.') - 1` : longueur de la partie avant le premier point.
 - `INSTR(email, '@') + 1` : position du premier caractere apres `@`.
 - `SUBSTR(email, depart)` sans troisieme argument extrait jusqu'a la fin.
+- Cet exemple suppose que l'adresse non NULL contient un point et un `@`, comme les adresses fournies dans le projet.
+- Si l'email est NULL, les deux extractions valent NULL ; l'etudiant reste dans le resultat.
 
 ---
 
