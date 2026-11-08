@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : HAVING + syntaxe](19_niveau3_03_HAVING_syntaxe.md)
 - [Niveau 4 - Cours suivant : JOIN base](23_niveau4_01_JOIN_base.md)
 
@@ -95,7 +95,7 @@ Si tu as reussi ce test, tu peux passer au **Niveau 4** !
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : HAVING + syntaxe](19_niveau3_03_HAVING_syntaxe.md)
 - [Niveau 4 - JOIN base](23_niveau4_01_JOIN_base.md)
 

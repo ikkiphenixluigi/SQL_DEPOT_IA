@@ -81,7 +81,7 @@ FROM cours;
 - Sous-requete dans SELECT : calcule la moyenne generale
 - Affichee pour chaque ligne
 
-**Resultat :** Tous les cours avec la meme moyenne_generale.
+**Resultat :** Tous les cours avec la meme moyenne generale.
 
 ---
 
