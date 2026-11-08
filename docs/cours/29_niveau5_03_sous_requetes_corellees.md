@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes comparatives](28_niveau5_02_sous_requetes_compare.md)
 - [Cours suivant : Test Niveau 5](30_niveau5_TEST.md)
 
@@ -92,7 +92,7 @@ WHERE NOT EXISTS (
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes comparatives](28_niveau5_02_sous_requetes_compare.md)
 - [Cours suivant : Test Niveau 5](30_niveau5_TEST.md)
 

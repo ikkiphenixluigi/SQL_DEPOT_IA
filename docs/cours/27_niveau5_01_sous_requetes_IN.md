@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Niveau 4 - Test](26_niveau4_TEST.md)
 - [Cours suivant : Sous-requetes comparatives](28_niveau5_02_sous_requetes_compare.md)
 
@@ -107,7 +107,7 @@ WHERE id_etudiant NOT IN (SELECT id_etudiant FROM inscriptions);
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Niveau 4 - Test](26_niveau4_TEST.md)
 - [Cours suivant : Sous-requetes comparatives](28_niveau5_02_sous_requetes_compare.md)
 

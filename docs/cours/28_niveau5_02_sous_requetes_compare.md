@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes IN](27_niveau5_01_sous_requetes_IN.md)
 - [Cours suivant : Sous-requetes correlees](29_niveau5_03_sous_requetes_corellees.md)
 
@@ -81,7 +81,7 @@ FROM cours;
 - Sous-requete dans SELECT : calcule la moyenne generale
 - Affichee pour chaque ligne
 
-**Resultat :** Tous les cours avec la meme moyenne generale.
+**Resultat :** Tous les cours avec la meme moyenne_generale.
 
 ---
 
@@ -147,7 +147,7 @@ WHERE id_etudiant IN (
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes IN](27_niveau5_01_sous_requetes_IN.md)
 - [Cours suivant : Sous-requetes correlees](29_niveau5_03_sous_requetes_corellees.md)
 
