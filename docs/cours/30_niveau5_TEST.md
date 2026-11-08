@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes correlees](29_niveau5_03_sous_requetes_corellees.md)
 
 ---
@@ -94,7 +94,7 @@ Les enonces sont valides sur le plan redactionnel et pedagogique ; leurs resulta
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : Sous-requetes correlees](29_niveau5_03_sous_requetes_corellees.md)
 
 ---
