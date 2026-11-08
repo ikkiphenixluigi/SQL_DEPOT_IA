@@ -2,8 +2,8 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 1 - Cours suivant ->](01_niveau1_01_FROM_SELECT.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
+- [Niveau 1 - Cours suivant ->](01_niveau1_01_SELECT_FROM.md)
 
 ---
 
@@ -269,8 +269,8 @@ Les SGBDR reposent sur plusieurs principes fondamentaux :
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
-- [Niveau 1 - Cours suivant ->](01_niveau1_01_FROM_SELECT.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
+- [Niveau 1 - Cours suivant ->](01_niveau1_01_SELECT_FROM.md)
 
 ---
 

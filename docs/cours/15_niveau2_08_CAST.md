@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : LIKE](14_niveau2_07_LIKE.md)
 - [Cours suivant : strftime()](16_niveau2_09_strftime.md)
 
@@ -76,7 +76,7 @@ FROM cours;
 
 ## Navigation
 
-- [Retour au SOMMAIRE](../SOMMAIRE.md)
+- [Retour au sommaire]({{ '/' | relative_url }})
 - [Cours precedent : LIKE](14_niveau2_07_LIKE.md)
 - [Cours suivant : strftime()](16_niveau2_09_strftime.md)
 

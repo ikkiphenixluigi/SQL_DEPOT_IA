@@ -44,24 +44,24 @@
 
 ### NIVEAU 3 : Agregats, GROUP BY, HAVING
 
-- [20 - Agregats (COUNT, MIN, MAX, AVG, SUM)](cours/20_niveau3_01_agregats.md)
-- [21 - GROUP BY](cours/21_niveau3_02_GROUP_BY.md)
-- [22 - HAVING + Syntaxe complete](cours/22_niveau3_03_HAVING_syntaxe.md)
-- [23 - Test NIVEAU 3](cours/23_niveau3_TEST.md)
+- [17 - Agregats (COUNT, MIN, MAX, AVG, SUM)](cours/17_niveau3_01_agregats.md)
+- [18 - GROUP BY](cours/18_niveau3_02_GROUP_BY.md)
+- [19 - HAVING + Syntaxe complete](cours/19_niveau3_03_HAVING_syntaxe.md)
+- [20 - Test NIVEAU 3](cours/20_niveau3_TEST.md)
 
 ### NIVEAU 4 : Jointures (INNER JOIN, LEFT JOIN)
 
-- [24 - JOIN base](cours/24_niveau4_01_JOIN_base.md)
-- [25 - JOIN multiple](cours/25_niveau4_02_JOIN_multiple.md)
-- [26 - JOIN avance](cours/26_niveau4_03_JOIN_avance.md)
-- [27 - Test NIVEAU 4](cours/27_niveau4_TEST.md)
+- [23 - JOIN base](cours/23_niveau4_01_JOIN_base.md)
+- [24 - JOIN multiple](cours/24_niveau4_02_JOIN_multiple.md)
+- [25 - JOIN avance](cours/25_niveau4_03_JOIN_avance.md)
+- [26 - Test NIVEAU 4](cours/26_niveau4_TEST.md)
 
 ### NIVEAU 5 : Sous-requetes et requetes complexes
 
-- [28 - Sous-requetes IN](cours/28_niveau5_01_sous_requetes_IN.md)
-- [29 - Sous-requetes comparatives](cours/29_niveau5_02_sous_requetes_compare.md)
-- [30 - Sous-requetes correlees](cours/30_niveau5_03_sous_requetes_corellees.md)
-- [31 - Test NIVEAU 5](cours/31_niveau5_TEST.md)
+- [27 - Sous-requetes IN](cours/27_niveau5_01_sous_requetes_IN.md)
+- [28 - Sous-requetes comparatives](cours/28_niveau5_02_sous_requetes_compare.md)
+- [29 - Sous-requetes correlees](cours/29_niveau5_03_sous_requetes_corellees.md)
+- [30 - Test NIVEAU 5](cours/30_niveau5_TEST.md)
 
 ---
 
@@ -74,10 +74,9 @@
 
 ## 📝 Guides
 
-- [GUIDE_TEST](../GUIDE_TEST.md)
 - [GUIDE_DB_BROWSER](../GUIDE_DB_BROWSER.md)
 - [GUIDE_DBEAVER](../GUIDE_DBEAVER.md)
 
 ---
 
-**Total : 31 fichiers cours (1 intro + 30 niveaux)**
+**Total : 30 pages de cours (1 introduction + 29 lecons et tests)**
