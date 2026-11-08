@@ -28,13 +28,21 @@ L’objectif n’est pas de concevoir une base complexe, mais de construire une 
 
 ## Préparer votre base dans DBeaver
 
-### 1. Préparer une copie de la base vide
+### 1. Télécharger et préparer la base vide
 
-Une base SQLite vide nommée `niveau6_vide.db` est prévue pour ce niveau.
+Téléchargez la base SQLite vide :
 
-> Mise à disposition du fichier en cours : le téléchargement n’est pas encore disponible sur cette page. Utilisez le fichier transmis par votre enseignant. Ne renommez pas un simple fichier texte en `.db`.
+<p>
+  <a href="{{ '/sql/niveau6_vide.db' | relative_url }}"
+     class="btn btn-blue"
+     download="niveau6_vide.db">
+    Télécharger la base SQLite vide
+  </a>
+</p>
 
-Conservez ce fichier intact, puis créez une copie nommée :
+Cette base ne contient aucune table utilisateur ni donnée. Vous allez construire ses tables et ajouter ses données pendant le cours.
+
+Conservez le fichier `niveau6_vide.db` intact, puis créez une copie nommée :
 
 ```text
 niveau6_catalogue.db
@@ -42,7 +50,7 @@ niveau6_catalogue.db
 
 Placez cette copie dans votre dossier de travail.
 
-Cette base ne contient aucune table utilisateur ni donnée. Vous allez la remplir progressivement pendant le cours.
+Vous utiliserez cette copie pour suivre les exemples. Pour l’exercice final, repartez du fichier d’origine et créez une seconde copie nommée `niveau6_exercice.db`.
 
 ### 2. Ouvrir la base dans DBeaver
 
